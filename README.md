@@ -12,6 +12,7 @@ A collection of modules and methods for performing
 ## Features
 
 * Adds `powerset` to {Array} and {Set}.
+* Added {Range#&}, {Range#upto} and {Range#downto}.
 * Adds Haskell/Python style list comprehensions via {Array#comprehension}.
 
 ## Examples
@@ -49,6 +50,12 @@ Power-set of a {Set}:
           #<Set: {"ab", "ef"}>,
           #<Set: {"ab", "cd"}>,
           #<Set: {"ab", "cd", "ef"}>]
+
+Enumerate over every sub-range between two ranges:
+
+    (1..5).upto(2..10).to_a
+    # => [1..5, 1..6, 1..7, 1..8, 1..9, 1..10,
+          2..5, 2..6, 2..7, 2..8, 2..9, 2..10]
 
 List comprehensions:
 
