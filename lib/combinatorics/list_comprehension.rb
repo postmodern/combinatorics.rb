@@ -58,13 +58,14 @@ class Array
     end
 
     cycles = ranges.map { |range| range.cycle }
+    values = cycles.map { |range| range.next }
 
     loop do
-      yield cycles.map { |cycle| cycle.peek }
+      yield values
 
       (cycles.length - 1).downto(0) do |index|
-        cycles[index].next
-        break unless cycles[index].peek == ranges[index].first
+        values[index] = cycles[index].next
+        break unless values[index] == ranges[index].first
 
         return nil if index == 0
       end
