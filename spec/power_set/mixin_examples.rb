@@ -16,4 +16,10 @@ shared_examples_for "Combinatorics::PowerSet::Mixin" do
 
     set.powerset.each { |subset| (set & subset).should == subset }
   end
+
+  it "should alias cartesian_product to powerset" do
+    set = subject[1,2,3]
+
+    set.cartesian_product.should == set.powerset
+  end
 end
