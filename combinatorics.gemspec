@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{combinatorics}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Postmodern"]
@@ -29,6 +29,8 @@ Gem::Specification.new do |s|
      "VERSION",
      "combinatorics.gemspec",
      "lib/combinatorics.rb",
+     "lib/combinatorics/extensions.rb",
+     "lib/combinatorics/extensions/range.rb",
      "lib/combinatorics/list_comprehension.rb",
      "lib/combinatorics/power_set.rb",
      "lib/combinatorics/power_set/extensions.rb",
@@ -37,6 +39,7 @@ Gem::Specification.new do |s|
      "lib/combinatorics/power_set/mixin.rb",
      "spec/.rspec",
      "spec/combinatorics_spec.rb",
+     "spec/extensions/range_spec.rb",
      "spec/list_comprehension_spec.rb",
      "spec/power_set/array_spec.rb",
      "spec/power_set/mixin_examples.rb",
@@ -51,6 +54,7 @@ Gem::Specification.new do |s|
   s.test_files = [
     "spec/combinatorics_spec.rb",
      "spec/list_comprehension_spec.rb",
+     "spec/extensions/range_spec.rb",
      "spec/spec_helper.rb",
      "spec/power_set/set_spec.rb",
      "spec/power_set/array_spec.rb",
