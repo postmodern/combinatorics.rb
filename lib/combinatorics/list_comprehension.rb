@@ -50,8 +50,6 @@ class Array
     ranges = self.map do |range|
       if range.kind_of?(Enumerable)
         range
-      elsif range.kind_of?(Proc)
-        Enumerator.new(&range)
       else
         (range..range)
       end

@@ -24,6 +24,12 @@ describe "Array#comprehension" do
     a.comprehension.to_a.should == [a]
   end
 
+  it "should pass through an empty Array" do
+    a = []
+
+    a.comprehension.to_a.should == [a]
+  end
+
   it "should iterate over the values within an enumerable value" do
     range = (1..10)
     a = [range]
@@ -39,11 +45,5 @@ describe "Array#comprehension" do
       values[0].should == 1
       range.should include(values[1])
     end
-  end
-
-  it "should pass through an empty Array" do
-    a = []
-
-    a.comprehension.to_a.should == [a]
   end
 end
