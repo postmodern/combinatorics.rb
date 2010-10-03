@@ -41,10 +41,9 @@ describe "Array#comprehension" do
     end
   end
 
-  it "should do nothing to an empty Array" do
-    # DoS!
-    #a = []
+  it "should pass through an empty Array" do
+    a = []
 
-    #a.comprehension.to_a.should == a
+    a.comprehension.to_a.should == [a]
   end
 end

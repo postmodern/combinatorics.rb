@@ -42,6 +42,11 @@ class Array
   def comprehension
     return enum_for(:comprehension) unless block_given?
 
+    if empty?
+      yield self
+      return nil
+    end
+
     ranges = self.map do |range|
       if range.kind_of?(Enumerable)
         range
