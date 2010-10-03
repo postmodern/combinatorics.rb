@@ -1,4 +1,4 @@
-# combinatorics
+# Combinatorics
 
 * [github.com/postmodern/combinatorics](http://github.com/postmodern/combinatorics)
 * [github.com/postmodern/combinatorics/issues](http://github.com/postmodern/combinatorics/issues)
