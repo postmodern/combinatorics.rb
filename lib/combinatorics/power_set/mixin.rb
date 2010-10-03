@@ -4,6 +4,13 @@ module Combinatorics
       #
       # Calculates the power-set of an Enumerable object.
       #
+      # @yield [subset]
+      #   If a block is given, it will be passed each sub-set from the
+      #   power-set.
+      #
+      # @yieldparam [Array] subset
+      #   A sub-set from the power-set.
+      #
       # @return [Array]
       #   The power set.
       #
@@ -24,9 +31,12 @@ module Combinatorics
         inject([self.class.new]) do |power_set,element|
           sub_set = []
 
-          power_set.each do |i|
-            sub_set << i
-            sub_set << i + [element]
+          power_set.each do |previous_set|
+            new_set = previous_set + [element]
+            yield new_set if block_given?
+
+            sub_set << previous_set
+            sub_set << new_set
           end
 
           sub_set
