@@ -1,13 +1,4 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-require 'combinatorics'
-require 'rspec'
-require 'rspec/autorun'
+require 'rubygems'
 
-# Requires supporting files with custom matchers and macros, etc,
-# in ./support/ and its subdirectories.
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
-
-RSpec.configure do |config|
-  
-end
+gem 'rspec', '>= 1.3.0'
+require 'spec'
