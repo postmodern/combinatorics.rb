@@ -12,10 +12,7 @@ describe "Array#comprehension" do
     range = (1..5)
     a = [range]
 
-    a.comprehension do |values|
-      values.should be_kind_of(Array)
-      range.should include(values[0])
-    end
+    a.comprehension.to_a.should == [[1],[2],[3],[4],[5]]
   end
 
   it "should do nothing an Array of all non-enumerable objects" do
@@ -34,16 +31,13 @@ describe "Array#comprehension" do
     range = (1..10)
     a = [range]
 
-    a.comprehension.each { |values| range.should include(values[0]) }
+    a.comprehension.to_a.should == [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10]]
   end
 
   it "should ignore non-enumerable values" do
     range = (1..5)
     a = [1,range]
 
-    a.comprehension.each do |values|
-      values[0].should == 1
-      range.should include(values[1])
-    end
+    a.comprehension.to_a.should == [[1,1],[1,2],[1,3],[1,4],[1,5]]
   end
 end

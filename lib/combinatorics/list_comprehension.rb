@@ -47,23 +47,24 @@ class Array
       return nil
     end
 
-    ranges = self.map do |range|
-      if range.kind_of?(Enumerable)
-        range
+    enums = self.map do |value|
+      if value.kind_of?(Enumerable)
+        value
       else
-        (range..range)
+        (value..value)
       end
     end
 
-    cycles = ranges.map { |range| range.cycle }
-    values = cycles.map { |range| range.next }
+    cycles = enums.map { |e| e.cycle }
+    start = cycles.map { |e| e.next }
+    iteration = start.dup
 
     loop do
-      yield values
+      yield iteration.dup
 
       (cycles.length - 1).downto(0) do |index|
-        values[index] = cycles[index].next
-        break unless values[index] == ranges[index].first
+        iteration[index] = cycles[index].next
+        break unless iteration[index] == start[index]
 
         return nil if index == 0
       end
