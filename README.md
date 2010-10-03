@@ -51,6 +51,11 @@ Power-set of a {Set}:
           #<Set: {"ab", "cd"}>,
           #<Set: {"ab", "cd", "ef"}>]
 
+Find the intersecting sub-range between two ranges:
+
+    (1..50) & (20..100)
+    # => (20..50)
+
 Enumerate over every sub-range between two ranges:
 
     (1..5).upto(2..10).to_a
