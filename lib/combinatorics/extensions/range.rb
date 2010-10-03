@@ -29,11 +29,14 @@ class Range
   #   The upper bounding range.
   #
   # @yield [subrange]
-  #   The given block will be passed every subrange between the two ranges.
+  #   The given block will be passed every sub-range between the two ranges.
   #
   # @yieldparam [Range] subrange
+  #   A sub-range bounded by the beginning of the range and the ending of
+  #   the other range.
   #
   # @return [Enumerator]
+  #   If no block is given, an enumerator object will be returned.
   #
   # @example
   #   (1..5).upto(2..7).to_a
@@ -62,11 +65,18 @@ class Range
   #   The lower bounding range.
   #
   # @yield [subrange]
-  #   The given block will be passed every subrange between the two ranges.
+  #   The given block will be passed every sub-range between the two ranges.
   #
   # @yieldparam [Range] subrange
+  #   A sub-range bounded by the beginning of the other range and the
+  #   ending of the range.
   #
   # @return [Enumerator]
+  #   If no block is given, an enumerator object will be returned.
+  #
+  # @example
+  #   (2..7).downto(1..5).to_a
+  #   # => [2..7, 2..6, 2..5, 1..7, 1..6, 1..5]
   #
   # @since 0.2.0
   #
