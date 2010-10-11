@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
      ".gitignore",
-     ".specopts",
+     ".rspec",
      ".yardopts",
      "ChangeLog.md",
      "LICENSE.txt",
