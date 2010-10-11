@@ -1,4 +1,4 @@
 require 'rubygems'
 
-gem 'rspec', '>= 1.3.0'
-require 'spec'
+gem 'rspec', '~> 2.0.0'
+require 'rspec'
