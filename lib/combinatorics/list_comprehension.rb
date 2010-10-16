@@ -49,22 +49,25 @@ class Array
 
     enums = self.map do |value|
       if value.kind_of?(Enumerable)
-        value
+        value.each
       else
-        (value..value)
+        [value].each
       end
     end
 
-    cycles = enums.map { |e| e.cycle }
-    start = cycles.map { |e| e.next }
-    iteration = start.dup
+    iteration = enums.map { |e| e.next }
 
     loop do
       yield iteration.dup
 
-      (cycles.length - 1).downto(0) do |index|
-        iteration[index] = cycles[index].next
-        break unless iteration[index] == start[index]
+      (enums.length - 1).downto(0) do |index|
+        begin
+          iteration[index] = enums[index].next
+          break
+        rescue StopIteration
+          enums[index].rewind
+          iteration[index] = enums[index].next
+        end
 
         return nil if index == 0
       end
