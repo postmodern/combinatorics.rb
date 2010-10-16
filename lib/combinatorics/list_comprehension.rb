@@ -49,9 +49,9 @@ class Array
 
     enums = self.map do |value|
       if value.kind_of?(Enumerable)
-        value.each
+        value.enum_for
       else
-        [value].each
+        [value].enum_for
       end
     end
 

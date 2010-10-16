@@ -1,6 +1,8 @@
 require 'spec_helper'
 require 'combinatorics/list_comprehension'
 
+require 'generator'
+
 describe "Array#comprehension" do
   it "should return an Enumerator object if no block is given" do
     a = [1..5]
@@ -28,10 +30,39 @@ describe "Array#comprehension" do
   end
 
   it "should iterate over the values within an enumerable value" do
-    range = (1..10)
+    range = (1..5)
     a = [range]
 
-    a.comprehension.to_a.should == [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10]]
+    a.comprehension.to_a.should == [[1],[2],[3],[4],[5]]
+  end
+
+  it "should iterate over repeating values" do
+    range = [1,2,3,1,2,4]
+    a = [range]
+
+    a.comprehension.to_a.should == [[1],[2],[3],[1],[2],[4]]
+  end
+
+  it "should iterate over values from a generator" do
+    a = [Generator.new { |g| 5.times { |i| g.yield i } }]
+
+    a.comprehension.to_a.should == [[0],[1],[2],[3],[4]]
+  end
+
+  it "should iterate over values from a non-repeating generator" do
+    multiplier = 0
+    a = [
+      [1,2],
+      Generator.new { |g|
+        multiplier += 1
+        5.times { |i| g.yield (i * multiplier) }
+      }
+    ]
+
+    a.comprehension.to_a.should == [
+      [1,0],[1,1],[1,2],[1,3],[1,4],
+      [2,0],[2,2],[2,4],[2,6],[2,8]
+    ]
   end
 
   it "should ignore non-enumerable values" do
