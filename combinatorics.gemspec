@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Postmodern"]
-  s.date = %q{2010-10-10}
+  s.date = %q{2010-10-16}
   s.description = %q{A collection of modules and methods for performing Combinatoric calculations.}
   s.email = %q{postmodern.mod3@gmail.com}
   s.extra_rdoc_files = [
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
      "README.md",
      "Rakefile",
      "VERSION",
+     "benchmarks/list_comprehension.rb",
      "combinatorics.gemspec",
      "lib/combinatorics.rb",
      "lib/combinatorics/extensions.rb",
