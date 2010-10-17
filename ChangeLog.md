@@ -1,3 +1,20 @@
+### 0.3.0 / 2010-10-17
+
+* Better detection of when enumerable values passed to
+  {Array#comprehension} reach their last value. This allows using
+  `Generator` objects that yield different values for each cycle:
+
+      multiplier = 0
+      gen = Generator.new { |g|
+        multiplier += 1
+        5.times { |i| g.yield (i * multiplier) }
+      }
+  
+      [[1,2], gen].comprehension.to_a
+      # => [[1,0],[1,1],[1,2],[1,3],[1,4],[2,0],[2,2],[2,4],[2,6],[2,8]]
+* Added a benchmark for {Array#comprehension}
+  (see the `benchmarks/` directory).
+
 ### 0.2.0 / 2010-10-03
 
 * Added {Range#&}.
