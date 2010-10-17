@@ -1,5 +1,9 @@
 ### 0.3.0 / 2010-10-17
 
+* Added {Combinatorics::Generator} which auto-detects the `Generator`
+  class.
+* Added {Combinatorics::Enumerator} which auto-detects the `Enumerator`
+  class.
 * Better detection of when enumerable values passed to
   {Array#comprehension} reach their last value. This allows using
   `Generator` objects that yield different values for each cycle:
