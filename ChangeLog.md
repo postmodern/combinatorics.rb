@@ -12,8 +12,9 @@
   
       [[1,2], gen].comprehension.to_a
       # => [[1,0],[1,1],[1,2],[1,3],[1,4],[2,0],[2,2],[2,4],[2,6],[2,8]]
-* Added a benchmark for {Array#comprehension}
-  (see the `benchmarks/` directory).
+
+* Added a benchmark for {Array#comprehension} (see the
+  [benchmarks](http://github.com/postmodern/combinatorics/tree/master/benchmarks) directory).
 
 ### 0.2.0 / 2010-10-03
 
