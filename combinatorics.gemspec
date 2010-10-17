@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{combinatorics}
-  s.version = "0.2.0"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Postmodern"]
-  s.date = %q{2010-10-16}
+  s.date = %q{2010-10-17}
   s.description = %q{A collection of modules and methods for performing Combinatoric calculations.}
   s.email = %q{postmodern.mod3@gmail.com}
   s.extra_rdoc_files = [
@@ -30,8 +30,10 @@ Gem::Specification.new do |s|
      "benchmarks/list_comprehension.rb",
      "combinatorics.gemspec",
      "lib/combinatorics.rb",
+     "lib/combinatorics/enumerator.rb",
      "lib/combinatorics/extensions.rb",
      "lib/combinatorics/extensions/range.rb",
+     "lib/combinatorics/generator.rb",
      "lib/combinatorics/list_comprehension.rb",
      "lib/combinatorics/power_set.rb",
      "lib/combinatorics/power_set/extensions.rb",
@@ -40,7 +42,9 @@ Gem::Specification.new do |s|
      "lib/combinatorics/power_set/mixin.rb",
      "spec/.rspec",
      "spec/combinatorics_spec.rb",
+     "spec/enumerator_spec.rb",
      "spec/extensions/range_spec.rb",
+     "spec/generator_spec.rb",
      "spec/list_comprehension_spec.rb",
      "spec/power_set/array_spec.rb",
      "spec/power_set/mixin_examples.rb",
@@ -53,8 +57,10 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Bringing (more) Combinatorics to Ruby}
   s.test_files = [
-    "spec/combinatorics_spec.rb",
+    "spec/enumerator_spec.rb",
+     "spec/combinatorics_spec.rb",
      "spec/list_comprehension_spec.rb",
+     "spec/generator_spec.rb",
      "spec/extensions/range_spec.rb",
      "spec/spec_helper.rb",
      "spec/power_set/set_spec.rb",
