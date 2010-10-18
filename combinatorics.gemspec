@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
      ".gitignore",
      ".rspec",
      ".yardopts",
+     "Benchmarks.md",
      "ChangeLog.md",
      "LICENSE.txt",
      "README.md",

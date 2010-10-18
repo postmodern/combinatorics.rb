@@ -1,4 +1,5 @@
 lib/**/*.rb
 - 
 LICENSE.txt
+Benchmarks.md
 ChangeLog.md
