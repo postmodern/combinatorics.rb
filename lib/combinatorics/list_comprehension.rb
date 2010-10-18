@@ -1,3 +1,5 @@
+require 'combinatorics/enumerator'
+
 class Array
 
   #
@@ -48,7 +50,10 @@ class Array
     end
 
     enums = self.map do |value|
-      if value.kind_of?(Enumerable)
+      case value
+      when Combinatorics::Enumerator
+        value
+      when Enumerable
         value.enum_for
       else
         [value].enum_for
