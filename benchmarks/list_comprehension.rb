@@ -11,18 +11,18 @@ Benchmark.bm(12) do |b|
   b.report('singleton:') do
     list = ([1] * 500)
 
-    list.comprehension.each { |list| }
+    list.comprehension.each { |list| list.last }
   end
 
   b.report('single-enum:') do
     list = [1..200, 1]
-    list.comprehension.each { |list| }
+    list.comprehension.each { |list| list.last }
   end
 
   (1..3).each do |n|
     b.report("depth #{n}:") do
       list = ([1..200] * n)
-      list.comprehension.each { |list| }
+      list.comprehension.each { |list| list.last }
     end
   end
 end
