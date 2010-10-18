@@ -22,10 +22,10 @@ Benchmark.bm(12) do |b|
   end
 
   (1..3).each do |n|
-    list = (depth_list * n)
+    deep_list = (depth_list * n)
 
     b.report("depth #{n}:") do
-      list.comprehension.each { |list| list.last }
+      deep_list.comprehension.each { |list| list.last }
     end
   end
 end
