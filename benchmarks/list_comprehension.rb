@@ -7,6 +7,20 @@ $LOAD_PATH << lib_dir unless $LOAD_PATH.include?(lib_dir)
 require 'benchmark'
 require 'combinatorics/list_comprehension'
 
-list = [(1..200)] * 3
+Benchmark.bm(12) do |b|
+  b.report('singleton:') do
+    list = ([1] * 500)
 
-puts Benchmark.measure { list.comprehension.each { |list| } }
+    list.comprehension.each { |list| }
+  end
+
+  b.report('single-enum:') do
+    list = [1..200, 1..200, 1]
+    list.comprehension.each { |list| }
+  end
+
+  b.report('depth:') do
+    list = [1..200, 1..200, 1..200]
+    list.comprehension.each { |list| }
+  end
+end
