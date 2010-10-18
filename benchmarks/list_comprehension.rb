@@ -15,12 +15,14 @@ Benchmark.bm(12) do |b|
   end
 
   b.report('single-enum:') do
-    list = [1..200, 1..200, 1]
+    list = [1..200, 1]
     list.comprehension.each { |list| }
   end
 
-  b.report('depth:') do
-    list = [1..200, 1..200, 1..200]
-    list.comprehension.each { |list| }
+  (1..3).each do |n|
+    b.report("depth #{n}:") do
+      list = ([1..200] * n)
+      list.comprehension.each { |list| }
+    end
   end
 end
