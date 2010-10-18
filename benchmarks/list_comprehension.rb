@@ -8,20 +8,23 @@ require 'benchmark'
 require 'combinatorics/list_comprehension'
 
 Benchmark.bm(12) do |b|
-  b.report('singleton:') do
-    list = ([1] * 500)
+  singleton_list = ([1] * 500)
+  single_enum_list = [1..200, 1]
+  depth_list = [1..200]
 
-    list.comprehension.each { |list| list.last }
+  b.report('singleton:') do
+    singleton_list.comprehension.each { |list| list.last }
   end
 
+
   b.report('single-enum:') do
-    list = [1..200, 1]
-    list.comprehension.each { |list| list.last }
+    single_enum_list.comprehension.each { |list| list.last }
   end
 
   (1..3).each do |n|
+    list = (depth_list * n)
+
     b.report("depth #{n}:") do
-      list = ([1..200] * n)
       list.comprehension.each { |list| list.last }
     end
   end
