@@ -92,5 +92,7 @@ List comprehensions:
 
 ## License
 
+Copyright (c) 2010 Hal Brodigan
+
 See {file:LICENSE.txt} for license information.
 
