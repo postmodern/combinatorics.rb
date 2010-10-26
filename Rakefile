@@ -2,35 +2,28 @@ require 'rubygems'
 require 'rake'
 
 begin
-  gem 'jeweler', '~> 1.4.0'
-  require 'jeweler'
-
-  Jeweler::Tasks.new do |gem|
-    gem.name = 'combinatorics'
-    gem.summary = %Q{Bringing (more) Combinatorics to Ruby}
-    gem.description = %Q{A collection of modules and methods for performing Combinatoric calculations.}
-    gem.email = 'postmodern.mod3@gmail.com'
-    gem.homepage = 'http://github.com/postmodern/combinatorics'
-    gem.authors = ['Postmodern']
-    gem.add_development_dependency 'rspec', '~> 2.0.0'
-    gem.add_development_dependency 'yard', '~> 0.6.0'
-    gem.add_development_dependency 'jeweler', '~> 1.4.0'
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts 'Jeweler (or a dependency) not available. Install it with: gem install jeweler'
+  require 'ore/tasks'
+  Ore::Tasks.new
+rescue LoadError => e
+  STDERR.puts e.message
+  STDERR.puts "Run `gem install ore-tasks` to install 'ore/tasks'."
 end
 
-require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new
+rescue LoadError => e
+  task :spec do
+    abort "Please run `gem install rspec` to install RSpec."
+  end
+end
 task :default => :spec
 
 begin
   require 'yard'
-
-  YARD::Rake::YardocTask.new
-rescue LoadError
+  YARD::Rake::YardocTask.new  
+rescue LoadError => e
   task :yard do
-    abort 'YARD is not available. In order to run yard, you must: gem install yard'
+    abort "Please run `gem install yard` to install YARD."
   end
 end

@@ -1,0 +1,16 @@
+name: combinatorics
+summary: Bringing (more) Combinatorics to Ruby
+description:
+  A collection of modules and methods for performing Combinatoric
+  calculations.
+license: MIT
+authors: Postmodern
+email: postmodern.mod3@gmail.com
+homepage: http://github.com/postmodern/combinatorics
+has_yard: true
+
+development_dependencies:
+  ore: ~> 0.1.0
+  ore-tasks: ~> 0.1.0
+  rspec: ~> 2.0.0
+  yard: ~> 0.6.0
