@@ -1,3 +1,10 @@
+### 0.3.1 / 2010-10-26
+
+* Do not call `enum_for` on `Enumerator` objects passed to
+  {Array#comprehension}.
+* Improved {Array#comprehension} benchmarks.
+* Added [benchmark results] (see {file:Benchmarks.md}).
+
 ### 0.3.0 / 2010-10-17
 
 * Added {Combinatorics::Generator} which auto-detects the `Generator`
