@@ -54,7 +54,7 @@ describe "Array#comprehension" do
       [1,2],
       Combinatorics::Generator.new { |g|
         multiplier += 1
-        5.times { |i| g.yield (i * multiplier) }
+        5.times { |i| g.yield(i * multiplier) }
       }
     ]
 

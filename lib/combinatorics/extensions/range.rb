@@ -53,7 +53,7 @@ class Range
 
     self.first.upto(other.first) do |start|
       self.last.upto(other.last) do |stop|
-        yield (start..stop)
+        yield start..stop
       end
     end
   end
@@ -89,7 +89,7 @@ class Range
 
     self.first.downto(other.first) do |start|
       self.last.downto(other.last) do |stop|
-        yield (start..stop)
+        yield start..stop
       end
     end
   end
