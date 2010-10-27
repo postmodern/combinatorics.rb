@@ -90,7 +90,7 @@ List comprehensions:
 
     $ sudo gem install combinatorics
 
-## License
+## Copyright
 
 Copyright (c) 2010 Hal Brodigan
 
