@@ -86,6 +86,10 @@ List comprehensions:
           [10, "b"],
           [10, "c"]]
 
+## Requirements
+
+* [ruby](http://www.ruby-lang.org/) >= 1.8.7
+
 ## Install
 
     $ sudo gem install combinatorics
