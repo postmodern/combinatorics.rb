@@ -1,4 +1,4 @@
-require 'generator'
+require 'enumerator'
 
 module Combinatorics
   # auto-detects the `Generator` class.
