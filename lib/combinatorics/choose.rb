@@ -1,0 +1,1 @@
+require 'combinatorics/choose/factorial'
