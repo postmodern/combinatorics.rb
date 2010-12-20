@@ -12,3 +12,11 @@ module Combinatorics
     end
   end
 end
+
+if $0 == __FILE__
+  include Combinatorics, Combinatorics::Choose
+
+  puts factorial(10) 
+
+  exit 0
+end

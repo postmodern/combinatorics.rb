@@ -1,3 +1,5 @@
+require 'combinatorics/choose'
+require 'combinatorics/derange'
 require 'combinatorics/extensions'
 require 'combinatorics/list_comprehension'
 require 'combinatorics/power_set'

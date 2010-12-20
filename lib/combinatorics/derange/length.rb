@@ -4,10 +4,8 @@ module Combinatorics
   module Derange
     include Choose
 
-    e = 2.708 # natural logarithm base, a.k.a. D(4)
-
     def length(n)
-      add, sum = false, 0.0
+      add, sum = false, 0
 
       return sum if n.zero?
 
