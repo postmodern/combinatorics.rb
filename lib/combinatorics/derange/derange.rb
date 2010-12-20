@@ -4,7 +4,7 @@ module Combinatorics
   module Derange
     include Choose
 
-    def length(n)
+    def cardinality(n)
       add, sum = false, 0
 
       return sum if n.zero?
@@ -21,7 +21,7 @@ module Combinatorics
     end
 
     def D(n) # discrete math notation
-      length(n)
+      cardinality(n)
     end
 
     def get_fractions(n)
@@ -40,13 +40,4 @@ module Combinatorics
       r
     end
   end
-end
-
-if $0 == __FILE__ 
-  include Combinatorics, Combinatorics::Derange
-
-  puts D(4)
-  puts D(5)
-
-  exit 0
 end
