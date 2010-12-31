@@ -24,6 +24,8 @@ module Combinatorics
     # @see http://en.wikipedia.org/wiki/Derangements
     # @see Array#comprehension 
     #
+    # @since 0.4.0
+    #
     def derange(a)
       c = []
 
@@ -51,6 +53,8 @@ module Combinatorics
     #
     # @see http://mathworld.wolfram.com/Subfactorial.html
     #
+    # @since 0.4.0
+    #
     def subfactorial(n)
       add, sum = false, 0
 
@@ -70,6 +74,8 @@ module Combinatorics
     #
     # @see subfactorial
     #
+    # @since 0.4.0
+    #
     def cardinality(n)
       subfactorial(n)
     end
@@ -78,6 +84,8 @@ module Combinatorics
     # Discrete math notation.
     #
     # @see subfactorial
+    #
+    # @since 0.4.0
     #
     def D(n) 
       subfactorial(n)
@@ -88,6 +96,8 @@ module Combinatorics
     #   define operators for combinatorics functions? i.e. *** represents
     #   partial_factorial, n! represents factorial and !n subfactorial.
     #
+    # @since 0.4.0
+    #
     def partial_factorial(j, k)
       r = j
 
@@ -96,6 +106,9 @@ module Combinatorics
       r
     end
 
+    #
+    # @since 0.4.0
+    #
     def get_fractions(n)
       a = []
 

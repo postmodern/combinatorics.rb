@@ -17,6 +17,8 @@ module Combinatorics
     #   factorial(10)
     #   # => 3628800
     #
+    # @since 0.4.0
+    #
     def factorial(n=1)
       count, product = 0, 1
 
