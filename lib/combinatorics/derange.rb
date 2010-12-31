@@ -5,11 +5,25 @@ module Combinatorics
   module Derange
     include Choose
 
-    # @param [Array] a sequence to output derangements for
-    # @return [Array] set of the derangements for input sequence
-    # @example derange([1,2,3])
+    #
+    # @param [Array] a
+    #   Sequence to output derangements for.
+    #
+    # @return [Array]
+    #   Set of the derangements for input sequence
+    #
+    # @example
+    #   derange([1,2,3])
+    #   # => [
+    #          [2, 1, 1], [2, 1, 2],
+    #          [2, 3, 1], [2, 3, 2],
+    #          [3, 1, 1], [3, 1, 2],
+    #          [3, 3, 1], [3, 3, 2]
+    #        ]
+    #
     # @see http://en.wikipedia.org/wiki/Derangements
     # @see Array#comprehension 
+    #
     def derange(a)
       c = []
 
@@ -17,16 +31,26 @@ module Combinatorics
         c << a - [a[i]]
       end
 
-      # @todo wouldn't it be better to yield Enumerators for combinatorics 
-      #   methods that do set generation? (i.e. power_set, choose, derange, etc.)
-      #   so the ronin-fuzzer doesn't have to wait on the computation..
+      # @todo
+      #   wouldn't it be better to yield Enumerators for combinatorics 
+      #   methods that do set generation? (i.e. power_set, choose, derange,
+      #   etc.) so the ronin-fuzzer doesn't have to wait on the computation.
       c.comprehension.to_a
     end
 
-    # @param Fixnum length of sequence 
-    # @return cardinality of derangements set 
-    # @example subfactorial([1,2,3].size)
+    #
+    # @param [Fixnum] n
+    #   Length of sequence.
+    #
+    # @return [Integer]
+    #   Cardinality of derangements set.
+    #
+    # @example
+    #   subfactorial([1,2,3].length)
+    #   # => 2
+    #
     # @see http://mathworld.wolfram.com/Subfactorial.html
+    #
     def subfactorial(n)
       add, sum = false, 0
 
@@ -43,16 +67,27 @@ module Combinatorics
       (1 - sum).abs.to_i
     end
 
+    #
+    # @see subfactorial
+    #
     def cardinality(n)
       subfactorial(n)
     end
 
-    def D(n) # discrete math notation
+    #
+    # Discrete math notation.
+    #
+    # @see subfactorial
+    #
+    def D(n) 
       subfactorial(n)
     end
 
-    # @todo: define operators for combinatorics functions? i.e. *** represents
-    #   partial_factorial, n! represents factorial and !n subfactorial..
+    #
+    # @todo
+    #   define operators for combinatorics functions? i.e. *** represents
+    #   partial_factorial, n! represents factorial and !n subfactorial.
+    #
     def partial_factorial(j, k)
       r = j
 
