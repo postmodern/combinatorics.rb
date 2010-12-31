@@ -1,9 +1,26 @@
 module Combinatorics
   module Choose
-    def factorial(number = 1)
+    #
+    # Calculates the factorial of a number.
+    #
+    # @param [Integer] n
+    #   The number to calculate the factorial of.
+    #
+    # @return [Integer]
+    #   The factorial of `n`.
+    #
+    # @example
+    #   factorial
+    #   # => 1
+    #
+    # @example
+    #   factorial(10)
+    #   # => 3628800
+    #
+    def factorial(n=1)
       count, product = 0, 1
 
-      number.times do
+      n.times do
         count += 1
         product *= count
       end
