@@ -9,7 +9,7 @@ describe "Choose#factorial" do
   end
 
   it "should calculate the factorial of 0" do
-    subject.factorial(0).should == 0
+    subject.factorial(0).should == 1
   end
 
   it "should calculate the factorial of numbers greater than 1" do
