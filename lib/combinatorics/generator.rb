@@ -1,5 +1,10 @@
 require 'enumerator'
 
+begin
+  require 'generator' # 1.8.7
+rescue LoadError
+end
+
 module Combinatorics
   # auto-detects the `Generator` class.
   Generator = if defined?(::Enumerator::Generator) # 1.9
