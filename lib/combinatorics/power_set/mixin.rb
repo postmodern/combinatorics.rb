@@ -42,9 +42,6 @@ module Combinatorics
           sub_set
         end
       end
-
-      alias cartesian_product powerset
-
     end
   end
 end
