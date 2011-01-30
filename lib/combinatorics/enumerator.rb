@@ -6,5 +6,7 @@ module Combinatorics
                  ::Enumerator
                elsif defined?(::Enumerable::Enumerator) # 1.8.7
                  ::Enumerable::Enumerator
+               else
+                 raise("unable to find the Enumerator class")
                end
 end

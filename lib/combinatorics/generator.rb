@@ -6,5 +6,7 @@ module Combinatorics
                 ::Enumerator::Generator
               elsif defined?(::Generator) # 1.8.7
                 ::Generator
+              else
+                raise("unable to find the Generator class")
               end
 end
