@@ -27,7 +27,7 @@ module Combinatorics
       #   [1, 2].cartprod([3, 4])
       #   # => [[1, 3], [2, 3], [1, 4], [2, 4]]
       # @example Cartesian product on a Set of strings.
-      #   Set['abc', 'xyz', '123'].powerset
+      #   Set['abc', 'xyz'].cartesian_product(Set['123', '456')
       #   # => [#<Set: {}>, #<Set: {"123"}>, #<Set: {"xyz"}>,
       #         #<Set: {"abc"}>, #<Set: {"xyz", "123"}>,
       #         #<Set: {"abc", "123"}>, #<Set: {"abc", "xyz"}>,

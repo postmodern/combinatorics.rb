@@ -19,23 +19,17 @@ module Combinatorics
     #       set theory. It represents a function returning an integer value
     #       for the cardinality of a k-combination (i.e. binomial coefficient.)
     def P(n, r = nil) 
-      if n < 0
-        raise(RangeError,'n must be non-negative')
-      elsif r < -1
-        raise(RangeError,'r must be non-negative')
-      elsif r > n
-        raise(RangeError,'r must be less than or equal to n')
-      end
 
       if r.nil?
         factorial(n)
       else
-        return 0 if r.zero?
-        return 1 if n == r
+        raise(RangeError, 'r must be non-negative') if r < 0
+        raise(RangeError, 'r must be less than or equal to n') if r > n
+        return 1 if n.zero? or n == r 
 
         ret = 1
 
-        n.downto(n - (r - 1)) do |x|
+        n.downto(n - r - 1) do |x|
           ret *= x
         end
 
@@ -56,7 +50,7 @@ module Combinatorics
       if c.zero?
         return []
       elsif c < 0
-        raise(RangeError,'c must be non-negative')
+        raise(RangeError, 'c must be non-negative')
       end
 
       ret = [c]
@@ -74,7 +68,7 @@ module Combinatorics
     # @example choose([1, 2], 1)
     # @see Array#combination
     def choose(s, k)
-      if (s.nil? || s.empty?)
+      if s.nil? or s.empty?
         [[]].enum_for
       else
         s.combination(k)

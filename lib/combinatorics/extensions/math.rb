@@ -91,9 +91,7 @@ module Math
   # @example factorial(4)
   # @see http://en.wikipedia.org/wiki/Factorial
   def factorial(x = 1)
-    if x < 0
-      raise(RangeError,'x must be non-negative')
-    end
+    raise(RangeError, 'x must be non-negative') if x < 0
 
     count, product = 0, 1
 

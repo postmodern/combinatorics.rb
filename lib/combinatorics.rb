@@ -1,3 +1,4 @@
+require 'combinatorics/cartesian_product'
 require 'combinatorics/choose'
 require 'combinatorics/derange'
 require 'combinatorics/extensions'
