@@ -3,22 +3,22 @@
 require 'combinatorics/extensions/math'
 
 module Combinatorics
-  module Choose
+  module Rearrange
     include Math
 
     # @param [Fixnum] n the number of elements in the input set
-    # @param [Fixnum] r cardinality of subsets to choose
+    # @param [Fixnum] r cardinality of permuted subsets
     # @raise [RangeError] n must be non-negative
     # @raise [RangeError] r must be non-negative
     # @raise [RangeError] r must be less than or equal to n
-    # @return [Fixnum] the binomial coefficient of "n-choose-r"
-    # @example C(6, 4)
-    # @see http://en.wikipedia.org/wiki/Binomial_coefficient
+    # @return [Fixnum] the product of the first r factors of n
+    # @example P(6, 4)
+    # @see http://en.wikipedia.org/wiki/Permutations
     # @note This method's naming convention reflects well-known notation used 
     #       within fields of academic inquiry such as discrete mathematics and
     #       set theory. It represents a function returning an integer value
-    #       for the cardinality of a k-combination (i.e. binomial coefficient.)
-    def C(n, r = nil)
+    #       for the cardinality of a r-permutation.
+    def P(n, r = nil) 
       raise(RangeError, 'n must be non-negative') if n < 0
 
       if r.nil?
@@ -26,14 +26,13 @@ module Combinatorics
       else
         raise(RangeError, 'r must be non-negative') if r < 0
         raise(RangeError, 'r must be less than or equal to n') if r > n
-        return 0 if r.zero?
-        return 1 if n == r
+        return 1 if n.zero? or n == r 
 
-        factorial(n) / (factorial(r) * factorial(n - r))
+        factorial(n) / factorial(n-r)
       end
     end
 
-    alias cardinality C
+    alias cardinality P
     alias len cardinality
 
     # @param [Fixnum] c input set cardinality
@@ -41,8 +40,8 @@ module Combinatorics
     # @raise [RangeError] c must be non-negative
     # @example cardinality_all(4)
     # @note sum of elements will equal factorial(c)
-    # @see choose
-    # @see http://en.wikipedia.org/wiki/Combinations
+    # @see rearrange
+    # @see http://en.wikipedia.org/wiki/Permutations
     def cardinality_all(c)
       if c.zero?
         return []
@@ -57,19 +56,19 @@ module Combinatorics
       ret
     end
 
-    alias C_all cardinality_all
-    alias len_all C_all
+    alias P_all cardinality_all
+    alias len_all P_all
 
     # @param [Array] s the input set
-    # @param [Fixnum] k cardinality of subsets to choose
-    # @return [Enumerator] k-combinations of s
-    # @example choose([1, 2], 1)
-    # @see Array#combination
-    def choose(s, k)
+    # @param [Fixnum] k cardinality of subsets to rearrange
+    # @return [Enumerator] k-permutations of s
+    # @example rearrange([1, 2], 1)
+    # @see Array#permutation
+    def rearrange(s, k)
       if s.nil? or s.empty?
         [[]].enum_for
       else
-        s.combination(k)
+        s.permutation(k)
       end
     end
   end
