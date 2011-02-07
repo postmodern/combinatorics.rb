@@ -19,6 +19,7 @@ module Combinatorics
       # @example Three-way Cartesian product operation
       #   
       # @see http://en.wikipedia.org/wiki/Cartesian_product
+      # @see http://en.wikipedia.org/wiki/Arity
       def cartprod(enum2)
         raise(ArgumentError, 'enum2 must be non-nil') if not enum2
 
