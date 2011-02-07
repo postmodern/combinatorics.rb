@@ -42,6 +42,8 @@ module Combinatorics
           sub_set
         end
       end
+
+      alias power_set powerset
     end
   end
 end

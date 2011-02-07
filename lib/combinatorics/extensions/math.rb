@@ -90,16 +90,14 @@ module Math
   # @raise [RangeError] number must be non-negative
   # @example factorial(4)
   # @see http://en.wikipedia.org/wiki/Factorial
+  # @note the factorial of zero equals one!
   def factorial(x = 1)
     raise(RangeError, 'x must be non-negative') if x < 0
 
-    count, product = 0, 1
-
-    x.times do
-      count += 1
-      product *= count
+    if x.zero?
+      1
+    else
+      sigma(1 .. x)
     end
-
-    product
   end
 end

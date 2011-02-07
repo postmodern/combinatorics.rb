@@ -29,6 +29,14 @@ describe 'Choose' do
     it 'should return [[1, 2]] for choose([1, 2], 2).to_a' do
       choose([1, 2], 2).to_a == [[1, 2]]
     end
+
+    it 'should raise TypeError if s is not Enumerable' do
+      lambda {choose(1, 1)}.should raise_error(TypeError)
+    end
+
+    it 'should alias choose to combos' do
+      should respond_to(:combos) 
+    end
   end
 
   describe 'C' do

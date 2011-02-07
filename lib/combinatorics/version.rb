@@ -1,4 +1,5 @@
 module Combinatorics
-  # combinatorics version
+  # Combinatorics module revision number
+  # @version 0.4.0
   VERSION = '0.4.0'
 end
