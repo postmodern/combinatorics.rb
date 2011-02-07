@@ -1,27 +1,12 @@
 module Combinatorics
   module CartesianProduct
-    # Compute the number of elements a Cartesian Product will contain
-    #
-    # @param [Fixnum] c1 cardinality of first set
-    # @param [Fixnum] c2 cardinality of second set
-    # @raise [RangeError] c1 must be non-negative!
-    # @raise [RangeError] c2 must be non-negative!
-    # @return [Fixnum] number of elements in resulting Cartesian product set
-    # @example [1,2].cardinality([3,4])
-    def cardinality(c1, c2)
-      raise(RangeError, 'c1 must be non-negative!') if c1 < 0
-      raise(RangeError, 'c2 must be non-negative!') if c2 < 0
-
-      e1 * e2
-    end
-
     module Mixin
       # Calculates the Cartesian product of an Enumerable object.
       #
       # @yield [subset] If a block is given, it will be passed each sub-set from the
       #   Cartesian product.
       # @yieldparam [Array] subset A sub-set from the Cartesian product.
-      # @raise ArgumentError enum2 must be non-nil!
+      # @raise ArgumentError enum2 must be non-nil
       # @return [Array] The Cartesian product.
       # @example Cartesian product of an Array.
       #   [1, 2].cartprod([3, 4])
@@ -33,8 +18,8 @@ module Combinatorics
       #         #<Set: {"abc", "123"}>, #<Set: {"abc", "xyz"}>,
       #         #<Set: {"abc", "xyz", "123"}>]
       # @see http://en.wikipedia.org/wiki/Cartesian_product
-      def cartprod(enum2 = self)
-        raise(ArgumentError, 'enum2 must be non-nil!') if not enum2
+      def cartprod(enum2)
+        raise(ArgumentError, 'enum2 must be non-nil') if not enum2
 
         cpset, enum1, aele2 = [], self, nil
         aele2 = enum2.first 
@@ -63,28 +48,6 @@ module Combinatorics
       alias cartesian_product cartprod
       alias cartesianproduct cartprod
       alias cartesian cartprod
-
-      # Compute the number of elements a Cartesian Product will contain
-      #
-      # @param [Enumerable] enum2 enumeration to compute cardinality for
-      # @return [Fixnum] number of elements in resulting Cartesian product set
-      # @example [1,2].cardinality([3,4])
-      def cartprod_length(enum2)
-        enum1 = self
-
-        if enum1 and enum2
-          raise(TypeError, 'enum1 must be an Enumerable type!') if not enum1.is_a?(Enumerable)
-          raise(TypeError, 'enum2 must be an Enumerable type!') if not enum2.is_a?(Enumerable)
-
-          CartesianProduct::cardinality(enum1.to_a.size, enum2.to_a.size)
-        else
-          0
-        end
-      end
-
-      alias cartesian_product_length cartprod_length
-      alias cartesianproduct_length cartprod_length
-      alias cartesian_length cartprod_length
     end
   end
 end

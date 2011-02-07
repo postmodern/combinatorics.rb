@@ -39,21 +39,21 @@ shared_examples_for 'Combinatorics::CartesianProduct::Mixin' do
   # @todo: nested cartesian product argument test cases
   ###
 
-  it 'should alias cartesian_product to cartprod' do
-    set = subject[1, 2, 3]
+  it 'should alias cartprod to cartesian_product' do
+    set = [1]
 
-    set.cartesian_product.should == set.cartprod
+    set.should respond_to(:cartesian_product)
   end
 
-  it 'should alias cartesianproduct to cartprod' do
-    set = subject[1, 2, 3]
+  it 'should alias cartprod to cartesianproduct' do
+    set = [1]
 
-    set.cartesianproduct.should == set.cartprod
+    set.should respond_to(:cartesianproduct)
   end
 
-  it 'should alias cardinality to len' do
-    set = subject[1, 2, 3]
-      
-    set.cartesianproduct.should == set.cartprod
+  it 'should alias cartprod to cartesian' do
+    set = [1]
+
+    set.should respond_to(:cartesian)
   end
 end

@@ -63,7 +63,7 @@ module Math
   private :partial_factorial, :get_fractions
 
   # @param [Fixnum] n length of sequence
-  # @raise [RangeError] n must be non-negative!
+  # @raise [RangeError] n must be non-negative
   # @return [Fixnum] cardinality of derangements set
   # @example subfactorial([1, 2, 3].size)
   # @see http://mathworld.wolfram.com/Subfactorial.html
@@ -87,7 +87,7 @@ module Math
 
   # @param [Fixnum] x positive integer to apply algebraic factorial function to
   # @return [Fixnum] solution to factorial function as a whole number
-  # @raise [RangeError] number must be non-negative!
+  # @raise [RangeError] number must be non-negative
   # @example factorial(4)
   # @see http://en.wikipedia.org/wiki/Factorial
   def factorial(x = 1)

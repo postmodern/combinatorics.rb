@@ -31,93 +31,93 @@ describe 'Choose' do
     end
   end
 
-  describe 'P' do
+  describe 'C' do
     it 'should raise RangeError if n is negative' do
-      lambda {P(-1)}.should raise_error(RangeError)
+      lambda {C(-1)}.should raise_error(RangeError)
     end
 
     it 'should raise RangeError if n is negative' do
-      lambda {P(-1, 1)}.should raise_error(RangeError)
+      lambda {C(-1, 1)}.should raise_error(RangeError)
     end
 
     it 'should raise RangeError if r is negative' do
-      lambda {P(1, -1)}.should raise_error(RangeError)
+      lambda {C(1, -1)}.should raise_error(RangeError)
     end
 
     it 'should raise RangeError if r is greater than n' do
-      lambda {P(2, 3)}.should raise_error(RangeError)
+      lambda {C(2, 3)}.should raise_error(RangeError)
     end
 
-    it 'should return 1 for P(0)' do
-      P(0) == 1
+    it 'should return 1 for C(0)' do
+      C(0) == 1
     end
 
-    it 'should return 1 for P(1)' do
-      P(1) == 1
+    it 'should return 1 for C(1)' do
+      C(1) == 1
     end
 
-    it 'should return 2 for P(2)' do
-      P(2) == 2
+    it 'should return 2 for C(2)' do
+      C(2) == 2
     end
 
-    it 'should return 6 for P(3)' do
-      P(3) == 6
+    it 'should return 6 for C(3)' do
+      C(3) == 6
     end
 
-    it 'should return 24 for P(4)' do
-      P(4) == 24
+    it 'should return 24 for C(4)' do
+      C(4) == 24
     end
 
-    it 'should return 0 for P(1, 0)' do
-      P(1, 0).zero?
+    it 'should return 0 for C(1, 0)' do
+      C(1, 0).zero?
     end
 
-    it 'should return 1 for P(1, 1)' do
-      P(1, 1) == 1
+    it 'should return 1 for C(1, 1)' do
+      C(1, 1) == 1
     end
 
-    it 'should return 2 for P(2, 1)' do
-      P(2, 1) == 2
+    it 'should return 2 for C(2, 1)' do
+      C(2, 1) == 2
     end
 
-    it 'should return 1 for P(2, 2)' do
-      P(2, 2) == 1
+    it 'should return 1 for C(2, 2)' do
+      C(2, 2) == 1
     end
 
-    it 'should return 3 for P(3, 1)' do
-      P(3, 1) == 3
+    it 'should return 3 for C(3, 1)' do
+      C(3, 1) == 3
     end
 
-    it 'should return 3 for P(3, 2)' do
-      P(3, 2) == 3
+    it 'should return 3 for C(3, 2)' do
+      C(3, 2) == 3
     end
 
-    it 'should return 1 for P(3, 3)' do
-      P(3, 3) == 1
+    it 'should return 1 for C(3, 3)' do
+      C(3, 3) == 1
     end
 
-    it 'should return 4 for P(4, 1)' do
-      P(4, 1) == 4
+    it 'should return 4 for C(4, 1)' do
+      C(4, 1) == 4
     end
 
-    it 'should return 6 for P(4, 2)' do
-      P(4, 2) == 6
+    it 'should return 6 for C(4, 2)' do
+      C(4, 2) == 6
     end
 
-    it 'should return 4 for P(4, 3)' do
-      P(4, 3) == 4
+    it 'should return 4 for C(4, 3)' do
+      C(4, 3) == 4
     end
 
-    it 'should return 1 for P(4, 4)' do
-      P(4, 4) == 1
+    it 'should return 1 for C(4, 4)' do
+      C(4, 4) == 1
     end
 
-    it 'should return 360 for P(6, 4)' do
-      P(6, 4) == 360
+    it 'should return 360 for C(6, 4)' do
+      C(6, 4) == 360
     end
 
-    it 'should return 3628800 for P(10)' do
-      P(10) == 3628800
+    it 'should return 3628800 for C(10)' do
+      C(10) == 3628800
     end
   end
 
@@ -144,6 +144,22 @@ describe 'Choose' do
 
     it 'should raise RangeError for cardinality_all(-1)' do
       lambda {cardinality_all(-1)}.should raise_error(RangeError)
+    end
+
+    it 'should alias cardinality to C' do
+      should respond_to(:C)
+    end
+
+    it 'should alias cardinality to len' do
+      should respond_to(:len)
+    end
+
+    it 'should alias cardinality_all to C_all' do
+      should respond_to(:C_all)
+    end
+
+    it 'should alias cardinality_all to len_all' do
+      should respond_to(:len_all)
     end
   end
 end
