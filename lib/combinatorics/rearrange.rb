@@ -59,17 +59,19 @@ module Combinatorics
     alias P_all cardinality_all
     alias len_all P_all
 
+    # Enumerate permutations for a particular sequence of elements
     # @param [Array] s the input set
-    # @param [Fixnum] k cardinality of subsets to rearrange
-    # @return [Enumerator] k-permutations of s
+    # @param [Fixnum] length of permuted subsets to return
+    # @return [Enumerator] k-permutations of elements from s
+    # @raise [TypeError] s must be Enumerable
     # @example rearrange([1, 2], 1)
     # @see Array#permutation
     def rearrange(s, k)
-      if s.nil? or s.empty?
-        [[]].enum_for
-      else
-        s.permutation(k)
-      end
+      return [[]].enum_for if s.nil?
+      raise(TypeError, 's must be Enumerable') if not s.is_a?(Enumerable)
+      return [[]].enum_for if s.empty?
+
+      s.permutation(k)
     end
   end
 end

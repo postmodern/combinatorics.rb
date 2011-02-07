@@ -60,17 +60,22 @@ module Combinatorics
     alias C_all cardinality_all
     alias len_all C_all
 
+    # Get combinations with a specified number of elements from an input set
     # @param [Array] s the input set
-    # @param [Fixnum] k cardinality of subsets to choose
-    # @return [Enumerator] k-combinations of s
-    # @example choose([1, 2], 1)
+    # @param [Fixnum] k cardinality of chosen subsets
+    # @raise [TypeError] s must be Enumerable
+    # @return [Enumerator] collection of k-sized combinations within input set
+    # @example choose([1, 2], 1).to_a => [[1], [2]]
     # @see Array#combination
+    # @see Combinatorics::Rearrange::rearrange
     def choose(s, k)
-      if s.nil? or s.empty?
-        [[]].enum_for
-      else
-        s.combination(k)
-      end
+      return [[]].enum_for if s.nil?
+      raise(TypeError, 's must be Enumerable') if not s.is_a?(Enumerable)
+      return [[]].enum_for if s.empty?
+
+      s.combination(k)
     end
+
+    alias combos choose
   end
 end
