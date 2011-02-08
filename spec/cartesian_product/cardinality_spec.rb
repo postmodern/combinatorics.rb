@@ -1,65 +1,64 @@
 require 'spec_helper'
 require 'combinatorics/cartesian_product'
 
-include Combinatorics
-include Combinatorics::CartesianProduct
+describe CartesianProduct do
+  subject { Object.new.extend(CartesianProduct) }
 
-describe 'CartesianProduct' do
   describe 'cardinality' do
     it 'should return 1 for cardinality(1, 1)' do 
-      cardinality(1, 1) == 1
+      subject.cardinality(1, 1) == 1
     end
 
     it 'should return 2 for cardinality(1, 2)' do
-      cardinality(1, 2) == 2
+      subject.cardinality(1, 2) == 2
     end
 
     it 'should return 2 for cardinality(2, 1)' do
-      cardinality(2, 1) == 2
+      subject.cardinality(2, 1) == 2
     end
 
     it 'should return 4 for cardinality(2, 2)' do
-      cardinality(2, 2) == 4
+      subject.cardinality(2, 2) == 4
     end
 
     it 'should return 3 for cardinality(3, 1)' do
-      cardinality(3, 1) == 3
+      subject.cardinality(3, 1) == 3
     end
 
     it 'should return 3 for cardinality(1, 3)' do
-      cardinality(1, 3) == 3
+      subject.cardinality(1, 3) == 3
     end
 
     it 'should return 6 for cardinality(2, 3)' do
-      cardinality(2, 3) == 6
+      subject.cardinality(2, 3) == 6
     end
 
     it 'should return 6 for cardinality(3, 2)' do
-      cardinality(3, 2) == 6
+      subject.cardinality(3, 2) == 6
     end
     
     it 'should return 9 for cardinality(3, 3)' do
-      cardinality(3, 3) == 9
+      subject.cardinality(3, 3) == 9
     end
 
     it 'should raise RangeError if c1 is negative' do
-      lambda{cardinality(-1, 1)}.should raise_error(RangeError)
+      lambda{subject.cardinality(-1, 1)}.should raise_error(RangeError)
     end
 
     it 'should raise RangeError if c2 is negative' do
-      lambda{cardinality(1, -1)}.should raise_error(RangeError)
+      lambda{subject.cardinality(1, -1)}.should raise_error(RangeError)
     end
 
     it 'should raise RangeError if c1 is zero' do
-      lambda{cardinality(0, 1)}.should raise_error(RangeError)
+      lambda{subject.cardinality(0, 1)}.should raise_error(RangeError)
     end
 
     it 'should raise RangeError if c2 is zero' do
-      lambda{cardinality(1, 0)}.should raise_error(RangeError)
+      lambda{subject.cardinality(1, 0)}.should raise_error(RangeError)
     end
+  end
 
-    it 'should alias cardinality to len' do
-      should respond_to(:len)
-    end
+  it 'should alias cardinality to len' do
+    should respond_to(:len)
   end
 end
