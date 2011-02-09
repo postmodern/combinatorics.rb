@@ -7,7 +7,7 @@ describe Range do
       ((100..200) & (150..200)).first.should == 150
     end
 
-    it "should pick the mimum ending value" do
+    it "should pick the minimum ending value" do
       ((100..150) & (100..200)).last.should == 150
     end
   end

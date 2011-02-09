@@ -9,13 +9,14 @@ module Combinatorics
       #   subset element from the Cartesian product set as a whole
       # @yieldparam [Array] subset A sub-set from the Cartesian product
       # @raise ArgumentError enum2 must be non-nil
-      # @return [Array] The resulting Cartesian product set
+      # @return [Enumerator] The resulting Cartesian product set
       # @example Cartesian product of an Array
       #   [1, 2].cartprod([3, 4])
       #   # => [[1, 3], [2, 3], [1, 4], [2, 4]]
-      # @example Cartesian product on a Set of strings
-      #   Set['abc', 'xyz'].cartesian_product(Set['123', '456')
-      #   # => [["abc", "123"], ["abc", "456"], ["xyz", "123"], ["xyz", "456"]]
+      # @example Cartesian product over an Array of string Array's
+      #   ['a'].cartprod([['b'], ['c'], ['d']]).to_a
+      #   # => [["a", "b", "c", "d"]]
+      #
       # @example Three-way Cartesian product operation
       #   
       # @see http://en.wikipedia.org/wiki/Cartesian_product
@@ -46,6 +47,8 @@ module Combinatorics
       alias cartesian_product cartprod
       alias cartesianproduct cartprod
       alias cartesian cartprod
+      # @note: 'X' is the formal set theory symbol for Cartesian Product
+      alias X cartprod 
     end
   end
 end

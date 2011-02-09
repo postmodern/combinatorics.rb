@@ -49,6 +49,13 @@ shared_examples_for 'Combinatorics::CartesianProduct::Mixin' do
     set1.cartprod([set2, set3]).to_a == [[0, 2, 4], [1, 2, 4], [0, 3, 4], [1, 3, 4], [0, 2, 5]]
   end
 
+  it "the cartprod of ['a'].cartprod([['b'], ['c'], ['d']]) should be [['a', 'b', 'c', 'd']]" do
+    set1 = ['a']
+    set2 = [['b'], ['c'], ['d']]
+
+    set1.cartprod(set2).to_a == [['a', 'b', 'c', 'd']]
+  end
+
   it 'should take an optional block argument' do
     aset = subject[1]
     aproc = lambda { |x| x }
@@ -73,5 +80,11 @@ shared_examples_for 'Combinatorics::CartesianProduct::Mixin' do
     set = [1]
 
     set.should respond_to(:cartesian)
+  end
+
+  it 'should alias cartprod to X' do
+    set = [1]
+
+    set.should respond_to(:X)
   end
 end

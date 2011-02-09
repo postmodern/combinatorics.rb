@@ -73,5 +73,7 @@ module Combinatorics
 
       s.permutation(k)
     end
+
+    alias permute rearrange
   end
 end

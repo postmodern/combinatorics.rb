@@ -29,6 +29,10 @@ describe 'Rearrange' do
     it 'should return [[1, 2]] for rearrange([1, 2], 2).to_a' do
       rearrange([1, 2], 2).to_a == [[1, 2]]
     end
+
+    it 'should alias permute to rearrange' do
+      should respond_to(:permute)
+    end
   end
 
   describe 'P' do
