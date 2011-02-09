@@ -5,22 +5,30 @@ include Math
 
 describe Math do
   describe 'sigma' do
-    it 'should return 6 for S(1..3)' do
+    it 'should return 6 for sigma(1..3)' do
       sigma(1..3) == 6
     end
 
     it 'should return 60 for sigma(3..5)' do
       sigma(3..5) == 60
     end
+
+    it 'should alias S to sigma' do
+      should respond_to(:S)
+    end
   end
 
   describe 'pi' do
-    it 'should return 24 for P(1..4)' do
+    it 'should return 24 for pi(1..4)' do
       pi(1..4) == 24
     end
 
     it 'should return 30 for pi(5..6)' do
       pi(5..6) == 30
+    end
+
+    it 'should alias P to pi' do
+      should respond_to(:P)
     end
   end
 
