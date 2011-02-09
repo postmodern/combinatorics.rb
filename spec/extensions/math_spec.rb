@@ -13,6 +13,14 @@ describe Math do
       sigma(3..5) == 60
     end
 
+    it 'should take an optional block argument' do
+      arange = 1..1
+      aproc = lambda {|x| x}
+      ares = sigma(arange, &aproc)
+
+      ares.should == 1
+    end
+
     it 'should alias S to sigma' do
       should respond_to(:S)
     end
@@ -25,6 +33,14 @@ describe Math do
 
     it 'should return 30 for pi(5..6)' do
       pi(5..6) == 30
+    end
+
+    it 'should take an optional block argument' do
+      arange = 1..1
+      aproc = lambda {|x| x}
+      ares = pi(arange, &aproc)
+
+      ares.should == 0
     end
 
     it 'should alias P to pi' do

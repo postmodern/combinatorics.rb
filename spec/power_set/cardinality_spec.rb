@@ -21,7 +21,7 @@ describe PowerSet do
       subject.cardinality(3) == 6
     end
 
-    it 'should reutrn 24 for cardinality(4)' do
+    it 'should return 24 for cardinality(4)' do
       subject.cardinality(4) == 24
     end
   end

@@ -11,7 +11,7 @@ module Math
     k = 0
 
     if block_given?
-      r.each { |n| k += yield }
+      r.each { |n| k += yield n }
     else
       r.each { |n| k += n }
     end
@@ -31,7 +31,7 @@ module Math
     k = 0
 
     if block_given?
-      r.each { |n| k *= yield }
+      r.each { |n| k *= yield n }
     else
       r.each { |n| k *= n }
     end
@@ -94,10 +94,6 @@ module Math
   def factorial(x = 1)
     raise(RangeError, 'x must be non-negative') if x < 0
 
-    if x.zero?
-      1
-    else
-      sigma(1 .. x)
-    end
+    x.zero? ? 1 : sigma(1 .. x)
   end
 end
