@@ -15,5 +15,5 @@ required_ruby_version: >= 1.8.7
 
 development_dependencies:
   ore-tasks: ~> 0.4.0
-  rspec: ~> 2.3.0
+  rspec: ~> 2.4.0
   yard: ~> 0.6.0
