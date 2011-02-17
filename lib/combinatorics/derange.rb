@@ -5,12 +5,20 @@ require 'combinatorics/extensions/math'
 module Combinatorics
   module Derange
     include Choose, Math
-
-    # @param [Array] a sequence to output derangements for
-    # @return [Enumerator] set of the derangements for input sequence
-    # @example derange([1, 2, 3])
+    #
+    # @param [Array] a Sequence to output derangements for
+    #
+    # @return [Enumerator] Set of the derangements for input sequence
+    #
+    # @example Produce the derangements of a three-element Array
+    #   derange([1, 2, 3]).to_a
+    #   # => [[2, 1, 1], [2, 1, 2], [2, 3, 1], [2, 3, 2], [3, 1, 1], [3, 1, 2],
+    #      [3, 3, 1], [3, 3, 2]] 
+    #
     # @see http://en.wikipedia.org/wiki/Derangements
+    #
     # @see Array#comprehension 
+    # 
     def derange(a)
       c = []
 
@@ -26,6 +34,7 @@ module Combinatorics
     end
 
     alias cardinality subfactorial
-    alias D subfactorial # discrete math notation
+    # @note The letter 'D' is formal discrete math notation for this operation
+    alias D subfactorial 
   end
 end
