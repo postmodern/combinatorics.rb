@@ -1,18 +1,24 @@
 module Combinatorics
   module CartesianProduct
+    #
     # Compute the number of elements a Cartesian Product will contain
     #
-    # @param [Fixnum] c1 cardinality of first set
-    # @param [Fixnum] c2 cardinality of second set
-    # @raise [RangeError] c1 must be greater than zero
-    # @raise [RangeError] c2 must be greater than zero 
-    # @return [Fixnum] number of elements in resulting Cartesian product set
-    # @example Combinatorics::CartesianProduct::cardinality(3, 4) => 12
-    def cardinality(c1, c2)
-      raise(RangeError, 'c1 must be greater than zero') if c1 <= 0
-      raise(RangeError, 'c2 must be greater than zero') if c2 <= 0
+    # @param [Fixnum] a Cardinality of first set
+    #
+    # @param [Fixnum] b Cardinality of second set
+    #
+    # @raise [RangeError] Inputs must be greater than zero 
+    #
+    # @return [Fixnum] Length of enumeration resulting from a Cartesian product
+    #
+    # @example Calculate elements in Cartesian product of two equal-size sets
+    #   cardinality(3, 4) 
+    #   # => 12
+    # 
+    def cardinality(a, b)
+      raise(RangeError, 'inputs must be greater than zero') if a <= 0 or b <= 0
 
-      c1 * c2
+      a * b
     end
 
     alias len cardinality
