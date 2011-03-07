@@ -32,7 +32,7 @@ module Combinatorics
 
         c = []
 
-        self.to_a.permutation.each{|x|
+        self.to_a.permutation{|x|
           b = true
 
           for i in 0 .. x.size - 1

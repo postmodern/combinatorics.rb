@@ -30,7 +30,7 @@ module Combinatorics
         raise(TypeError, 'self must be Enumerable') if not self.is_a?(Enumerable)
         return [[]].enum_for if self.empty?
 
-        self.combination(k)
+        self.to_a.combination(k)
       end
 
       alias combos choose
