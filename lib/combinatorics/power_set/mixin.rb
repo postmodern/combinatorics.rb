@@ -11,15 +11,15 @@ module Combinatorics
       # @yieldparam [Array] subset
       #   A sub-set from the power-set.
       #
-      # @return [Array]
+      # @return [Enumerator]
       #   The power set.
       #
       # @example Power-set of an Array.
-      #   [1,2,3].powerset
+      #   [1,2,3].powerset.to_a
       #   # => [[], [3], [2], [2, 3], [1], [1, 3], [1, 2], [1, 2, 3]]
       #
       # @example Power-set on a Set of strings.
-      #   Set['abc', 'xyz', '123'].powerset
+      #   Set['abc', 'xyz', '123'].powerset.to_a
       #   # => [#<Set: {}>, #<Set: {"123"}>, #<Set: {"xyz"}>,
       #         #<Set: {"abc"}>, #<Set: {"xyz", "123"}>,
       #         #<Set: {"abc", "123"}>, #<Set: {"abc", "xyz"}>,
@@ -28,18 +28,19 @@ module Combinatorics
       # @see http://johncarrino.net/blog/2006/08/11/powerset-in-ruby/
       #
       def powerset
-        inject([self.class.new]) do |power_set,element|
+        inject([self.class.new]) do |power_set, element|
           sub_set = []
 
           power_set.each do |previous_set|
             new_set = previous_set + [element]
+
             yield new_set if block_given?
 
             sub_set << previous_set
             sub_set << new_set
           end
 
-          sub_set
+          sub_set.enum_for
         end
       end
 
