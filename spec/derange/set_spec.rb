@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'derange/mixin_examples'
+
 require 'combinatorics/derange/extensions/set'
 
 describe Set do

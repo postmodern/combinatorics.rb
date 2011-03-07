@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'derange/mixin_examples'
+
 require 'combinatorics/derange/extensions/array'
 
 describe Array do
