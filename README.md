@@ -1,8 +1,9 @@
 # Combinatorics
 
-* [github.com/postmodern/combinatorics](http://github.com/postmodern/combinatorics)
-* [github.com/postmodern/combinatorics/issues](http://github.com/postmodern/combinatorics/issues)
-* Postmodern (postmodern.mod3 at gmail.com)
+* [Source](http://github.com/postmodern/combinatorics)
+* [Issues](http://github.com/postmodern/combinatorics/issues)
+* [Documentation](http://rubydoc.info/gems/combinatorics)
+* [Email](mailto:postmodern.mod3 at gmail.com)
 
 ## Description
 
