@@ -1,9 +1,11 @@
 require 'spec_helper'
 require 'combinatorics/derange/cardinality'
 
-include Combinatorics, Combinatorics::Derange
-
 describe Derange do
+  subject do
+    Object.new.extend(Combinatorics::Derange)
+  end
+
   it 'should alias cardinality to subfactorial' do
     should respond_to(:cardinality)
   end
