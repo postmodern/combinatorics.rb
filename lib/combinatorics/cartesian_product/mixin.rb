@@ -1,19 +1,26 @@
-# @author duper <super@manson.vistech.net>
-
 module Combinatorics
   module CartesianProduct
+    #
+    # @author duper <super@manson.vistech.net>
+    #
+    # @since 0.4.0
+    #
     module Mixin
       #
       # Calculates the Cartesian product of an Enumerable object.
       #
-      # @yield [subset] If a block is given, it will be passed each individual
-      #   subset element from the Cartesian product set as a whole
+      # @yield [subset]
+      #   If a block is given, it will be passed each individual subset
+      #   element from the Cartesian product set as a whole.
       #
-      # @yieldparam [Array] subset The sub-set from the Cartesian product
+      # @yieldparam [Array] subset
+      #   The sub-set from the Cartesian product.
       #
-      # @raise [ArgumentError] enum2 must be non-nil
+      # @raise [ArgumentError]
+      #   `enum2` must be non-nil.
       #
-      # @return [Enumerator] Resulting Cartesian product set
+      # @return [Enumerator]
+      #   Resulting Cartesian product set.
       #
       # @example Cartesian product of an Array
       #   [1, 2].cartprod([3, 4])

@@ -1,24 +1,34 @@
-# @author duper <super@manson.vistech.net>
-
 require 'combinatorics/extensions/math'
 
 module Combinatorics
+  #
+  # @author duper <super@manson.vistech.net>
+  #
+  # @since 0.4.0
+  #
   module Permute
     include Math
     #
-    # Mathematically determine the number of elements in a r-permutations set
+    # Mathematically determine the number of elements in a r-permutations
+    # set.
     # 
-    # @param [Fixnum] n The number of elements in the input set
+    # @param [Fixnum] n
+    #   The number of elements in the input set.
     #
-    # @param [Fixnum] r Cardinality of permuted subsets
+    # @param [Fixnum] r
+    #   Cardinality of permuted subsets.
     #
-    # @raise [RangeError] n must be non-negative
+    # @raise [RangeError]
+    #   `n` must be non-negative.
     #
-    # @raise [RangeError] r must be non-negative
+    # @raise [RangeError]
+    #   `r` must be non-negative.
     #
-    # @raise [RangeError] r must be less than or equal to n
+    # @raise [RangeError]
+    #   `r` must be less than or equal to `n`.
     #
-    # @return [Fixnum] The product of the first r factors of n
+    # @return [Fixnum]
+    #   The product of the first `r` factors of `n`.
     #
     # @example Calculate total 4-permutations for a set whose cardinality is 6
     #   P(6, 4)
@@ -26,10 +36,11 @@ module Combinatorics
     #
     # @see http://en.wikipedia.org/wiki/Permutations
     #
-    # @note This method's naming convention reflects well-known notation used 
-    #       within fields of academic inquiry such as discrete mathematics and
-    #       set theory. It represents a function returning an integer value
-    #       for the cardinality of a r-permutation.
+    # @note
+    #   This method's naming convention reflects well-known notation used 
+    #   within fields of academic inquiry such as discrete mathematics and
+    #   set theory. It represents a function returning an integer value
+    #   for the cardinality of a r-permutation.
     #
     def P(n, r = nil) 
       raise(RangeError, 'n must be non-negative') if n < 0
@@ -51,16 +62,19 @@ module Combinatorics
     #
     # Compute cardinality of all r-permutations for a set with cardinality c
     #
-    # @param [Fixnum] c Input set cardinality
+    # @param [Fixnum] c
+    #   Input set cardinality.
     #
-    # @return [Array] Elements are cardinalities for each subset 1 .. c
+    # @return [Array]
+    #   Elements are cardinalities for each subset `1 .. c`.
     #
-    # @raise [RangeError] c must be non-negative
+    # @raise [RangeError]
+    #   `c` must be non-negative.
     #
     # @example cardinality_all(4)
     #   # => [4, 3, 10, 1]
     #
-    # @note sum of elements will equal factorial(c)
+    # @note sum of elements will equal `factorial(c)`
     #
     # @see http://en.wikipedia.org/wiki/Permutations
     #

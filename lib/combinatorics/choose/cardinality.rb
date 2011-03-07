@@ -1,31 +1,43 @@
-# @author duper <super@manson.vistech.net>
 
 require 'combinatorics/extensions/math'
 
 module Combinatorics
+  #
+  # @author duper <super@manson.vistech.net>
+  #
+  # @since 0.4.0
+  #
   module Choose
     include Math
     #
-    # @param [Fixnum] n The number of elements in the input set
+    # @param [Fixnum] n
+    #   The number of elements in the input set
     #
-    # @param [Fixnum] r Cardinality of subsets to choose
+    # @param [Fixnum] r
+    #   Cardinality of subsets to choose
     #
-    # @raise [RangeError] n must be non-negative
+    # @raise [RangeError]
+    #   `n` must be non-negative.
     #
-    # @raise [RangeError] r must be non-negative
+    # @raise [RangeError]
+    #   `r` must be non-negative.
     #
-    # @raise [RangeError] r must be less than or equal to n
+    # @raise [RangeError]
+    #   `r` must be less than or equal to `n`.
     #
-    # @return [Fixnum] The binomial coefficient for "n-choose-r"
+    # @return [Fixnum]
+    #   The binomial coefficient for "n-choose-r"
     #
-    # @example C(6, 4)
+    # @example
+    #   C(6, 4)
     #
     # @see http://en.wikipedia.org/wiki/Binomial_coefficient
     #
-    # @note This method's naming convention reflects well-known notation used 
-    #       within fields of academic inquiry such as discrete mathematics and
-    #       set theory. It represents a function returning an integer value
-    #       for the cardinality of a k-combination (i.e. binomial coefficient.)
+    # @note
+    #   This method's naming convention reflects well-known notation used 
+    #   within fields of academic inquiry such as discrete mathematics and
+    #   set theory. It represents a function returning an integer value
+    #   for the cardinality of a k-combination (i.e. binomial coefficient.)
     #
     def C(n, r = nil)
       raise(RangeError, 'n must be non-negative') if n < 0
@@ -45,15 +57,20 @@ module Combinatorics
     alias len cardinality
 
     #
-    # @param [Fixnum] c Input set cardinality
+    # @param [Fixnum] c
+    #   Input set cardinality.
     #
-    # @return [Array] elements are cardinalities for each subset "1" through "c"
+    # @return [Array]
+    #   Elements are cardinalities for each subset "1" through "c".
     #
-    # @raise [RangeError] c must be non-negative
+    # @raise [RangeError]
+    #   `c` must be non-negative.
     #
-    # @example cardinality_all(4)
+    # @example
+    #   cardinality_all(4)
     #
-    # @note sum of elements will equal factorial(c)
+    # @note
+    #   Sum of elements will equal factorial(c).
     #
     # @see Combinatorics::Choose::Mixin::cardinality_all
     # @see http://en.wikipedia.org/wiki/Combinations

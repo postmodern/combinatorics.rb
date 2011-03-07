@@ -1,18 +1,26 @@
-# @author duper <super@manson.vistech.net>
-
 module Combinatorics
   module Permute
+    #
+    # @author duper <super@manson.vistech.net>
+    #
+    # @since 0.4.0
+    #
     module Mixin
       #
-      # Enumerate distinct r-permutations for a particular sequence of elements
+      # Enumerate distinct r-permutations for a particular sequence of
+      # elements.
       #
-      # @param [Array] s the input set
+      # @param [Array] s
+      #   The input set.
       #
-      # @param [Fixnum] r Length of permuted subsets to return
+      # @param [Fixnum] r
+      #   Length of permuted subsets to return.
       #
-      # @return [Enumerator] k-permutations of elements from s
+      # @return [Enumerator]
+      #   k-permutations of elements from `s`.
       #
-      # @raise [TypeError] s must be Enumerable
+      # @raise [TypeError]
+      #   `s` must be Enumerable.
       #
       # @example permute([1, 2], 1).to_a
       #   # => [[1], [2]]

@@ -1,16 +1,19 @@
-# @author duper <super@manson.vistech.net>
-
 module Combinatorics
   module Derange
+    #
+    # @author duper <super@manson.vistech.net>
+    #
+    # @since 0.4.0
+    #
     module Mixin
       #
-      # Calculate all derangements for an Enumerable object
+      # Calculate all derangements for an Enumerable object.
       #
       # @yield [derangement] 
       #   If a block is given, it will be passed an Array representing
       #   an individual derangement from the full calculation.
       #
-      # @yieldparam [Array] 
+      # @yieldparam [Array] derangement
       #   One of the calculated derangements.
       #
       # @return [Enumerator] 
@@ -47,8 +50,9 @@ module Combinatorics
           end
         }
 
-        # @note All combinatorics methods should return an Enumerator so supported
-        # code such as ronin-fuzz won't be generating all combinations at once.
+        # @note All combinatorics methods should return an Enumerator so
+        # supported code such as ronin-fuzz won't be generating all
+        # combinations at once.
         c.enum_for
       end
     end

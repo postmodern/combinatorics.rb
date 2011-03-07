@@ -1,18 +1,26 @@
-# @author duper <super@manson.vistech.net>
-
 module Combinatorics
   module Choose
+    #
+    # @author duper <super@manson.vistech.net>
+    #
+    # @since 0.4.0
+    #
     module Mixin
       #
-      # Get combinations with a specified number of elements from an input set
+      # Get combinations with a specified number of elements from an input
+      # set.
       #
-      # @param [Fixnum] k Cardinality of chosen subsets
+      # @param [Fixnum] k
+      #   Cardinality of chosen subsets
       #
-      # @raise [TypeError] self must be Enumerable
+      # @raise [TypeError]
+      #   `self` must be Enumerable.
       #
-      # @return [Enumerator] collection of k-sized combinations within input set
+      # @return [Enumerator]
+      #   Collection of k-sized combinations within input set.
       #
-      # @example [1, 2].choose(1).to_a 
+      # @example
+      #   [1, 2].choose(1).to_a 
       #   # => [[1], [2]]
       #
       # @see Array#combination
