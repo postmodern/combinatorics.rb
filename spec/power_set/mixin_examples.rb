@@ -2,13 +2,13 @@ shared_examples_for "Combinatorics::PowerSet::Mixin" do
   it "the powerset of an empty Set should only contain the empty Set" do
     set = subject[]
 
-    set.powerset.should == [set]
+    set.powerset.to_a.should == [set]
   end
 
   it "the powerset of a single Set should contain that Set" do
     set = subject[1]
 
-    set.powerset.should == [subject[], set]
+    set.powerset.to_a.should == [subject[], set]
   end
 
   it "the powerset of a Set should all be subsets" do

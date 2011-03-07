@@ -1,3 +1,5 @@
+# @author duper <super@manson.vistech.net>
+
 module Combinatorics
   module CartesianProduct
     #
