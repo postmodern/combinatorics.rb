@@ -24,8 +24,10 @@ shared_examples_for 'Combinatorics::Derange::Mixin' do
 
   it 'should take an optional block argument' do
     aset = subject[1, 2, 3]
-    aproc = lambda { |x| x }
-    ares = aset.derange(&aproc)
-    ares.to_a.should == [[2, 3, 1], [3, 1, 2]]
+    ares = []
+
+    aset.derange { |aderange| ares << aderange }
+
+    ares.should == [[2, 3, 1], [3, 1, 2]]
   end
 end

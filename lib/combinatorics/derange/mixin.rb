@@ -17,7 +17,8 @@ module Combinatorics
       #   One of the calculated derangements.
       #
       # @return [Enumerator] 
-      #   Set of all derangements for the given Enumerable object
+      #   If no block is given, an Enumerator of all derangements will be
+      #   returned.
       #
       # @example Produce the derangements of a three-element Array
       #   [1, 2, 3].derange.to_a
@@ -28,11 +29,14 @@ module Combinatorics
       # @see http://mathworld.wolfram.com/Derangement.html
       #
       def derange
-        return [[]].enum_for if self.size <= 1
+        return enum_for(:derange) unless block_given?
 
-        c = []
+        if self.size <= 1
+          yield []
+          return
+        end
 
-        self.to_a.permutation{|x|
+        self.to_a.permutation do |x|
           b = true
 
           for i in 0 .. x.size - 1
@@ -43,17 +47,8 @@ module Combinatorics
             end
           end
 
-          if b  
-            yield x if block_given?
-
-            c << x
-          end
-        }
-
-        # @note All combinatorics methods should return an Enumerator so
-        # supported code such as ronin-fuzz won't be generating all
-        # combinations at once.
-        c.enum_for
+          yield x if b  
+        end
       end
     end
   end
