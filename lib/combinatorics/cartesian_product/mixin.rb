@@ -35,7 +35,7 @@ module Combinatorics
       # @see http://en.wikipedia.org/wiki/Cartesian_product
       #
       def cartprod(enum2)
-        raise(ArgumentError, 'enum2 must be non-nil') if not enum2
+        raise(ArgumentError, 'enum2 must be non-nil') if enum2.nil?
 
         enum1, aele2 = self, nil
         aele2 = enum2.first if enum2.respond_to?(:first)
