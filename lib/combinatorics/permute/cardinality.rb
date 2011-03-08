@@ -8,6 +8,7 @@ module Combinatorics
   #
   module Permute
     include Math
+
     #
     # Mathematically determine the number of elements in a r-permutations
     # set.

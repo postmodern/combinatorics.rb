@@ -1,4 +1,3 @@
-
 require 'combinatorics/extensions/math'
 
 module Combinatorics
@@ -9,6 +8,7 @@ module Combinatorics
   #
   module Choose
     include Math
+
     #
     # @param [Fixnum] n
     #   The number of elements in the input set
