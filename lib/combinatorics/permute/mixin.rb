@@ -13,8 +13,15 @@ module Combinatorics
       # @param [Fixnum] r
       #   Length of permuted subsets to return.
       #
+      # @yield [permutation]
+      #   If a block is given, it will be passed each k-permutation.
+      #
+      # @yieldparam [Array] permutation
+      #   A k-permutation of the elements from `self`.
+      #
       # @return [Enumerator]
-      #   k-permutations of elements from `self`.
+      #   If no block is given, an Enumerator of the k-permutations of
+      #   elements from `self` is returned.
       #
       # @raise [TypeError]
       #   `self` must be Enumerable.
@@ -24,12 +31,18 @@ module Combinatorics
       #
       # @see Array#permutation
       #
-      def permute(r)
-        return [[]].enum_for if self.nil?
-        raise(TypeError, 'self must be Enumerable') if not self.is_a?(Enumerable)
-        return [[]].enum_for if self.empty?
+      def permute(r,&block)
+        return enum_for(:permute,r) unless block
 
-        self.to_a.permutation(r)
+        if self.nil?
+          yield []
+        elsif !self.is_a?(Enumerable)
+          raise(TypeError, 'self must be Enumerable')
+        elsif self.empty?
+          yield []
+        else
+          self.to_a.permutation(r,&block)
+        end
       end
 
       alias rearrange permute
