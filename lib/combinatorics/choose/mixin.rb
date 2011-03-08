@@ -13,11 +13,18 @@ module Combinatorics
       # @param [Fixnum] k
       #   Cardinality of chosen subsets
       #
+      # @yield [combo]
+      #   The given block will be passed each combination.
+      #
+      # @yieldparam [Array] combo
+      #   A k-sized combination of elements from the set.
+      #
       # @raise [TypeError]
       #   `self` must be Enumerable.
       #
       # @return [Enumerator]
-      #   Collection of k-sized combinations within input set.
+      #   If no block is given, an Enumerator of the k-sized combinations
+      #   within the set will be returned.
       #
       # @example
       #   [1, 2].choose(1).to_a 
@@ -25,12 +32,18 @@ module Combinatorics
       #
       # @see Array#combination
       #
-      def choose(k)
-        return [[]].enum_for if self.nil?
-        raise(TypeError, 'self must be Enumerable') if not self.is_a?(Enumerable)
-        return [[]].enum_for if self.empty?
+      def choose(k,&block)
+        return enum_for(:choose,k) unless block
 
-        self.to_a.combination(k)
+        if self.nil?
+          yield []
+        elsif !self.is_a?(Enumerable)
+          raise(TypeError, 'self must be Enumerable')
+        elsif empty?
+          yield []
+        else
+          self.to_a.combination(k,&block)
+        end
       end
 
       alias combos choose
