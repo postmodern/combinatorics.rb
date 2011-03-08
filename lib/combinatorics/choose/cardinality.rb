@@ -82,7 +82,7 @@ module Combinatorics
       if c.zero?
         return []
       elsif c < 0
-        raise(RangeError, 'c must be non-negative') if c < 0
+        raise(RangeError, 'c must be non-negative')
       end
 
       ret = [c]
