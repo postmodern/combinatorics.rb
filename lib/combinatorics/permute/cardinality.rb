@@ -50,9 +50,12 @@ module Combinatorics
       else
         raise(RangeError, 'r must be non-negative') if r < 0
         raise(RangeError, 'r must be less than or equal to n') if r > n
-        return 1 if n.zero? or n == r 
 
-        factorial(n) / factorial(n-r)
+        if n.zero? or n == r 
+          1
+        else
+          factorial(n) / factorial(n-r)
+        end
       end
     end
 
