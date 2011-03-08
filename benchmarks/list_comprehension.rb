@@ -14,7 +14,6 @@ Benchmark.bm(12) do |b|
     singleton_list.comprehension.each { |list| list.last }
   end
 
-
   b.report('single-enum:') do
     single_enum_list.comprehension.each { |list| list.last }
   end
