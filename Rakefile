@@ -34,3 +34,7 @@ rescue LoadError => e
     abort "Please run `gem install yard` to install YARD."
   end
 end
+
+task :benchmark do
+  Dir.glob('benchmarks/*.rb') { |script| ruby(script) }
+end
