@@ -36,11 +36,13 @@ module Combinatorics
           return
         end
 
-        self.to_a.permutation do |x|
+        elements = self.to_a
+
+        elements.permutation do |x|
           b = true
 
           for i in 0 .. x.size - 1
-            if x[i] == self.to_a[i]
+            if x[i] == elements[i]
               b = false
 
               break
