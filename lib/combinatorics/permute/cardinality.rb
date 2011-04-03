@@ -7,8 +7,6 @@ module Combinatorics
   # @since 0.4.0
   #
   module Permute
-    include Math
-
     #
     # Mathematically determine the number of elements in a r-permutations
     # set.
@@ -47,7 +45,7 @@ module Combinatorics
       raise(RangeError, 'n must be non-negative') if n < 0
 
       if r.nil?
-        factorial(n)
+        Math.factorial(n)
       else
         raise(RangeError, 'r must be non-negative') if r < 0
         raise(RangeError, 'r must be less than or equal to n') if r > n
@@ -55,7 +53,7 @@ module Combinatorics
         if n.zero? or n == r 
           1
         else
-          factorial(n) / factorial(n-r)
+          Math.factorial(n) / Math.factorial(n-r)
         end
       end
     end

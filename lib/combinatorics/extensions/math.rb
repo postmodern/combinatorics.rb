@@ -7,7 +7,7 @@ module Math
   # @return [Fixnum] sum after calling block for each element in r
   # @example sigma(1..10){|i| i * 4}
   # @see http://en.wikipedia.org/wiki/Summation
-  def sigma(r)
+  def Math.sigma(r)
     k = 0
 
     if block_given?
@@ -19,7 +19,12 @@ module Math
     k
   end
 
-  alias S sigma
+  #
+  # @see sigma
+  #
+  def Math.S
+    sigma
+  end
 
   # Pi notation for iterative product computations
   # @param [Range] r inclusive range of integers
@@ -27,7 +32,7 @@ module Math
   # @return [Fixnum] total product after calling b for each element in r
   # @example pi(1..4){|i| i}
   # @see http://en.wikipedia.org/wiki/Pi_notation#Capital_Pi_notation
-  def pi(r)
+  def Math.pi(r)
     k = 0
 
     if block_given?
@@ -39,35 +44,19 @@ module Math
     k
   end
 
-  alias P pi
-
-  # @todo: define operators for combinatorics functions? i.e. *** represents
-  #   partial_factorial, n! represents factorial and !n subfactorial..
-  def partial_factorial(j, k)
-    r = j
-    j -= 1
-  
-    j.downto(k) { |n| r *= n }
-  
-    r
+  #
+  # @see pi
+  #
+  def Math.P
+    pi
   end
-
-  def get_fractions(n)
-    a = []
-
-    n.downto(1) { |x| a << partial_factorial(n, x) }
-
-    a
-  end
-
-  private :partial_factorial, :get_fractions
 
   # @param [Fixnum] n length of sequence
   # @raise [RangeError] n must be non-negative
   # @return [Fixnum] cardinality of derangements set
   # @example subfactorial([1, 2, 3].size)
   # @see http://mathworld.wolfram.com/Subfactorial.html
-  def subfactorial(n)
+  def Math.subfactorial(n)
     if n < 0
       raise(RangeError,'n must be non-negative')
     end
@@ -91,9 +80,30 @@ module Math
   # @example factorial(4)
   # @see http://en.wikipedia.org/wiki/Factorial
   # @note the factorial of zero equals one!
-  def factorial(x = 1)
+  def Math.factorial(x = 1)
     raise(RangeError, 'x must be non-negative') if x < 0
 
     x.zero? ? 1 : sigma(1 .. x)
+  end
+
+  private
+
+  # @todo: define operators for combinatorics functions? i.e. *** represents
+  #   partial_factorial, n! represents factorial and !n subfactorial..
+  def Math.partial_factorial(j, k)
+    r = j
+    j -= 1
+  
+    j.downto(k) { |n| r *= n }
+  
+    r
+  end
+
+  def Math.get_fractions(n)
+    a = []
+
+    n.downto(1) { |x| a << partial_factorial(n, x) }
+
+    a
   end
 end

@@ -1,9 +1,6 @@
 require 'spec_helper'
 require 'combinatorics/choose'
 
-include Combinatorics
-include Combinatorics::Choose
-
 describe 'Choose' do
   describe 'choose' do
     it 'should return [[]] for choose(nil, 0).to_a' do

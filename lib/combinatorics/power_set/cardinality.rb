@@ -19,7 +19,7 @@ module Combinatorics
     #   equals 1.
     #
     def cardinality(n)
-      Math::factorial(n)
+      Math.factorial(n)
     end
 
     alias len cardinality
