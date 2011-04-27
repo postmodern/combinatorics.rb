@@ -33,5 +33,17 @@ module Combinatorics
     end
 
     alias len cardinality
+
+    #
+    # Wrapper for Cartesian product cardinality method defined above
+    #
+    # @note The letter `X' is scholastic notation for the Cartesian product
+    #       set operation
+    #
+    # @see CartesianProduct.cardinality
+    #
+    def CartesianProduct.X
+      cardinality
+    end
   end
 end

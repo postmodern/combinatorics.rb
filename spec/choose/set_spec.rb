@@ -1,9 +1,9 @@
 require 'spec_helper'
-require 'combinatorics/power_set/extensions/set'
-require 'power_set/mixin_examples'
+require 'combinatorics/choose/extensions/set'
+require 'choose/mixin_examples'
 
 describe Set do
   subject { Set }
 
-  it_should_behave_like "Combinatorics::PowerSet::Mixin"
+  it_should_behave_like 'Choose::Mixin'
 end

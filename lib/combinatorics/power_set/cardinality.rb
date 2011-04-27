@@ -22,6 +22,17 @@ module Combinatorics
       Math.factorial(n)
     end
 
+    # Alias for shortened power set cardinality method name
     alias len cardinality
+
+    # 
+    # Wrapper function for power set cardinality method defined above
+    #
+    # @note The letter `P' stands for the power set function in the context of
+    #       statements regarding discrete mathematics.
+    #
+    def PowerSet.P
+      cardinality
+    end
   end
 end

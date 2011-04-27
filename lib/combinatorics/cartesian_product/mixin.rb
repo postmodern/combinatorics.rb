@@ -60,8 +60,6 @@ module Combinatorics
       alias cartesian_product cartprod
       alias cartesianproduct cartprod
       alias cartesian cartprod
-      # @note 'X' is the formal set theory symbol for Cartesian Product
-      alias X cartprod 
     end
   end
 end

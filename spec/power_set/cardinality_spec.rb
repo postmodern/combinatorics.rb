@@ -29,4 +29,8 @@ describe PowerSet do
   it 'should alias cardinality to len' do
     should respond_to(:len)
   end
+
+  it 'should wrap cardinality with PowerSet.P' do
+    PowerSet.should respond_to(:P)
+  end
 end

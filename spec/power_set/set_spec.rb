@@ -5,5 +5,5 @@ require 'power_set/mixin_examples'
 describe Set do
   subject { Set }
 
-  it_should_behave_like "Combinatorics::PowerSet::Mixin"
+  it_should_behave_like PowerSet::Mixin
 end

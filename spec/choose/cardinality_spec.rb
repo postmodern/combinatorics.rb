@@ -1,15 +1,16 @@
 require 'spec_helper'
-require 'combinatorics/permute'
+require 'combinatorics/choose'
 
-describe Permute do
-  subject { Object.new.extend(Permute) }
+describe Choose do
+  before(:all) { @class = Class.new { include Choose } }
+  subject { @class.new }
 
   describe 'cardinality' do
-    it 'should raise RangeError if n is negative without passing r' do
+    it 'should raise RangeError if n is negative' do
       lambda { subject.cardinality(-1) }.should raise_error(RangeError)
     end
 
-    it 'should raise RangeError if n is negative when r is provided' do
+    it 'should raise RangeError if n is negative' do
       lambda { subject.cardinality(-1, 1) }.should raise_error(RangeError)
     end
 
@@ -95,60 +96,40 @@ describe Permute do
   end
 
   describe 'cardinality_all' do
-    it 'should return [] for cardinality_all(0)' do
+    it 'should return [] for subject.cardinality_all(0)' do
       subject.cardinality_all(0).empty?
     end
 
-    it 'should return [1] for cardinality_all(1)' do
+    it 'should return [1] for subject.cardinality_all(1)' do
       subject.cardinality_all(1) == [1]
     end
 
-    it 'should return [2, 1] for cardinality_all(2)' do
+    it 'should return [2, 1] for subject.cardinality_all(2)' do
       subject.cardinality_all(2) == [2, 1]
     end
 
-    it 'should return [3, 6, 1] for cardinality_all(3)' do
+    it 'should return [3, 6, 1] for subject.cardinality_all(3)' do
       subject.cardinality_all(3) == [3, 6, 1]
     end
 
-    it 'should return [4, 12, 24, 1] for cardinality_all(4)' do
+    it 'should return [4, 12, 24, 1] for subject.cardinality_all(4)' do
       subject.cardinality_all(4) == [4, 12, 24, 1]
     end
 
-    it 'should raise RangeError for cardinality_all(-1)' do
-      lambda { subject.cardinality_all(-1) }.should raise_error(RangeError)
+    it 'should raise RangeError for subject.cardinality_all(-1)' do
+      lambda {subject.cardinality_all(-1)}.should raise_error(RangeError)
     end
 
     it 'should alias cardinality to len' do
-      subject.should respond_to(:len)
+      should respond_to(:len)
     end
 
-    it 'should wrap cardinality with Permute.N' do
-      Permute.should respond_to(:N)
-    end
-
-    it 'should wrap cardinalith with Permute.R' do
-      Permute.should respond_to(:R)
-    end
-
-    it 'should wrap cardinality with Permute.NR' do
-      Permute.should respond_to(:NR)
+    it 'should wrap cardinality with Choose.C' do
+      Choose.should respond_to(:C)
     end
 
     it 'should alias cardinality_all to len_all' do
-      subject.should respond_to(:len_all)
-    end
-
-    it 'should alias cardinality_all to N_all' do
-      subject.should respond_to(:N_all)
-    end
-
-    it 'should alias cardinality_all to NR_all' do
-      subject.should respond_to(:NR_all)
-    end
-
-    it 'should alias cardinality_all to R_all' do
-      subject.should respond_to(:R_all)
+      should respond_to(:len_all)
     end
   end
 end

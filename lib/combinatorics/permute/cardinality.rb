@@ -30,18 +30,17 @@ module Combinatorics
     #   The product of the first `r` factors of `n`.
     #
     # @example Calculate total 4-permutations for a set whose cardinality is 6
-    #   P(6, 4)
+    #   cardinality(6, 4)
     #   # => 360
     #
     # @see http://en.wikipedia.org/wiki/Permutations
     #
     # @note
-    #   This method's naming convention reflects well-known notation used 
-    #   within fields of academic inquiry such as discrete mathematics and
-    #   set theory. It represents a function returning an integer value
-    #   for the cardinality of a r-permutation.
+    #   This function is well-known within fields of academic inquiry such as 
+    #   discrete mathematics and set theory. It is represented in "chalkboard"
+    #   notation by the letter "P."
     #
-    def P(n, r = nil) 
+    def cardinality(n, r = nil) 
       raise(RangeError, 'n must be non-negative') if n < 0
 
       if r.nil?
@@ -58,8 +57,26 @@ module Combinatorics
       end
     end
 
-    alias cardinality P
+    # Alias for shortened permutation cardinality method name
     alias len cardinality
+
+    #
+    # Wrappers for permutation cardinality method defined above
+    #
+    # @note In the study of set theory, permutations are often referenced by
+    #       the name of an associated algorithm called "n-choose-r."
+    #
+    def Permute.N
+      cardinality
+    end
+
+    def Permute.NR
+      cardinality 
+    end
+
+    def Permute.R
+      cardinality
+    end
 
     #
     # Compute cardinality of all r-permutations for a set with cardinality c
@@ -89,12 +106,37 @@ module Combinatorics
 
       ret = [c]
 
-      2.upto(c) { |x| ret << P(c, x) }
+      2.upto(c) { |x| ret << cardinality(c, x) }
 
       ret
     end
 
-    alias P_all cardinality_all
-    alias len_all P_all
+    #
+    # Aliases defining shortened method names for cardinalities of all 
+    # permutations resulting from a given set.
+    #
+    # @see Permute.cardinality_all
+    #
+    # @note The letters `N' and `R' correspond to a discrete math algorithm
+    #       called "n-choose-r" which calculates the number of ways to choose
+    #       `r' objects from a set of cardinality `n'. More specifically, the 
+    #       algorithm/notation called "n-choose-r" is better known as binomial
+    #       coefficient and is the basis for Pascal's Triangle. 
+    #
+    # @note For those involved in the study of set theory: be careful not to 
+    #       confuse these characters as references to the common sets for 
+    #       natural number and real number domains as Pascal's binomial theorem 
+    #       is technically a recurrence relation. It's simply difficult to 
+    #       present the info accurately without MathML/LaTeX/etc. since Ruby
+    #       gems usually consist of mostly ASCII-encoded documents.
+    #
+    # @todo Write mathematician-friendly documentation as an HTML5 web page.
+    #       
+    # @see http://en.wikipedia.org/wiki/Pascal's_Triangle
+    #
+    alias len_all cardinality_all
+    alias N_all len_all
+    alias NR_all len_all
+    alias R_all len_all
   end
 end

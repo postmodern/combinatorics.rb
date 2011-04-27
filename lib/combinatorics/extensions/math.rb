@@ -1,13 +1,30 @@
 # @author duper <super@manson.vistech.net>
 
 module Math
-  # Sigma notation for summation operations
+  #
+  # Mathematical summation (invokes a block for k = 1 until ++k = n)
+  #
   # @param [Range] r range containing the number of times to execute block
+  #
   # @yield [] block of code returning a Fixnum to iteratively total sum
+  #
   # @return [Fixnum] sum after calling block for each element in r
-  # @example sigma(1..10){|i| i * 4}
+  #
+  # @raise [TypeError] r must be a Range
+  #
+  # @example sigma(1 .. 4) { |i| i }
+  #   # => 10
+  #
   # @see http://en.wikipedia.org/wiki/Summation
+  #
+  # @note "chalkboard" notation for summation is the capital Greek letter Sigma
+  #
+  # @todo should the second function argument be "k = 1" ?
+  #       if so, raise a RangeError if k is negative
+  #
   def Math.sigma(r)
+    raise(TypeError, 'r must be a Range') if not r.is_a?(Range)
+
     k = 0
 
     if block_given?
@@ -20,20 +37,33 @@ module Math
   end
 
   #
-  # @see sigma
+  # CamelCase alias for sigma (defined above)
   #
-  def Math.S
-    sigma
+  # @see Math.sigma
+  #
+  def Math.Sigma
+    Math.sigma
   end
 
+  #
   # Pi notation for iterative product computations
+  #
   # @param [Range] r inclusive range of integers
+  #
   # @yield [] code block to apply elements of r to and return a Fixnum
+  #
   # @return [Fixnum] total product after calling b for each element in r
-  # @example pi(1..4){|i| i}
+  #
+  # @raise [TypeError] r must be a Range
+  #
+  # @example pi(1 .. 4) { |i| i }
+  #   # => 24
+  #
   # @see http://en.wikipedia.org/wiki/Pi_notation#Capital_Pi_notation
   def Math.pi(r)
-    k = 0
+    raise(TypeError, 'r must be a Range') if not r.is_a?(Range)
+
+    k = 1
 
     if block_given?
       r.each { |n| k *= yield n }
@@ -45,21 +75,35 @@ module Math
   end
 
   #
-  # @see pi
+  # CamelCase alias for pi (defined above)
   #
-  def Math.P
-    pi
+  # @see Math.pi
+  #
+  def Math.Pi
+    Math.pi
   end
+  
 
+  #
+  # Subfactorial function for calculation of derangement cardinalities
+  #
   # @param [Fixnum] n length of sequence
+  #
   # @raise [RangeError] n must be non-negative
+  #
   # @return [Fixnum] cardinality of derangements set
+  #
   # @example subfactorial([1, 2, 3].size)
+  #   # => 2
+  #
   # @see http://mathworld.wolfram.com/Subfactorial.html
+  #
+  # @see Derange.cardinality
+  #
+  # @note The notation used in academia for subfactorial notation is "!n"
+  #
   def Math.subfactorial(n)
-    if n < 0
-      raise(RangeError,'n must be non-negative')
-    end
+    raise(RangeError, 'n must be non-negative') if n < 0
 
     add, sum = false, 0
 
@@ -74,12 +118,22 @@ module Math
     (1 - sum).abs.to_i
   end
 
+  # 
+  # Apply the well-known factorial function to the given integer
+  #
   # @param [Fixnum] x positive integer to apply algebraic factorial function to
+  #
   # @return [Fixnum] solution to factorial function as a whole number
+  #
   # @raise [RangeError] number must be non-negative
+  #
   # @example factorial(4)
+  #   # => 24
+  #
   # @see http://en.wikipedia.org/wiki/Factorial
+  #
   # @note the factorial of zero equals one!
+  #
   def Math.factorial(x = 1)
     raise(RangeError, 'x must be non-negative') if x < 0
 
@@ -88,8 +142,9 @@ module Math
 
   private
 
-  # @todo: define operators for combinatorics functions? i.e. *** represents
-  #   partial_factorial, n! represents factorial and !n subfactorial..
+  # 
+  # Helper function for Math.get_fractions
+  #
   def Math.partial_factorial(j, k)
     r = j
     j -= 1
@@ -99,6 +154,9 @@ module Math
     r
   end
 
+  #
+  # Helper function for Math.subfactorial
+  #
   def Math.get_fractions(n)
     a = []
 

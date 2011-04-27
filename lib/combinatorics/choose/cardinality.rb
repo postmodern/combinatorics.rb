@@ -7,8 +7,9 @@ module Combinatorics
   # @since 0.4.0
   #
   module Choose
-    include Math
 
+    #
+    # Compute the number of elements in a subset of given size
     #
     # @param [Fixnum] n
     #   The number of elements in the input set
@@ -28,36 +29,41 @@ module Combinatorics
     # @return [Fixnum]
     #   The binomial coefficient for "n-choose-r"
     #
-    # @example
-    #   C(6, 4)
+    # @example cardinality(6, 4)
+    #   # => 117
     #
     # @see http://en.wikipedia.org/wiki/Binomial_coefficient
     #
-    # @note
-    #   This method's naming convention reflects well-known notation used 
-    #   within fields of academic inquiry such as discrete mathematics and
-    #   set theory. It represents a function returning an integer value
-    #   for the cardinality of a k-combination (i.e. binomial coefficient.)
-    #
-    def C(n, r = nil)
+    def cardinality(n, r = nil)
       raise(RangeError, 'n must be non-negative') if n < 0
 
       if r.nil?
-        factorial(n)
+        Math.factorial(n)
       else
         raise(RangeError, 'r must be non-negative') if r < 0
         raise(RangeError, 'r must be less than or equal to n') if r > n
 
-        if n.zero? or n == r
-          1
-        else
-          (n ** r) / factorial(r)
-        end
+        n.zero? or n == r ? 1 : (n ** r) / Math.factorial(r)
       end
     end
 
-    alias cardinality C
+    # Alias for shortened method name
     alias len cardinality
+
+    # 
+    # Wrapper for combination cardinality method defined above. The letter `C'
+    # is "chalkboard" notation for subset cardinality.
+    #
+    # @note This method's naming convention reflects well-known notation used
+    #       within fields of academic inquiry such as discrete mathematics and
+    #       set theory. It represents a function returning an integer value
+    #       for the cardinality of a k-combination (i.e. binomial coefficient.)
+    #
+    # @see Choose.cardinality
+    #
+    def Choose.C
+      cardinality
+    end
 
     #
     # @param [Fixnum] c
@@ -69,13 +75,15 @@ module Combinatorics
     # @raise [RangeError]
     #   `c` must be non-negative.
     #
-    # @example
-    #   cardinality_all(4)
+    # @example cardinality_all(4)
+    #   # => [4, 4, 9, 1]
     #
-    # @note
-    #   Sum of elements will equal factorial(c).
+    # @note Sum of elements will equal Math.factorial(c)
     #
-    # @see Combinatorics::Choose::Mixin::cardinality_all
+    # @see Combinatorics::Choose::cardinality
+    #
+    # @see Math.factorial
+    #
     # @see http://en.wikipedia.org/wiki/Combinations
     # 
     def cardinality_all(c)
@@ -87,12 +95,11 @@ module Combinatorics
 
       ret = [c]
 
-      2.upto(c) { |x| ret << C(c, x) }
+      2.upto(c) { |x| ret << cardinality(c, x) }
 
       ret
     end
 
-    alias C_all cardinality_all
-    alias len_all C_all
+    alias len_all cardinality_all
   end
 end

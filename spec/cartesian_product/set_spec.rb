@@ -5,5 +5,5 @@ require 'combinatorics/cartesian_product/extensions/set'
 describe Set do
   subject { Set }
 
-  it_should_behave_like 'Combinatorics::CartesianProduct::Mixin'
+  it_should_behave_like CartesianProduct::Mixin
 end

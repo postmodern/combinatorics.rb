@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'combinatorics/cartesian_product'
 
 describe CartesianProduct do
-  subject { Object.new.extend(CartesianProduct) }
+  subject  {  Object.new.extend(CartesianProduct)  } 
 
   describe 'cardinality' do
     it 'should return 1 for cardinality(1, 1)' do 
@@ -42,23 +42,27 @@ describe CartesianProduct do
     end
 
     it 'should raise RangeError if c1 is negative' do
-      lambda{subject.cardinality(-1, 1)}.should raise_error(RangeError)
+      lambda { subject.cardinality(-1, 1) } .should raise_error(RangeError)
     end
 
     it 'should raise RangeError if c2 is negative' do
-      lambda{subject.cardinality(1, -1)}.should raise_error(RangeError)
+      lambda { subject.cardinality(1, -1) } .should raise_error(RangeError)
     end
 
     it 'should raise RangeError if c1 is zero' do
-      lambda{subject.cardinality(0, 1)}.should raise_error(RangeError)
+      lambda { subject.cardinality(0, 1) } .should raise_error(RangeError)
     end
 
     it 'should raise RangeError if c2 is zero' do
-      lambda{subject.cardinality(1, 0)}.should raise_error(RangeError)
+      lambda { subject.cardinality(1, 0) } .should raise_error(RangeError)
     end
   end
 
   it 'should alias cardinality to len' do
-    should respond_to(:len)
+    subject.should respond_to(:len)
+  end
+
+  it 'should wrap cardinality with CartesianProduct.X' do
+    CartesianProduct.should respond_to(:X)
   end
 end

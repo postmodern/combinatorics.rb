@@ -1,9 +1,9 @@
 require 'spec_helper'
-require 'combinatorics/power_set/extensions/array'
-require 'power_set/mixin_examples'
+require 'combinatorics/choose/extensions/array'
+require 'choose/mixin_examples'
 
 describe Array do
   subject { Array }
 
-  it_should_behave_like 'Combinatorics::PowerSet::Mixin'
+  it_should_behave_like 'Choose::Mixin'
 end
