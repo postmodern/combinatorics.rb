@@ -178,7 +178,6 @@ Combinatorics::Permute::cardinality(128)
 
 ## Copyright
 
-  Copyright (c) 2010 Hal Brodigan
+Copyright (c) 2010 Hal Brodigan
 
-  See {file:LICENSE.txt} for license information.
-
+See {file:LICENSE.txt} for license information.
