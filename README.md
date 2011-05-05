@@ -21,10 +21,20 @@ exponential computational complexity.)
 
 ## Features
 
-* Mixes `powerset`, `cartprod`, `permute`, `choose`, and `derange` into
-  {Array} and {Set}.
-* Added {Range#&}, {Range#upto} and {Range#downto}.
 * Adds Haskell/Python style list comprehensions via {Array#comprehension}.
+* Provides reusable Combinatorics Mixins:
+  * {Combinatorics::CartesianProduct}
+  * {Combinatorics::Choose}
+  * {Combinatorics::Derange}
+  * {Combinatorics::Permute}
+  * {Combinatorics::PowerSet}
+* Adds Combinatorics conveniance methods to {Array} and {Set}:
+  * `cartprod`
+  * `choose`
+  * `derange`
+  * `permute`
+  * `powerset`
+* Adds {Range#&}, {Range#upto} and {Range#downto}.
 
 ## Examples
 
