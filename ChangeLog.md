@@ -1,3 +1,11 @@
+### 0.4.0 / 2011-05-06
+
+* Added {Combinatorics::CartesianProduct}.
+* Added {Combinatorics::Choose}.
+* Added {Combinatorics::Derange}.
+* Added {Combinatorics::Permute}.
+* Added {Combinatorics::PowerSet}.
+
 ### 0.3.1 / 2010-10-26
 
 * Do not call `enum_for` on `Enumerator` objects passed to
