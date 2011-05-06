@@ -1,3 +1,5 @@
+require 'combinatorics/generator'
+
 module Combinatorics
   module CartesianProduct
     #
@@ -43,14 +45,14 @@ module Combinatorics
         if aele2.is_a?(Enumerable)
           enum2.inject(enum1){|m, o| m.to_a.cartprod(o)}
         else
-          Enumerator.new do |e|
+          Combinatorics::Generator.new do |e|
             enum2.each do |x|
               enum1.each do |y|
                 z = [y, x]
 
                 z.flatten!
 
-                e << z
+                e.yield z
               end
             end
           end
