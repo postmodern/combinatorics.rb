@@ -1,7 +1,8 @@
 require 'spec_helper'
+
 require 'combinatorics/cartesian_product/mixin'
 
-shared_examples_for CartesianProduct::Mixin do
+shared_examples_for "CartesianProduct::Mixin" do
   it "the cartprod of any two Set's should return an Enumerator" do
     result = subject[[]].cartprod(subject[[]])
 

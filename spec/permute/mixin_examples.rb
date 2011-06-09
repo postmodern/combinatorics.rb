@@ -1,14 +1,15 @@
 require 'spec_helper'
+
 require 'combinatorics/permute'
 
-shared_examples_for Permute::Mixin do
+shared_examples_for "Permute::Mixin" do
   it 'should alias rearrange to permute' do
     aset = subject[1]
 
     aset.should respond_to(:rearrange)
   end
 
-  describe 'permute' do
+  describe "#permute" do
     it 'should return [[]] for [].permute(0).to_a' do
       aset = subject[[]]
 

@@ -1,7 +1,8 @@
 require 'spec_helper'
+
 require 'combinatorics/derange'
 
-shared_examples_for Derange::Mixin do
+shared_examples_for "Derange::Mixin" do
   it 'the derange of an empty Set should only contain an empty Array' do
     aset = subject[[]]
 

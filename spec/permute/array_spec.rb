@@ -1,9 +1,10 @@
 require 'spec_helper'
-require 'combinatorics/permute/array_extension'
 require 'permute/mixin_examples'
+
+require 'combinatorics/permute/array_extension'
 
 describe Array do
   subject { Array }
 
-  it_should_behave_like Permute::Mixin
+  it_should_behave_like "Permute::Mixin"
 end
