@@ -61,11 +61,12 @@ shared_examples_for "CartesianProduct::Mixin" do
   end
 
   it 'should take an optional block argument' do
-    aset = subject[[1]]
-    aproc = lambda { |x| x }
-    ares = aset.cartprod(aset, &aproc)
+    set = subject[[1]]
+    results = []
 
-    ares.to_a.should == [[1, 1]]
+    set.cartprod(set) { |result| results << result }
+
+    results.should == [[1, 1]]
   end
 
   it 'should alias cartprod to cartesian_product' do

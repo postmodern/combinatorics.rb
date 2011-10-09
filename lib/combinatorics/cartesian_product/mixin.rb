@@ -18,11 +18,11 @@ module Combinatorics
       # @yieldparam [Array] subset
       #   The sub-set from the Cartesian product.
       #
-      # @raise [ArgumentError]
-      #   `enum2` must be non-nil.
-      #
       # @return [Enumerator]
       #   Resulting Cartesian product set.
+      #
+      # @raise [TypeError]
+      #   `other` must be Enumerable.
       #
       # @example Cartesian product of an Array
       #   [1, 2].cartprod([3, 4])
@@ -36,25 +36,19 @@ module Combinatorics
       #   
       # @see http://en.wikipedia.org/wiki/Cartesian_product
       #
-      def cartprod(enum2)
-        raise(ArgumentError, 'enum2 must be non-nil') if enum2.nil?
+      def cartprod(other)
+        return enum_for(:cartprod,other) unless block_given?
 
-        enum1, aele2 = self, nil
-        aele2 = enum2.first if enum2.respond_to?(:first)
+        unless other.kind_of?(Enumerable)
+          raise(TypeError, 'cartprod requires another Enumerable object')
+        end
 
-        if aele2.is_a?(Enumerable)
-          enum2.inject(enum1){|m, o| m.to_a.cartprod(o)}
-        else
-          Combinatorics::Generator.new do |e|
-            enum2.each do |x|
-              enum1.each do |y|
-                z = [y, x]
+        other.each do |x|
+          self.each do |y|
+            z = [y, x]
+            z.flatten!
 
-                z.flatten!
-
-                e.yield z
-              end
-            end
+            yield z
           end
         end
       end
