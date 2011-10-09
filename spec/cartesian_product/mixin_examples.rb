@@ -75,12 +75,6 @@ shared_examples_for "CartesianProduct::Mixin" do
     aset.should respond_to(:cartesian_product)
   end
 
-  it 'should alias cartprod to cartesianproduct' do
-    aset = subject[1]
-
-    aset.should respond_to(:cartesianproduct)
-  end
-
   it 'should alias cartprod to cartesian' do
     aset = subject[1]
 

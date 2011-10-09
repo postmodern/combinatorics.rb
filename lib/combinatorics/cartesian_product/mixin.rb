@@ -36,7 +36,7 @@ module Combinatorics
       #   
       # @see http://en.wikipedia.org/wiki/Cartesian_product
       #
-      def cartprod(other)
+      def cartesian_product(other)
         return enum_for(:cartprod,other) unless block_given?
 
         unless other.kind_of?(Enumerable)
@@ -53,9 +53,8 @@ module Combinatorics
         end
       end
 
-      alias cartesian_product cartprod
-      alias cartesianproduct cartprod
-      alias cartesian cartprod
+      alias cartprod  cartesian_product
+      alias cartesian cartesian_product
     end
   end
 end
