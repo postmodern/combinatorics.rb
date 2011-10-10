@@ -184,10 +184,6 @@ module Math
   # Helper function for Math.subfactorial
   #
   def Math.get_fractions(n)
-    a = []
-
-    n.downto(1) { |x| a << partial_factorial(n, x) }
-
-    a
+    n.downto(1).map { |x| partial_factorial(n,x) }
   end
 end
