@@ -12,7 +12,7 @@ shared_examples_for "CartesianProduct::Mixin" do
 
   it "the cartprod of two empty Set's should return an empty Set" do
     set     = subject[[]]
-    results = set.cartprod([[]])
+    results = set.cartprod([[]]).to_a
     
     results.should be_empty
   end
