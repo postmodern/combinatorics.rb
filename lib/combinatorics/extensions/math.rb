@@ -111,15 +111,19 @@ module Math
   
 
   #
-  # Subfactorial function for calculation of derangement cardinalities
+  # Subfactorial function for calculation of derangement cardinalities.
   #
-  # @param [Fixnum] n length of sequence
+  # @param [Fixnum] n
+  #   The length of sequence.
   #
-  # @raise [RangeError] n must be non-negative
+  # @raise [RangeError]
+  #   `n` must be non-negative.
   #
-  # @return [Fixnum] cardinality of derangements set
+  # @return [Integer]
+  #   Cardinality of derangements set.
   #
-  # @example subfactorial([1, 2, 3].size)
+  # @example
+  #   subfactorial([1, 2, 3].size)
   #   # => 2
   #
   # @see http://mathworld.wolfram.com/Subfactorial.html
@@ -145,20 +149,24 @@ module Math
   end
 
   # 
-  # Apply the well-known factorial function to the given integer
+  # Apply the well-known factorial function to the given Integer.
   #
-  # @param [Fixnum] x positive integer to apply algebraic factorial function to
+  # @param [Fixnum] x
+  #   Positive integer to apply algebraic factorial function to.
   #
-  # @return [Fixnum] solution to factorial function as a whole number
+  # @return [Integer]
+  #   Solution to factorial function as a whole number.
   #
-  # @raise [RangeError] number must be non-negative
+  # @raise [RangeError]
+  #   The given number must be non-negative.
   #
-  # @example factorial(4)
+  # @example
+  #   factorial(4)
   #   # => 24
   #
   # @see http://en.wikipedia.org/wiki/Factorial
   #
-  # @note the factorial of zero equals one!
+  # @note The factorial of zero equals one!
   #
   def Math.factorial(x = 1)
     raise(RangeError, 'x must be non-negative') if x < 0
