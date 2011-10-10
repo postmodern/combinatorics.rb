@@ -1,8 +1,9 @@
+#
 # @author duper <super@manson.vistech.net>
-
+#
 module Math
   #
-  # Mathematical summation (invokes a block for k = 1 until ++k = n)
+  # Mathematical summation (invokes a block for k = 1 until ++k = n).
   #
   # @param [Range] r
   #   Range containing the number of times to yield.
@@ -10,6 +11,9 @@ module Math
   # @yield [i]
   #   The given block is expected to return an Integer, which is added to the
   #   total sum.
+  #
+  # @yieldparam [Integer] i
+  #   An element from `r`.
   #
   # @return [Integer]
   #   Total sum after yielding for each element in `r`.
@@ -23,7 +27,8 @@ module Math
   #
   # @see http://en.wikipedia.org/wiki/Summation
   #
-  # @note "chalkboard" notation for summation is the capital Greek letter Sigma
+  # @note
+  #   "chalkboard" notation for summation is the capital Greek letter Sigma.
   #
   # @todo
   #   should the second function argument be "k = 1" ?
@@ -55,22 +60,34 @@ module Math
   end
 
   #
-  # Pi notation for iterative product computations
+  # Pi notation for iterative product computations.
   #
-  # @param [Range] r inclusive range of integers
+  # @param [Range<Integer>] r
+  #   Inclusive range of Integers.
   #
-  # @yield [] code block to apply elements of r to and return a Fixnum
+  # @yield [i]
+  #   The given block will be passed elements of `r`. The return value from
+  #   the block will be combined with the product.
   #
-  # @return [Fixnum] total product after calling b for each element in r
+  # @yield [Integer] i
+  #   An element from `r`.
   #
-  # @raise [TypeError] r must be a Range
+  # @return [Integer]
+  #   The total product after iterating over each element in `r`.
   #
-  # @example pi(1 .. 4) { |i| i }
+  # @raise [TypeError]
+  #   `r` must be a Range.
+  #
+  # @example
+  #   Math.pi(1..4)
   #   # => 24
   #
   # @see http://en.wikipedia.org/wiki/Pi_notation#Capital_Pi_notation
+  #
   def Math.pi(r)
-    raise(TypeError, 'r must be a Range') if not r.is_a?(Range)
+    unless r.kind_of?(Range)
+      raise(TypeError, 'r must be a Range')
+    end
 
     k = 1
 
