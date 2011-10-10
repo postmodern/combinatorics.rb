@@ -4,26 +4,35 @@ module Math
   #
   # Mathematical summation (invokes a block for k = 1 until ++k = n)
   #
-  # @param [Range] r range containing the number of times to execute block
+  # @param [Range] r
+  #   Range containing the number of times to yield.
   #
-  # @yield [] block of code returning a Fixnum to iteratively total sum
+  # @yield [i]
+  #   The given block is expected to return an Integer, which is added to the
+  #   total sum.
   #
-  # @return [Fixnum] sum after calling block for each element in r
+  # @return [Integer]
+  #   Total sum after yielding for each element in `r`.
   #
-  # @raise [TypeError] r must be a Range
+  # @raise [TypeError]
+  #   `r` must be a {Range}.
   #
-  # @example sigma(1 .. 4) { |i| i }
+  # @example
+  #   sigma(1..4) { |i| i }
   #   # => 10
   #
   # @see http://en.wikipedia.org/wiki/Summation
   #
   # @note "chalkboard" notation for summation is the capital Greek letter Sigma
   #
-  # @todo should the second function argument be "k = 1" ?
-  #       if so, raise a RangeError if k is negative
+  # @todo
+  #   should the second function argument be "k = 1" ?
+  #   if so, raise a RangeError if k is negative.
   #
   def Math.sigma(r)
-    raise(TypeError, 'r must be a Range') if not r.is_a?(Range)
+    unless r.kind_of?(Range)
+      raise(TypeError,"r must be a Range")
+    end
 
     k = 0
 
