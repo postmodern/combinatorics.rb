@@ -163,7 +163,7 @@ module Math
   def Math.factorial(x = 1)
     raise(RangeError, 'x must be non-negative') if x < 0
 
-    x.zero? ? 1 : sigma(1 .. x)
+    x.zero? ? 1 : pi(1..x)
   end
 
   private
