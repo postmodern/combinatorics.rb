@@ -16,7 +16,7 @@ describe Math do
     end
 
     it "should return 60 for sigma(3..5)" do
-      subject.sigma(3..5).should == 60
+      subject.sigma(3..5).should == 12
     end
 
     it "should take an optional block argument" do
