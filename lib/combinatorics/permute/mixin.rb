@@ -34,9 +34,7 @@ module Combinatorics
       def permute(r,&block)
         return enum_for(:permute,r) unless block
 
-        if self.nil?
-          yield []
-        elsif !self.is_a?(Enumerable)
+        if !self.is_a?(Enumerable)
           raise(TypeError, 'self must be Enumerable')
         elsif self.empty?
           yield []
