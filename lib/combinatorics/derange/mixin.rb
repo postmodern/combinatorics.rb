@@ -39,17 +39,9 @@ module Combinatorics
         elements = self.to_a
 
         elements.permutation do |x|
-          b = true
-
-          for i in 0 .. x.size - 1
-            if x[i] == elements[i]
-              b = false
-
-              break
-            end
+          unless x.each_with_index.any? { |xi,i| xi == elements[i] }
+            yield x
           end
-
-          yield x if b  
         end
       end
     end
