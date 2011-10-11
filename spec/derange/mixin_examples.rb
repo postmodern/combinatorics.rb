@@ -4,7 +4,7 @@ require 'combinatorics/derange'
 
 shared_examples_for "Derange::Mixin" do
   it "the derange of an empty Set should only contain an empty Array" do
-    set     = subject[[]]
+    set     = subject[]
     results = set.derange.to_a
     
     results.should == [[]]

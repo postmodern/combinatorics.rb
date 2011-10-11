@@ -11,14 +11,14 @@ shared_examples_for "Permute::Mixin" do
 
   describe "#permute" do
     it "should return [[]] for [].permute(0).to_a" do
-      set     = subject[[]]
+      set     = subject[]
       results = set.permute(0).to_a
       
       results.should == [[]]
     end
 
     it "should return [[]] for [1].permute(0).to_a" do
-      set     = subject[[1]]
+      set     = subject[1]
       results = set.permute(0).to_a
       
       results.should == [[]]
