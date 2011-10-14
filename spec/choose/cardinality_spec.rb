@@ -107,16 +107,16 @@ describe Choose do
       subject.cardinality_all(2).should == [2, 1]
     end
 
-    it "should return [3, 6, 1] for subject.cardinality_all(3)" do
-      subject.cardinality_all(3).should == [3, 6, 1]
+    it "should return [3, 3, 1] for subject.cardinality_all(3)" do
+      subject.cardinality_all(3).should == [3, 3, 1]
     end
 
-    it "should return [4, 12, 24, 1] for subject.cardinality_all(4)" do
-      subject.cardinality_all(4).should == [4, 12, 24, 1]
+    it "should return [4, 6, 4, 1] for subject.cardinality_all(4)" do
+      subject.cardinality_all(4).should == [4, 6, 4, 1]
     end
 
     it "should raise RangeError for subject.cardinality_all(-1)" do
-      lambda {subject.cardinality_all(-1)}.should raise_error(RangeError)
+      lambda { subject.cardinality_all(-1) }.should raise_error(RangeError)
     end
 
     it "should wrap cardinality with Choose.C" do
