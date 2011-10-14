@@ -119,16 +119,8 @@ describe Choose do
       lambda {subject.cardinality_all(-1)}.should raise_error(RangeError)
     end
 
-    it "should alias cardinality to len" do
-      should respond_to(:len)
-    end
-
     it "should wrap cardinality with Choose.C" do
       should respond_to(:C)
-    end
-
-    it "should alias cardinality_all to len_all" do
-      should respond_to(:len_all)
     end
   end
 end
