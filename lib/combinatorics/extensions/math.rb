@@ -136,7 +136,7 @@ module Math
     raise(RangeError, 'n must be non-negative') if n < 0
 
     Math.factorial(n) * Math.sigma(0..n) do |k|
-      (-1 ** k) / Math.factorial(k)
+      ((-1) ** k) / Math.factorial(k)
     end
   end
 
