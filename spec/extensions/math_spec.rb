@@ -90,7 +90,7 @@ describe Math do
     end
 
     it "should return 44 for subfactorial(5)" do
-      subject.subfactorial(5).should == 4
+      subject.subfactorial(5).should == 44
     end
 
     it "should raise RangeError for subfactorial(-1)" do
