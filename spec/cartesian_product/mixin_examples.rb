@@ -42,14 +42,14 @@ shared_examples_for "CartesianProduct::Mixin" do
     set     = subject[1, 2]
     results = set.cartprod([3]).to_a
     
-    results.should == [[1, 3], [2, 3]]
+    results.should =~ [[1, 3], [2, 3]]
   end
 
   it "the cartprod of [1, 2] and [3, 4] should be [[1, 3], [1, 4], [2, 3], [2, 4]]" do
     set     = subject[1, 2]
     results = set.cartprod([3, 4]).to_a
     
-    results.should == [[1, 3], [1, 4], [2, 3], [2, 4]]
+    results.should =~ [[1, 3], [1, 4], [2, 3], [2, 4]]
   end
 
   it "the cartprod of [0, 1] and [[2, 3], [4, 5]] should be [[0, 2, 4], [1, 2, 4], [0, 3, 4], [1, 3, 4], [0, 2, 5], [1, 2, 5], [0, 3, 5], [1, 3, 5]]" do
@@ -58,7 +58,7 @@ shared_examples_for "CartesianProduct::Mixin" do
     set3    = subject[4, 5]
     results = set1.cartprod([set2, set3]).to_a
     
-    results.should == [
+    results.should =~ [
       [0, 2, 4],
       [1, 2, 4],
       [0, 3, 4],
@@ -72,7 +72,7 @@ shared_examples_for "CartesianProduct::Mixin" do
     set2    = subject[['b'], ['c'], ['d']]
     results = set1.cartprod(set2).to_a
     
-    results.should == [['a', 'b', 'c', 'd']]
+    results.should =~ [['a', 'b', 'c', 'd']]
   end
 
   it "should take an optional block argument" do
