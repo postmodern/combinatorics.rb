@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'combinatorics/cartesian_product'
 
 describe CartesianProduct do
-  subject  {  Object.new.extend(CartesianProduct)  } 
+  subject { CartesianProduct } 
 
   describe "cardinality" do
     it "should return 1 for cardinality(1, 1)" do 
@@ -58,11 +58,7 @@ describe CartesianProduct do
     end
   end
 
-  it "should alias cardinality to len" do
-    subject.should respond_to(:len)
-  end
-
   it "should wrap cardinality with CartesianProduct.X" do
-    CartesianProduct.should respond_to(:X)
+    should respond_to(:X)
   end
 end

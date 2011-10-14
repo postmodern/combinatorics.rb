@@ -6,7 +6,7 @@ module Combinatorics
   #
   module CartesianProduct
     #
-    # Compute the number of elements a Cartesian Product will contain.
+    # Wrapper for Cartesian product cardinality method defined above
     #
     # @param [Fixnum] a
     #   Cardinality of first set.
@@ -24,26 +24,22 @@ module Combinatorics
     #   cardinality(3, 4) 
     #   # => 12
     # 
-    def cardinality(a, b)
-      if a <= 0 or b <= 0
+    def self.cardinality(a,b)
+      if (a <= 0 || b <= 0)
         raise(RangeError, 'inputs must be greater than zero')
       end
 
       a * b
     end
 
-    alias len cardinality
-
-    #
-    # Wrapper for Cartesian product cardinality method defined above
     #
     # @note The letter `X' is scholastic notation for the Cartesian product
     #       set operation
     #
-    # @see CartesianProduct.cardinality
+    # @see cardinality
     #
-    def CartesianProduct.X
-      cardinality
+    def self.X(a,b)
+      cardinality(a,b)
     end
   end
 end
