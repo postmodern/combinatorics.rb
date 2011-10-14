@@ -105,8 +105,8 @@ module Math
   #
   # @see Math.pi
   #
-  def Math.Pi
-    Math.pi
+  def Math.Pi(r)
+    Math.pi(r)
   end
   
 
