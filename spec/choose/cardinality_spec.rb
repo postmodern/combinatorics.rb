@@ -2,8 +2,7 @@ require 'spec_helper'
 require 'combinatorics/choose'
 
 describe Choose do
-  before(:all) { @class = Class.new { include Choose } }
-  subject { @class.new }
+  subject { Choose }
 
   describe "cardinality" do
     it "should raise RangeError if n is negative" do
@@ -125,7 +124,7 @@ describe Choose do
     end
 
     it "should wrap cardinality with Choose.C" do
-      Choose.should respond_to(:C)
+      should respond_to(:C)
     end
 
     it "should alias cardinality_all to len_all" do

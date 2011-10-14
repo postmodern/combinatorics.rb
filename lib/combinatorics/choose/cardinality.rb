@@ -7,7 +7,6 @@ module Combinatorics
   # @since 0.4.0
   #
   module Choose
-
     #
     # Compute the number of elements in a subset of given size
     #
@@ -34,7 +33,7 @@ module Combinatorics
     #
     # @see http://en.wikipedia.org/wiki/Binomial_coefficient
     #
-    def cardinality(n, r = nil)
+    def self.cardinality(n,r=nil)
       raise(RangeError, 'n must be non-negative') if n < 0
 
       if r.nil?
@@ -47,9 +46,6 @@ module Combinatorics
       end
     end
 
-    # Alias for shortened method name
-    alias len cardinality
-
     # 
     # Wrapper for combination cardinality method defined above. The letter `C'
     # is "chalkboard" notation for subset cardinality.
@@ -61,7 +57,7 @@ module Combinatorics
     #
     # @see Choose.cardinality
     #
-    def Choose.C
+    def self.C
       cardinality
     end
 
@@ -86,7 +82,7 @@ module Combinatorics
     #
     # @see http://en.wikipedia.org/wiki/Combinations
     # 
-    def cardinality_all(c)
+    def self.cardinality_all(c)
       if c.zero?
         return []
       elsif c < 0
@@ -99,7 +95,5 @@ module Combinatorics
 
       ret
     end
-
-    alias len_all cardinality_all
   end
 end
