@@ -1,4 +1,4 @@
-require 'combinatorics/generator'
+require 'combinatorics/list_comprehension'
 
 module Combinatorics
   module CartesianProduct
@@ -36,21 +36,13 @@ module Combinatorics
       #   
       # @see http://en.wikipedia.org/wiki/Cartesian_product
       #
-      def cartesian_product(other)
-        return enum_for(:cartprod,other) unless block_given?
+      def cartesian_product(*others,&block)
+        return enum_for(:cartesian_product,*others) unless block
 
-        unless other.kind_of?(Enumerable)
-          raise(TypeError, 'cartprod requires another Enumerable object')
-        end
+        # a single empty Set will result in an empty Set
+        return nil if (empty? || others.any?(&:empty?))
 
-        other.each do |x|
-          self.each do |y|
-            z = [y, x]
-            z.flatten!
-
-            yield z
-          end
-        end
+        Array[self,*others].comprehension(&block)
       end
 
       alias cartprod  cartesian_product
