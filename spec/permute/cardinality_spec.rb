@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'combinatorics/permute'
 
 describe Permute do
-  subject { Object.new.extend(Permute) }
+  subject { Permute }
 
   describe "cardinality" do
     it "should raise RangeError if n is negative without passing r" do
@@ -119,36 +119,28 @@ describe Permute do
       lambda { subject.cardinality_all(-1) }.should raise_error(RangeError)
     end
 
-    it "should alias cardinality to len" do
-      subject.should respond_to(:len)
-    end
-
     it "should wrap cardinality with Permute.N" do
-      Permute.should respond_to(:N)
+      should respond_to(:N)
     end
 
     it "should wrap cardinalith with Permute.R" do
-      Permute.should respond_to(:R)
+      should respond_to(:R)
     end
 
     it "should wrap cardinality with Permute.NR" do
-      Permute.should respond_to(:NR)
-    end
-
-    it "should alias cardinality_all to len_all" do
-      subject.should respond_to(:len_all)
+      should respond_to(:NR)
     end
 
     it "should alias cardinality_all to N_all" do
-      subject.should respond_to(:N_all)
+      should respond_to(:N_all)
     end
 
     it "should alias cardinality_all to NR_all" do
-      subject.should respond_to(:NR_all)
+      should respond_to(:NR_all)
     end
 
     it "should alias cardinality_all to R_all" do
-      subject.should respond_to(:R_all)
+      should respond_to(:R_all)
     end
   end
 end

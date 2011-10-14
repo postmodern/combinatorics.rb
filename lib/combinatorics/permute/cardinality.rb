@@ -40,7 +40,7 @@ module Combinatorics
     #   discrete mathematics and set theory. It is represented in "chalkboard"
     #   notation by the letter "P."
     #
-    def cardinality(n, r = nil) 
+    def self.cardinality(n,r=nil) 
       raise(RangeError, 'n must be non-negative') if n < 0
 
       if r.nil?
@@ -57,26 +57,15 @@ module Combinatorics
       end
     end
 
-    # Alias for shortened permutation cardinality method name
-    alias len cardinality
-
     #
-    # Wrappers for permutation cardinality method defined above
+    # @see cardinality
     #
     # @note In the study of set theory, permutations are often referenced by
     #       the name of an associated algorithm called "n-choose-r."
     #
-    def Permute.N
-      cardinality
-    end
-
-    def Permute.NR
-      cardinality 
-    end
-
-    def Permute.R
-      cardinality
-    end
+    def self.N(n,r=nil);  cardinality(n,r); end
+    def self.NR(n,r=nil); cardinality(n,r); end
+    def self.R(n,r=nil);  cardinality(n,r); end
 
     #
     # Compute cardinality of all r-permutations for a set with cardinality c
@@ -97,7 +86,7 @@ module Combinatorics
     #
     # @see http://en.wikipedia.org/wiki/Permutations
     #
-    def cardinality_all(c)
+    def self.cardinality_all(c)
       if c.zero?
         return []
       elsif c < 0
@@ -111,32 +100,8 @@ module Combinatorics
       ret
     end
 
-    #
-    # Aliases defining shortened method names for cardinalities of all 
-    # permutations resulting from a given set.
-    #
-    # @see Permute.cardinality_all
-    #
-    # @note The letters `N' and `R' correspond to a discrete math algorithm
-    #       called "n-choose-r" which calculates the number of ways to choose
-    #       `r' objects from a set of cardinality `n'. More specifically, the 
-    #       algorithm/notation called "n-choose-r" is better known as binomial
-    #       coefficient and is the basis for Pascal's Triangle. 
-    #
-    # @note For those involved in the study of set theory: be careful not to 
-    #       confuse these characters as references to the common sets for 
-    #       natural number and real number domains as Pascal's binomial theorem 
-    #       is technically a recurrence relation. It's simply difficult to 
-    #       present the info accurately without MathML/LaTeX/etc. since Ruby
-    #       gems usually consist of mostly ASCII-encoded documents.
-    #
-    # @todo Write mathematician-friendly documentation as an HTML5 web page.
-    #       
-    # @see http://en.wikipedia.org/wiki/Pascal's_Triangle
-    #
-    alias len_all cardinality_all
-    alias N_all len_all
-    alias NR_all len_all
-    alias R_all len_all
+    def self.N_all(c);  cardinality_all(c); end
+    def self.NR_all(c); cardinality_all(c); end
+    def self.R_all(c);  cardinality_all(c); end
   end
 end
