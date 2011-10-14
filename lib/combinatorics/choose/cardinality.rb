@@ -36,13 +36,13 @@ module Combinatorics
     def self.cardinality(n,r=nil)
       raise(RangeError, 'n must be non-negative') if n < 0
 
-      if r.nil?
+      case r
+      when 0
+        0
+      when nil
         Math.factorial(n)
       else
-        raise(RangeError, 'r must be non-negative') if r < 0
-        raise(RangeError, 'r must be less than or equal to n') if r > n
-
-        n.zero? or n == r ? 1 : (n ** r) / Math.factorial(r)
+        Math.factorial(n) / (Math.factorial(r) * Math.factorial(n - r))
       end
     end
 

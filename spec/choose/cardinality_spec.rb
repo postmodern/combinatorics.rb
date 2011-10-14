@@ -85,8 +85,8 @@ describe Choose do
       subject.cardinality(4, 4).should == 1
     end
 
-    it "should return 360 for subject.cardinality(6, 4)" do
-      subject.cardinality(6, 4).should == 360
+    it "should return 15 for subject.cardinality(6, 4)" do
+      subject.cardinality(6, 4).should == 15
     end
 
     it "should return 3628800 for subject.cardinality(10)" do
