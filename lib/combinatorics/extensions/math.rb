@@ -135,17 +135,9 @@ module Math
   def Math.subfactorial(n)
     raise(RangeError, 'n must be non-negative') if n < 0
 
-    add, sum = false, 0
-
-    fractions(n) do |f|
-      if (add = !add)
-        sum += f
-      else
-        sum -= f
-      end
+    Math.factorial(n) * Math.sigma(0..n) do |k|
+      (-1 ** k) / Math.factorial(k)
     end
-
-    (1 - sum).abs.to_i
   end
 
   # 
