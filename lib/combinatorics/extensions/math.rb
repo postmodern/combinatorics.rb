@@ -137,7 +137,7 @@ module Math
 
     add, sum = false, 0
 
-    get_fractions(n).each do |f|
+    fractions(n) do |f|
       if (add = !add)
         sum += f
       else
@@ -179,19 +179,14 @@ module Math
   # 
   # Helper function for Math.get_fractions
   #
-  def Math.partial_factorial(j, k)
-    r = j
-    j -= 1
-  
-    j.downto(k) { |n| r *= n }
-  
-    r
+  def Math.partial_factorial(j,k)
+    Math.pi(k..j)
   end
 
   #
   # Helper function for Math.subfactorial
   #
-  def Math.get_fractions(n)
-    n.downto(1).map { |x| partial_factorial(n,x) }
+  def Math.fractions(n)
+    n.downto(1) { |x| yield partial_factorial(n,x) }
   end
 end
