@@ -57,8 +57,8 @@ module Combinatorics
     #
     # @see Choose.cardinality
     #
-    def self.C
-      cardinality
+    def self.C(n,r=nil)
+      cardinality(n,r)
     end
 
     #
