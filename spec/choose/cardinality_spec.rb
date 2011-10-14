@@ -23,97 +23,97 @@ describe Choose do
     end
 
     it "should return 1 for subject.cardinality(0)" do
-      subject.cardinality(0) == 1
+      subject.cardinality(0).should == 1
     end
 
     it "should return 1 for subject.cardinality(1)" do
-      subject.cardinality(1) == 1
+      subject.cardinality(1).should == 1
     end
 
     it "should return 2 for subject.cardinality(2)" do
-      subject.cardinality(2) == 2
+      subject.cardinality(2).should == 2
     end
 
     it "should return 6 for subject.cardinality(3)" do
-      subject.cardinality(3) == 6
+      subject.cardinality(3).should == 6
     end
 
     it "should return 24 for subject.cardinality(4)" do
-      subject.cardinality(4) == 24
+      subject.cardinality(4).should == 24
     end
 
     it "should return 0 for subject.cardinality(1, 0)" do
-      subject.cardinality(1, 0).zero?
+      subject.cardinality(1, 0).should be_zero
     end
 
     it "should return 1 for subject.cardinality(1, 1)" do
-      subject.cardinality(1, 1) == 1
+      subject.cardinality(1, 1).should == 1
     end
 
     it "should return 2 for subject.cardinality(2, 1)" do
-      subject.cardinality(2, 1) == 2
+      subject.cardinality(2, 1).should == 2
     end
 
     it "should return 1 for subject.cardinality(2, 2)" do
-      subject.cardinality(2, 2) == 1
+      subject.cardinality(2, 2).should == 1
     end
 
     it "should return 3 for subject.cardinality(3, 1)" do
-      subject.cardinality(3, 1) == 3
+      subject.cardinality(3, 1).should == 3
     end
 
     it "should return 3 for subject.cardinality(3, 2)" do
-      subject.cardinality(3, 2) == 3
+      subject.cardinality(3, 2).should == 3
     end
 
     it "should return 1 for subject.cardinality(3, 3)" do
-      subject.cardinality(3, 3) == 1
+      subject.cardinality(3, 3).should == 1
     end
 
     it "should return 4 for subject.cardinality(4, 1)" do
-      subject.cardinality(4, 1) == 4
+      subject.cardinality(4, 1).should == 4
     end
 
     it "should return 6 for subject.cardinality(4, 2)" do
-      subject.cardinality(4, 2) == 6
+      subject.cardinality(4, 2).should == 6
     end
 
     it "should return 4 for subject.cardinality(4, 3)" do
-      subject.cardinality(4, 3) == 4
+      subject.cardinality(4, 3).should == 4
     end
 
     it "should return 1 for subject.cardinality(4, 4)" do
-      subject.cardinality(4, 4) == 1
+      subject.cardinality(4, 4).should == 1
     end
 
     it "should return 360 for subject.cardinality(6, 4)" do
-      subject.cardinality(6, 4) == 360
+      subject.cardinality(6, 4).should == 360
     end
 
     it "should return 3628800 for subject.cardinality(10)" do
-      subject.cardinality(10) == 3628800
+      subject.cardinality(10).should == 3628800
     end
   end
 
   describe "cardinality_all" do
     it "should return [] for subject.cardinality_all(0)" do
-      subject.cardinality_all(0).empty?
+      subject.cardinality_all(0).should be_empty
     end
 
     it "should return [1] for subject.cardinality_all(1)" do
-      subject.cardinality_all(1) == [1]
+      subject.cardinality_all(1).should == [1]
     end
 
     it "should return [2, 1] for subject.cardinality_all(2)" do
-      subject.cardinality_all(2) == [2, 1]
+      subject.cardinality_all(2).should == [2, 1]
     end
 
     it "should return [3, 6, 1] for subject.cardinality_all(3)" do
-      subject.cardinality_all(3) == [3, 6, 1]
+      subject.cardinality_all(3).should == [3, 6, 1]
     end
 
     it "should return [4, 12, 24, 1] for subject.cardinality_all(4)" do
-      subject.cardinality_all(4) == [4, 12, 24, 1]
+      subject.cardinality_all(4).should == [4, 12, 24, 1]
     end
 
     it "should raise RangeError for subject.cardinality_all(-1)" do
