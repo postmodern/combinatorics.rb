@@ -28,8 +28,9 @@ module Combinatorics
     # @return [Fixnum]
     #   The binomial coefficient for "n-choose-r"
     #
-    # @example cardinality(6, 4)
-    #   # => 117
+    # @example
+    #   cardinality(6, 4)
+    #   # => 15
     #
     # @see http://en.wikipedia.org/wiki/Binomial_coefficient
     #
