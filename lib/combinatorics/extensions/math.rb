@@ -55,8 +55,8 @@ module Math
   #
   # @see Math.sigma
   #
-  def Math.Sigma
-    Math.sigma
+  def Math.Sigma(r)
+    Math.sigma(r)
   end
 
   #
@@ -162,10 +162,14 @@ module Math
   #
   # @note The factorial of zero equals one!
   #
-  def Math.factorial(x = 1)
-    raise(RangeError, 'x must be non-negative') if x < 0
-
-    x.zero? ? 1 : pi(1..x)
+  def Math.factorial(x=1)
+    if x >= 1
+      pi(1..x)
+    elsif x.zero?
+      1
+    else
+      raise(RangeError, 'x must be non-negative')
+    end
   end
 
   private
