@@ -133,10 +133,12 @@ module Math
   # @note The notation used in academia for subfactorial notation is "!n"
   #
   def Math.subfactorial(n)
-    raise(RangeError, 'n must be non-negative') if n < 0
-
-    Math.factorial(n) * Math.sigma(0..n) do |k|
-      ((-1) ** k) / Math.factorial(k)
+    if n >= 1
+      ((Math.factorial(n) + 1) / Math::E).floor
+    elsif n == 0
+      1
+    else
+      raise(RangeError, 'n must be non-negative')
     end
   end
 
