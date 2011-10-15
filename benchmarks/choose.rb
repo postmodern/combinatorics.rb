@@ -8,11 +8,12 @@ require 'benchmark'
 require 'combinatorics/choose'
 
 Benchmark.bm do |b|
-  array = (1..25).to_a
+  n     = 20
+  array = (1..n).to_a
 
-  (1..25).each do |n|
-    b.report("k=#{n}") do
-      array.choose(n) { |s| }
+  (1..n).each do |i|
+    b.report("n=#{n} k=#{i}") do
+      array.choose(i) { |s| }
     end
   end
 end
