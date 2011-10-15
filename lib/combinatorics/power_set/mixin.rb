@@ -20,9 +20,13 @@ module Combinatorics
       #
       # @example Power-set on a Set of strings.
       #   Set['abc', 'xyz', '123'].powerset.to_a
-      #   # => [#<Set: {}>, #<Set: {"123"}>, #<Set: {"xyz"}>,
-      #         #<Set: {"abc"}>, #<Set: {"xyz", "123"}>,
-      #         #<Set: {"abc", "123"}>, #<Set: {"abc", "xyz"}>,
+      #   # => [#<Set: {}>,
+      #         #<Set: {"123"}>,
+      #         #<Set: {"xyz"}>,
+      #         #<Set: {"abc"}>,
+      #         #<Set: {"xyz", "123"}>,
+      #         #<Set: {"abc", "123"}>,
+      #         #<Set: {"abc", "xyz"}>,
       #         #<Set: {"abc", "xyz", "123"}>]
       #
       def powerset(&block)
