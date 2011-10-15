@@ -97,7 +97,7 @@ Cartesian products:
 
     require 'combinatorics/cartesian_product'
     
-    ['a', 'b', 'c'].cartprod([0, 1, 2]).to_a
+    ['a', 'b', 'c'].cartesian_product([0, 1, 2]).to_a
     # => [["a", 0], 
           ["b", 0], 
           ["c", 0], 
