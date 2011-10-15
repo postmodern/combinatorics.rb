@@ -7,8 +7,8 @@ require 'combinatorics/list_comprehension'
 
 Benchmark.bm(12) do |b|
   singleton_list = ([1] * 500)
-  single_enum_list = [1..200, 1]
-  depth_list = [1..200]
+  single_enum_list = [1..100, 1]
+  depth_list = [1..100]
 
   b.report('singleton:') do
     singleton_list.comprehension.each { |list| list.last }
