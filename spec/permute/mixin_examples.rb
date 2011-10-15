@@ -29,14 +29,14 @@ shared_examples_for "Permute::Mixin" do
       set     = subject[1, 2]
       results = set.permute(1).to_a
       
-      results.should == [[1], [2]]
+      results.should =~ [[1], [2]]
     end
 
     it "should return [[1, 2]] for [1, 2].permute(2).to_a" do
       set     = subject[1, 2]
       results = set.permute(2).to_a
       
-      results.should == [[1, 2], [2, 1]]
+      results.should =~ [[1, 2], [2, 1]]
     end
   end
 end

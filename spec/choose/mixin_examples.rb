@@ -29,7 +29,7 @@ shared_examples_for "Choose::Mixin" do
     set     = subject[1, 2]
     results = set.choose(1).to_a
     
-    results.should == [Set[1], Set[2]]
+    results.should =~ [Set[1], Set[2]]
   end
 
   it "should return [[1, 2]] for [1, 2].choose(2).to_a" do
