@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'permute/mixin_examples'
 
-require 'combinatorics/permute/array_extension'
+require 'combinatorics/permute/extensions/array'
 
 describe Array do
   subject { Array }
