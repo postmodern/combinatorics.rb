@@ -10,14 +10,15 @@
 A collection of modules and methods for performing
 [Combinatoric](http://en.wikipedia.org/wiki/Combinatoric) calculations.
 Methods are defined to compute power sets, cartesian products, permutations, 
-combinations, and derangements. Note: this includes k-combinations and 
-k-permutations, i.e. only generating resultant sets of a given size. Each
-set theory operation method supports block arguments to allow continuous code
-execution during the combinatoric set generation process. Each combinatoric 
-operation implementation also supports a `cardinality` or `len` method which 
-determines the total number of subsets that will be created beforehand (to aid
-in the avoidance of starting an operation which will never complete due to 
-exponential computational complexity.)
+combinations, and derangements.
+
+Note: this includes k-combinations and k-permutations, i.e. only generating
+resultant sets of a given size. Each set theory operation method supports block 
+arguments to allow continuous code execution during the combinatoric set
+generation process. Each combinatoric operation implementation also supports a
+`cardinality` method which determines the total number of subsets that will be
+created beforehand (to aid in the avoidance of starting an operation which will 
+never complete due to exponential computational complexity.)
 
 ## Features
 
