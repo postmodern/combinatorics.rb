@@ -34,8 +34,8 @@ module Combinatorics
         elements = self.to_a
         elements.uniq!
 
-        0.upto(elements.length) do |n|
-          elements.combination(n) do |subset|
+        0.upto(elements.length) do |k|
+          elements.combination(k) do |subset|
             yield Set.new(subset)
           end
         end
