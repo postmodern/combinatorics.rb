@@ -9,7 +9,7 @@ require 'combinatorics/power_set'
 
 Benchmark.bm do |b|
 
-  (0..20).each do |n|
+  (10..20).each do |n|
     array = (1..n).to_a
 
     b.report("n=#{n}") do
