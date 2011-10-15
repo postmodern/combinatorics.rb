@@ -87,7 +87,7 @@ module Combinatorics
     #
     def self.cardinality_all(n,c=(1..n))
       if n < 0
-        raise(RangeError, 'c must be non-negative')
+        raise(RangeError, 'n must be non-negative')
       end
 
       c.map { |r| cardinality(n,r) }
