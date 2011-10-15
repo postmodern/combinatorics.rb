@@ -48,8 +48,6 @@ module Combinatorics
           yield Set.new(subset)
         end
       end
-
-      alias combinations choose
     end
   end
 end

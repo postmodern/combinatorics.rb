@@ -43,8 +43,6 @@ module Combinatorics
 
         self.to_a.permutation(r,&block)
       end
-
-      alias rearrange permute
     end
   end
 end

@@ -45,10 +45,4 @@ shared_examples_for "Choose::Mixin" do
 
     set1.choose(2).to_a.should == set2.choose(2).to_a
   end
-
-  it "should alias choose to combos" do
-    set = subject[1]
-
-    set.should respond_to(:combinations) 
-  end
 end

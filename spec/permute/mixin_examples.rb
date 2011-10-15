@@ -3,12 +3,6 @@ require 'spec_helper'
 require 'combinatorics/permute'
 
 shared_examples_for "Permute::Mixin" do
-  it "should alias rearrange to permute" do
-    set = subject[1]
-
-    set.should respond_to(:rearrange)
-  end
-
   describe "#permute" do
     it "should return [[]] for [].permute(0).to_a" do
       set     = subject[]
