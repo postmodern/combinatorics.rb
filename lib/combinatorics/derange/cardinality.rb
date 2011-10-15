@@ -7,22 +7,17 @@ module Combinatorics
     #
     # @see Math.subfactorial
     #
-    # @note The letter "D" denotes derangement cardinality in discrete math
-    # 
-    def cardinality
-      Math.subfactorial
+    def self.cardinality(n)
+      Math.subfactorial(n)
     end
-
-    # Alias for shortened derangement cardinality method name
-    alias len cardinality
 
     #
     # Wrapper for derangement cardinality method defined above
     #
     # @note The letter `D' is academic representation for derangements
     #
-    def Derange.D
-      cardinality
+    def self.D(n)
+      cardinality(n)
     end
   end
 end
