@@ -54,7 +54,7 @@ describe Permute do
     end
 
     it "should return 1 for subject.cardinality(2, 2)" do
-      subject.cardinality(2, 2).should == 1
+      subject.cardinality(2, 2).should == 2
     end
 
     it "should return 3 for subject.cardinality(3, 1)" do
@@ -62,27 +62,27 @@ describe Permute do
     end
 
     it "should return 3 for subject.cardinality(3, 2)" do
-      subject.cardinality(3, 2).should == 3
+      subject.cardinality(3, 2).should == 6
     end
 
     it "should return 1 for subject.cardinality(3, 3)" do
-      subject.cardinality(3, 3).should == 1
+      subject.cardinality(3, 3).should == 6
     end
 
     it "should return 4 for subject.cardinality(4, 1)" do
       subject.cardinality(4, 1).should == 4
     end
 
-    it "should return 6 for subject.cardinality(4, 2)" do
-      subject.cardinality(4, 2).should == 6
+    it "should return 12 for subject.cardinality(4, 2)" do
+      subject.cardinality(4, 2).should == 12
     end
 
-    it "should return 4 for subject.cardinality(4, 3)" do
-      subject.cardinality(4, 3).should == 4
+    it "should return 24 for subject.cardinality(4, 3)" do
+      subject.cardinality(4, 3).should == 24
     end
 
     it "should return 1 for subject.cardinality(4, 4)" do
-      subject.cardinality(4, 4).should == 1
+      subject.cardinality(4, 4).should == 24
     end
 
     it "should return 360 for subject.cardinality(6, 4)" do
