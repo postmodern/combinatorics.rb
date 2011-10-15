@@ -1,5 +1,8 @@
 module Combinatorics
   module PowerSet
+    #
+    # @author postmodern <postmodern.mod3@gmail.com>
+    #
     module Mixin
       #
       # Calculates the power-set of an Enumerable object.
