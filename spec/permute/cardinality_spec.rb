@@ -104,15 +104,15 @@ describe Permute do
     end
 
     it "should return [2, 1] for cardinality_all(2)" do
-      subject.cardinality_all(2).should == [2, 1]
+      subject.cardinality_all(2).should == [2, 2]
     end
 
     it "should return [3, 6, 1] for cardinality_all(3)" do
-      subject.cardinality_all(3).should == [3, 6, 1]
+      subject.cardinality_all(3).should == [3, 6, 6]
     end
 
     it "should return [4, 12, 24, 1] for cardinality_all(4)" do
-      subject.cardinality_all(4).should == [4, 12, 24, 1]
+      subject.cardinality_all(4).should == [4, 12, 24, 24]
     end
 
     it "should raise RangeError for cardinality_all(-1)" do
