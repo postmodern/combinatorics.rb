@@ -27,8 +27,10 @@ module Combinatorics
       #   `self` must be Enumerable.
       #
       # @example
-      #   permute([1, 2], 1).to_a
-      #   # => [[1], [2]]
+      #   [1, 2, 3].permute(2).to_a
+      #   # => [[1, 2], [1, 3],
+      #   #     [2, 1], [2, 3],
+      #   #     [3, 1], [3, 2]]
       #
       # @see Array#permutation
       #
