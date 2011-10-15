@@ -167,20 +167,4 @@ module Math
       raise(RangeError, 'x must be non-negative')
     end
   end
-
-  private
-
-  # 
-  # Helper function for Math.get_fractions
-  #
-  def Math.partial_factorial(j,k)
-    Math.pi(k..j)
-  end
-
-  #
-  # Helper function for Math.subfactorial
-  #
-  def Math.fractions(n)
-    n.downto(1) { |x| yield partial_factorial(n,x) }
-  end
 end
