@@ -39,11 +39,7 @@ module Combinatorics
           raise(TypeError,"#{inspect} must be Enumerable")
         end
 
-        if empty?
-          yield []
-        else
-          self.to_a.permutation(r,&block)
-        end
+        self.to_a.permutation(r,&block)
       end
 
       alias rearrange permute

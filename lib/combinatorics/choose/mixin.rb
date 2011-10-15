@@ -39,12 +39,8 @@ module Combinatorics
           raise(TypeError,"#{inspect} must be Enumerable")
         end
 
-        if empty?
-          yield Set[]
-        else
-          self.to_a.combination(k) do |subset|
-            yield subset.to_set
-          end
+        self.to_a.combination(k) do |subset|
+          yield subset.to_set
         end
       end
 
