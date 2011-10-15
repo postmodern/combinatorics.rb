@@ -2,6 +2,7 @@ require 'combinatorics/extensions/math'
 
 module Combinatorics
   module PowerSet
+    #
     # Get number of elements in power set from number of elements in input
     # set.
     #
