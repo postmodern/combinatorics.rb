@@ -28,7 +28,7 @@ module Combinatorics
       #
       # @example
       #   [1, 2].choose(1).to_a 
-      #   # => [[1], [2]]
+      #   # => [#<Set: {1}>, #<Set: {2}>]
       #
       # @see Array#combination
       #
@@ -40,9 +40,11 @@ module Combinatorics
         end
 
         if empty?
-          yield []
+          yield Set[]
         else
-          self.to_a.combination(k,&block)
+          self.to_a.combination(k) do |subset|
+            yield subset.to_set
+          end
         end
       end
 
