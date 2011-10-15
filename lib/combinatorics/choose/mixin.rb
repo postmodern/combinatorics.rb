@@ -29,8 +29,8 @@ module Combinatorics
       #   within the set will be returned.
       #
       # @example
-      #   [1, 2].choose(1).to_a 
-      #   # => [#<Set: {1}>, #<Set: {2}>]
+      #   [1, 2, 3].choose(2).to_a 
+      #   # => [#<Set: {1, 2}>, #<Set: {1, 3}>, #<Set: {2, 3}>]
       #
       # @see Array#combination
       #
