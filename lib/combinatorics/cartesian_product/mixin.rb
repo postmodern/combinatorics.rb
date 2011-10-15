@@ -28,9 +28,9 @@ module Combinatorics
       #   [1, 2].cartprod([3, 4])
       #   # => [[1, 3], [2, 3], [1, 4], [2, 4]]
       #
-      # @example Cartesian product over an Array of string Array's
-      #   ['a'].cartprod([['b'], ['c'], ['d']]).to_a
-      #   # => [["a", "b", "c", "d"]]
+      # @example Cartesian product over an Array of Strings
+      #   ['a'].cartprod(['b', 'c', 'd']).to_a
+      #   # => [["a", "b"], ["a", "c"], ["a", "d"]]
       #
       # @example Three-way Cartesian product operation
       #   

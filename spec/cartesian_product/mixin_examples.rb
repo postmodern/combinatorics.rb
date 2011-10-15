@@ -55,7 +55,7 @@ shared_examples_for "CartesianProduct::Mixin" do
     ]
   end
 
-  it "the cartprod of ['a'].cartprod([['b'], ['c'], ['d']]) should be [['a', 'b', 'c', 'd']]" do
+  it "the cartprod of ['a'].cartprod(['b', 'c', 'd']) should be [['a', 'b'], ['a', 'c'], ['a', 'd']]" do
     set1    = subject['a']
     set2    = subject['b', 'c', 'd']
     results = set1.cartprod(set2).to_a
