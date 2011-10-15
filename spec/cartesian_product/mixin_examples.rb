@@ -55,6 +55,14 @@ shared_examples_for "CartesianProduct::Mixin" do
     ]
   end
 
+  it "the cartprod of ['a'].cartprod([['b'], ['c'], ['d']]) should be [['a', 'b', 'c', 'd']]" do
+    set1    = subject['a']
+    set2    = subject['b', 'c', 'd']
+    results = set1.cartprod(set2).to_a
+    
+    results.should =~ [['a', 'b'], ['a', 'c'], ['a', 'd']]
+  end
+
   it "the cartprod of [0, 1] and [[2, 3], [4, 5]] should be [[0, 2, 4], [1, 2, 4], [0, 3, 4], [1, 3, 4], [0, 2, 5], [1, 2, 5], [0, 3, 5], [1, 3, 5]]" do
     set1    = subject[0, 1]
     set2    = subject[2, 3]
@@ -65,14 +73,6 @@ shared_examples_for "CartesianProduct::Mixin" do
       [0, 2, 4], [0, 2, 5], [0, 3, 4], [0, 3, 5],
       [1, 2, 4], [1, 2, 5], [1, 3, 4], [1, 3, 5],
     ]
-  end
-
-  it "the cartprod of ['a'].cartprod([['b'], ['c'], ['d']]) should be [['a', 'b', 'c', 'd']]" do
-    set1    = subject['a']
-    set2    = subject[['b'], ['c'], ['d']]
-    results = set1.cartprod(set2).to_a
-    
-    results.should =~ [['a', 'b', 'c', 'd']]
   end
 
   it "should take an optional block argument" do
