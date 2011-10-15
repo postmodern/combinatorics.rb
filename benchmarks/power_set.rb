@@ -8,7 +8,6 @@ require 'benchmark'
 require 'combinatorics/power_set'
 
 Benchmark.bm do |b|
-
   (10..20).each do |n|
     array = (1..n).to_a
 
