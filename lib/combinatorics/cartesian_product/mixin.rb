@@ -33,7 +33,7 @@ module Combinatorics
       #   # => [["a", "b"], ["a", "c"], ["a", "d"]]
       #
       # @example Three-way Cartesian product operation
-      #   [0, 1].cartesian_product([2, 3], [4, 5])
+      #   [0, 1].cartesian_product([2, 3], [4, 5]).to_a
       #   # => [
       #   #      [0, 2, 4], [0, 2, 5], [0, 3, 4], [0, 3, 5],
       #   #      [1, 2, 4], [1, 2, 5], [1, 3, 4], [1, 3, 5],

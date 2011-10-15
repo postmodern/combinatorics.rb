@@ -25,7 +25,6 @@ module Combinatorics
       #   # => [[2, 3, 1], [3, 1, 2]]
       #
       # @see http://en.wikipedia.org/wiki/Derangements
-      #
       # @see http://mathworld.wolfram.com/Derangement.html
       #
       def derange

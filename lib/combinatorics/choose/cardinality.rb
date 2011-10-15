@@ -49,10 +49,11 @@ module Combinatorics
     # Wrapper for combination cardinality method defined above. The letter `C'
     # is "chalkboard" notation for subset cardinality.
     #
-    # @note This method's naming convention reflects well-known notation used
-    #       within fields of academic inquiry such as discrete mathematics and
-    #       set theory. It represents a function returning an integer value
-    #       for the cardinality of a k-combination (i.e. binomial coefficient.)
+    # @note
+    #   This method's naming convention reflects well-known notation used
+    #   within fields of academic inquiry such as discrete mathematics and
+    #   set theory. It represents a function returning an integer value
+    #   for the cardinality of a k-combination (i.e. binomial coefficient.)
     #
     # @see Choose.cardinality
     #
@@ -81,7 +82,8 @@ module Combinatorics
     #   cardinality_all(10, 5..10)
     #   # => [252, 210, 120, 45, 10, 1]
     #
-    # @note Sum of elements will equal Math.factorial(c)
+    # @note
+    #   Sum of elements will equal Math.factorial(c)
     #
     # @see cardinality
     # @see http://en.wikipedia.org/wiki/Combinations
