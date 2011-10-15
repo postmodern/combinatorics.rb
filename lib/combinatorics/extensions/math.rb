@@ -88,7 +88,7 @@ module Math
   #
   def Math.pi(r)
     unless r.kind_of?(Range)
-      raise(TypeError, 'r must be a Range')
+      raise(TypeError,"r must be a Range")
     end
 
     k = 1
@@ -141,7 +141,7 @@ module Math
     if    n >= 1 then ((Math.factorial(n) + 1) / Math::E).floor
     elsif n == 0 then 1
     else
-      raise(RangeError, 'n must be non-negative')
+      raise(RangeError,"n must be non-negative")
     end
   end
 
@@ -171,7 +171,7 @@ module Math
     if    x >= 1  then pi(1..x)
     elsif x.zero? then 1
     else
-      raise(RangeError, 'x must be non-negative')
+      raise(RangeError,"x must be non-negative")
     end
   end
 end

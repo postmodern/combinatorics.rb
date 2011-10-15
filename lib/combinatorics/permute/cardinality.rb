@@ -41,14 +41,14 @@ module Combinatorics
     #   notation by the letter "P."
     #
     def self.cardinality(n,r=nil) 
-      raise(RangeError, 'n must be non-negative') if n < 0
+      raise(RangeError,"n must be non-negative") if n < 0
 
       case r
       when 0   then 0
       when nil then Math.factorial(n)
       else
-        raise(RangeError, 'r must be non-negative') if r < 0
-        raise(RangeError, 'r must be less than or equal to n') if r > n
+        raise(RangeError,"r must be non-negative") if r < 0
+        raise(RangeError,"r must be less than or equal to n") if r > n
 
         Math.factorial(n) / Math.factorial(n - r)
       end
@@ -85,7 +85,7 @@ module Combinatorics
     #
     def self.cardinality_all(n,c=(1..n))
       if n < 0
-        raise(RangeError, 'n must be non-negative')
+        raise(RangeError,"n must be non-negative")
       end
 
       c.map { |r| cardinality(n,r) }

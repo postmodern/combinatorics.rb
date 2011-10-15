@@ -36,7 +36,7 @@ module Combinatorics
         return enum_for(:permute,r) unless block
 
         unless kind_of?(Enumerable)
-          raise(TypeError, "#{inspect} must be Enumerable")
+          raise(TypeError,"#{inspect} must be Enumerable")
         end
 
         if empty?

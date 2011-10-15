@@ -26,7 +26,7 @@ module Combinatorics
     # 
     def self.cardinality(a,b)
       if (a <= 0 || b <= 0)
-        raise(RangeError, 'inputs must be greater than zero')
+        raise(RangeError,"inputs must be greater than zero")
       end
 
       a * b
