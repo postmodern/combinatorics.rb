@@ -32,7 +32,7 @@ module Combinatorics
       def powerset(&block)
         return enum_for(:powerset) unless block
 
-        0.upto(length) { |n| self.choose(n,&block) }
+        0.upto(length) { |n| choose(n,&block) }
       end
 
       alias power_set powerset
