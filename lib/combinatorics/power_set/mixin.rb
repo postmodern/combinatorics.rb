@@ -1,6 +1,10 @@
+require 'combinatorics/choose'
+
 module Combinatorics
   module PowerSet
     module Mixin
+      include Choose::Mixin
+
       #
       # Calculates the power-set of an Enumerable object.
       #
@@ -27,21 +31,10 @@ module Combinatorics
       #
       # @see http://johncarrino.net/blog/2006/08/11/powerset-in-ruby/
       #
-      def powerset
-        inject([self.class.new]) do |power_set, element|
-          sub_set = []
+      def powerset(&block)
+        return enum_for(:powerset) unless block
 
-          power_set.each do |previous_set|
-            new_set = previous_set + [element]
-
-            yield new_set if block_given?
-
-            sub_set << previous_set
-            sub_set << new_set
-          end
-
-          sub_set.enum_for
-        end
+        0.upto(length) { |n| self.choose(n,&block) }
       end
 
       alias power_set powerset
