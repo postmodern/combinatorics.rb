@@ -115,6 +115,12 @@ describe Choose do
       subject.cardinality_all(4).should == [4, 6, 4, 1]
     end
 
+    it "should allow specifying the range of `r` values" do
+      subject.cardinality_all(10,5..10).should == [
+        252, 210, 120, 45, 10, 1
+      ]
+    end
+
     it "should raise RangeError for subject.cardinality_all(-1)" do
       lambda { subject.cardinality_all(-1) }.should raise_error(RangeError)
     end

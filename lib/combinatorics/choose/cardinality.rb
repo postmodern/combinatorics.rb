@@ -63,38 +63,37 @@ module Combinatorics
     end
 
     #
-    # @param [Fixnum] c
-    #   Input set cardinality.
+    # @param [Integer] n
+    #   The total number of choices.
+    #
+    # @param [Enumerable] c
+    #   The set of `r` values to choose from `n`.
     #
     # @return [Array]
     #   Elements are cardinalities for each subset "1" through "c".
     #
     # @raise [RangeError]
-    #   `c` must be non-negative.
+    #   `n` must be non-negative.
     #
-    # @example cardinality_all(4)
-    #   # => [4, 4, 9, 1]
+    # @example
+    #   cardinality_all(4)
+    #   # => [4, 6, 4, 1]
+    #
+    # @example
+    #   cardinality_all(10, 5..10)
+    #   # => [252, 210, 120, 45, 10, 1]
     #
     # @note Sum of elements will equal Math.factorial(c)
     #
-    # @see Combinatorics::Choose::cardinality
-    #
-    # @see Math.factorial
-    #
+    # @see cardinality
     # @see http://en.wikipedia.org/wiki/Combinations
     # 
-    def self.cardinality_all(c)
-      if c.zero?
-        return []
-      elsif c < 0
+    def self.cardinality_all(n,c=(1..n))
+      if n < 0
         raise(RangeError, 'c must be non-negative')
       end
 
-      ret = [c]
-
-      2.upto(c) { |x| ret << cardinality(c, x) }
-
-      ret
+      c.map { |r| cardinality(n,r) }
     end
   end
 end
