@@ -46,29 +46,7 @@ never complete due to exponential computational complexity.)
 
 ## Examples
 
-Power-set of an {Array}:
-
-    require 'combinatorics/power_set'
-
-    [1,2,3,4].powerset
-    # => [[],
-          [4],
-          [3],
-          [3, 4],
-          [2],
-          [2, 4],
-          [2, 3],
-          [2, 3, 4],
-          [1],
-          [1, 4],
-          [1, 3],
-          [1, 3, 4],
-          [1, 2],
-          [1, 2, 4],
-          [1, 2, 3],
-          [1, 2, 3, 4]]
-
-Power-set of a {Set}:
+Power-set:
 
     Set['ab', 'cd', 'ef'].powerset
     # => [#<Set: {}>,

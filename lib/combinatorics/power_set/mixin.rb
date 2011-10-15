@@ -18,18 +18,12 @@ module Combinatorics
       # @return [Enumerator]
       #   The power set.
       #
-      # @example Power-set of an Array.
-      #   [1,2,3].powerset.to_a
-      #   # => [[], [3], [2], [2, 3], [1], [1, 3], [1, 2], [1, 2, 3]]
-      #
       # @example Power-set on a Set of strings.
       #   Set['abc', 'xyz', '123'].powerset.to_a
       #   # => [#<Set: {}>, #<Set: {"123"}>, #<Set: {"xyz"}>,
       #         #<Set: {"abc"}>, #<Set: {"xyz", "123"}>,
       #         #<Set: {"abc", "123"}>, #<Set: {"abc", "xyz"}>,
       #         #<Set: {"abc", "xyz", "123"}>]
-      #
-      # @see http://johncarrino.net/blog/2006/08/11/powerset-in-ruby/
       #
       def powerset(&block)
         return enum_for(:powerset) unless block
