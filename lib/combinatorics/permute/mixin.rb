@@ -26,7 +26,8 @@ module Combinatorics
       # @raise [TypeError]
       #   `self` must be Enumerable.
       #
-      # @example permute([1, 2], 1).to_a
+      # @example
+      #   permute([1, 2], 1).to_a
       #   # => [[1], [2]]
       #
       # @see Array#permutation
