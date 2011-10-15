@@ -43,17 +43,16 @@ module Combinatorics
     def self.cardinality(n,r=nil) 
       raise(RangeError, 'n must be non-negative') if n < 0
 
-      if r.nil?
+      case r
+      when 0
+        0
+      when nil
         Math.factorial(n)
       else
         raise(RangeError, 'r must be non-negative') if r < 0
         raise(RangeError, 'r must be less than or equal to n') if r > n
 
-        if n.zero? or n == r 
-          1
-        else
-          Math.factorial(n) / Math.factorial(n-r)
-        end
+        Math.factorial(n) / Math.factorial(n - r)
       end
     end
 
@@ -86,18 +85,12 @@ module Combinatorics
     #
     # @see http://en.wikipedia.org/wiki/Permutations
     #
-    def self.cardinality_all(c)
-      if c.zero?
-        return []
-      elsif c < 0
+    def self.cardinality_all(n,c=(1..n))
+      if n < 0
         raise(RangeError, 'c must be non-negative')
       end
 
-      ret = [c]
-
-      2.upto(c) { |x| ret << cardinality(c, x) }
-
-      ret
+      c.map { |r| cardinality(n,r) }
     end
 
     def self.N_all(c);  cardinality_all(c); end
