@@ -25,14 +25,12 @@ module Math
   #   sigma(1..4) { |i| i }
   #   # => 10
   #
-  # @see http://en.wikipedia.org/wiki/Summation
-  #
   # @note
   #   "chalkboard" notation for summation is the capital Greek letter Sigma.
   #
-  # @todo
-  #   should the second function argument be "k = 1" ?
-  #   if so, raise a RangeError if k is negative.
+  # @see http://en.wikipedia.org/wiki/Summation
+  #
+  # @since 0.4.0
   #
   def Math.sigma(r)
     unless r.kind_of?(Range)
@@ -54,6 +52,8 @@ module Math
   # CamelCase alias for sigma (defined above)
   #
   # @see Math.sigma
+  #
+  # @since 0.4.0
   #
   def Math.Sigma(r)
     Math.sigma(r)
@@ -84,6 +84,8 @@ module Math
   #
   # @see http://en.wikipedia.org/wiki/Pi_notation#Capital_Pi_notation
   #
+  # @since 0.4.0
+  #
   def Math.pi(r)
     unless r.kind_of?(Range)
       raise(TypeError, 'r must be a Range')
@@ -104,6 +106,8 @@ module Math
   # CamelCase alias for pi (defined above)
   #
   # @see Math.pi
+  #
+  # @since 0.4.0
   #
   def Math.Pi(r)
     Math.pi(r)
@@ -126,11 +130,12 @@ module Math
   #   subfactorial([1, 2, 3].size)
   #   # => 2
   #
-  # @see http://mathworld.wolfram.com/Subfactorial.html
+  # @note The notation used in academia for subfactorial notation is "!n"
   #
+  # @see http://mathworld.wolfram.com/Subfactorial.html
   # @see Derange.cardinality
   #
-  # @note The notation used in academia for subfactorial notation is "!n"
+  # @since 0.4.0
   #
   def Math.subfactorial(n)
     if    n >= 1 then ((Math.factorial(n) + 1) / Math::E).floor
@@ -156,9 +161,11 @@ module Math
   #   factorial(4)
   #   # => 24
   #
+  # @note The factorial of zero equals one!
+  #
   # @see http://en.wikipedia.org/wiki/Factorial
   #
-  # @note The factorial of zero equals one!
+  # @since 0.4.0
   #
   def Math.factorial(x=1)
     if    x >= 1  then pi(1..x)
