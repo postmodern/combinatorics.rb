@@ -30,7 +30,7 @@ never complete due to exponential computational complexity.)
   * {Combinatorics::Permute}
   * {Combinatorics::PowerSet}
 * Adds Combinatorics conveniance methods to {Array} and {Set}:
-  * `cartprod`
+  * `cartesian_product`
   * `choose`
   * `derange`
   * `permute`
