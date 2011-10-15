@@ -35,8 +35,8 @@ module Combinatorics
       def choose(k,&block)
         return enum_for(:choose,k) unless block
 
-        unless self.kind_of?(Enumerable)
-          raise(TypeError, 'self must be Enumerable')
+        unless kind_of?(Enumerable)
+          raise(TypeError,"#{inspect} must be Enumerable")
         end
 
         if empty?
