@@ -25,15 +25,15 @@ module Combinatorics
       #   `other` must be Enumerable.
       #
       # @example Cartesian product of an Array
-      #   [1, 2].cartprod([3, 4])
+      #   [1, 2].cartesian_product([3, 4])
       #   # => [[1, 3], [2, 3], [1, 4], [2, 4]]
       #
       # @example Cartesian product over an Array of Strings
-      #   ['a'].cartprod(['b', 'c', 'd']).to_a
+      #   ['a'].cartesian_product(['b', 'c', 'd']).to_a
       #   # => [["a", "b"], ["a", "c"], ["a", "d"]]
       #
       # @example Three-way Cartesian product operation
-      #   [0, 1].cartprod([2, 3], [4, 5])
+      #   [0, 1].cartesian_product([2, 3], [4, 5])
       #   # => [
       #   #      [0, 2, 4], [0, 2, 5], [0, 3, 4], [0, 3, 5],
       #   #      [1, 2, 4], [1, 2, 5], [1, 3, 4], [1, 3, 5],
