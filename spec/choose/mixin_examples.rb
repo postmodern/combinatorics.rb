@@ -40,6 +40,6 @@ shared_examples_for "Choose::Mixin" do
   it "should alias choose to combos" do
     set = subject[1]
 
-    set.should respond_to(:combos) 
+    set.should respond_to(:combinations) 
   end
 end

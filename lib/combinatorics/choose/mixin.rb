@@ -46,7 +46,7 @@ module Combinatorics
         end
       end
 
-      alias combos choose
+      alias combinations choose
     end
   end
 end
