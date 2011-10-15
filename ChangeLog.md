@@ -1,5 +1,9 @@
-### 0.4.0 / 2011-05-06
+### 0.4.0 / 2011-10-14
 
+* Added {Math.sigma}.
+* Added {Math.pi}.
+* Added {Math.factorial}.
+* Added {Math.subfactorial}.
 * Added {Combinatorics::CartesianProduct}.
 * Added {Combinatorics::Choose}.
 * Added {Combinatorics::Derange}.
