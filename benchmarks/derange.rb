@@ -11,7 +11,7 @@ Benchmark.bm do |b|
   (1..10).each do |n|
     array = (1..n).to_a
 
-    b.report("array (n=#{n})") do
+    b.report("n=#{n}") do
       array.derange { |s| }
     end
   end
