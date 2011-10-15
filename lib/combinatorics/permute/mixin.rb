@@ -32,7 +32,7 @@ module Combinatorics
       #   #     [2, 1], [2, 3],
       #   #     [3, 1], [3, 2]]
       #
-      # @see Array#permutation
+      # @see http://rubydoc.info/stdlib/core/Array#permutation-instance_method
       #
       def permute(r,&block)
         return enum_for(:permute,r) unless block
