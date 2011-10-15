@@ -39,6 +39,13 @@ shared_examples_for "Choose::Mixin" do
     results.should == [Set[1, 2]]
   end
 
+  it "should filter out repeated elements" do
+    set1 = subject[1,1,2,3]
+    set2 = subject[1,2,3]
+
+    set1.choose(2).to_a.should == set2.choose(2).to_a
+  end
+
   it "should alias choose to combos" do
     set = subject[1]
 

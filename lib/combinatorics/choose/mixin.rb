@@ -41,7 +41,10 @@ module Combinatorics
           raise(TypeError,"#{inspect} must be Enumerable")
         end
 
-        self.to_a.combination(k) do |subset|
+        elements = self.to_a
+        elements.uniq!
+
+        elements.combination(k) do |subset|
           yield Set.new(subset)
         end
       end
