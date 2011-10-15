@@ -31,16 +31,15 @@ module Combinatorics
       def derange
         return enum_for(:derange) unless block_given?
 
-        if self.size <= 1
+        if size <= 1
           yield []
-          return
-        end
+        else
+          elements = self.to_a
 
-        elements = self.to_a
-
-        elements.permutation do |x|
-          unless x.each_with_index.any? { |xi,i| xi == elements[i] }
-            yield x
+          elements.permutation do |x|
+            unless x.each_with_index.any? { |xi,i| xi == elements[i] }
+              yield x
+            end
           end
         end
       end

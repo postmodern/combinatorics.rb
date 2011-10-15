@@ -35,9 +35,11 @@ module Combinatorics
       def choose(k,&block)
         return enum_for(:choose,k) unless block
 
-        if !self.is_a?(Enumerable)
+        unless self.kind_of?(Enumerable)
           raise(TypeError, 'self must be Enumerable')
-        elsif empty?
+        end
+
+        if empty?
           yield []
         else
           self.to_a.combination(k,&block)
