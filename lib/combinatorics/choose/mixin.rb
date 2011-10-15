@@ -1,3 +1,5 @@
+require 'set'
+
 module Combinatorics
   module Choose
     #
@@ -40,7 +42,7 @@ module Combinatorics
         end
 
         self.to_a.combination(k) do |subset|
-          yield subset.to_set
+          yield Set.new(subset)
         end
       end
 
