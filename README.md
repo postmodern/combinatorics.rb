@@ -34,7 +34,14 @@ exponential computational complexity.)
   * `derange`
   * `permute`
   * `powerset`
-* Adds {Range#&}, {Range#upto} and {Range#downto}.
+* Adds conveniance methods:
+  * {Range#&}
+  * {Range#upto}
+  * {Range#downto}
+  * {Math.sigma}
+  * {Math.pi}
+  * {Math.factorial}
+  * {Math.subfactorial}
 
 ## Examples
 
@@ -109,64 +116,63 @@ List comprehensions:
 
 Cartesian products:
 
-require 'combinatorics/cartesian_product'
-
-['a', 'b', 'c'].cartprod([0, 1, 2]).to_a
-# => [["a", 0], 
-      ["b", 0], 
-      ["c", 0], 
-      ["a", 1], 
-      ["b", 1], 
-      ["c", 1], 
-      ["a", 2], 
-      ["b", 2], 
-      ["c", 2]]
+    require 'combinatorics/cartesian_product'
+    
+    ['a', 'b', 'c'].cartprod([0, 1, 2]).to_a
+    # => [["a", 0], 
+          ["b", 0], 
+          ["c", 0], 
+          ["a", 1], 
+          ["b", 1], 
+          ["c", 1], 
+          ["a", 2], 
+          ["b", 2], 
+          ["c", 2]]
 
 k-combinations:
 
-require 'combinatorics/choose'
+    require 'combinatorics/choose'
 
-('a'..'f').to_a.choose(2).to_a
-# => [["a", "b"], 
-      ["a", "c"], 
-      ["a", "d"], 
-      ["a", "e"], 
-      ["a", "f"], 
-      ["b", "c"], 
-      ["b", "d"], 
-      ["b", "e"], 
-      ["b", "f"], 
-      ["c", "d"], 
-      ["c", "e"], 
-      ["c", "f"], 
-      ["d", "e"], 
-      ["d", "f"], 
-      ["e", "f"]]
+    ('a'..'f').to_a.choose(2).to_a
+    # => [["a", "b"], 
+          ["a", "c"], 
+          ["a", "d"], 
+          ["a", "e"], 
+          ["a", "f"], 
+          ["b", "c"], 
+          ["b", "d"], 
+          ["b", "e"], 
+          ["b", "f"], 
+          ["c", "d"], 
+          ["c", "e"], 
+          ["c", "f"], 
+          ["d", "e"], 
+          ["d", "f"], 
+          ["e", "f"]]
 
 Derangements:
 
-require 'combinatorics/derange'
-
-[:_, :q, :z, :x].derange.to_a
-# => [[:q, :_, :x, :z], 
-      [:q, :z, :x, :_], 
-      [:q, :x, :_, :z], 
-      [:z, :_, :x, :q], 
-      [:z, :x, :_, :q], 
-      [:z, :x, :q, :_], 
-      [:x, :_, :q, :z], 
-      [:x, :z, :_, :q], 
-      [:x, :z, :q, :_]]
+    require 'combinatorics/derange'
+    
+    [:_, :q, :z, :x].derange.to_a
+    # => [[:q, :_, :x, :z], 
+          [:q, :z, :x, :_], 
+          [:q, :x, :_, :z], 
+          [:z, :_, :x, :q], 
+          [:z, :x, :_, :q], 
+          [:z, :x, :q, :_], 
+          [:x, :_, :q, :z], 
+          [:x, :z, :_, :q], 
+          [:x, :z, :q, :_]]
 
 Permutation cardinality:
 
-require 'combinatorics/permutation'
-
-include Combinatorics::Permute
-
-Combinatorics::Permute::cardinality(128)
-# => 8256
-
+    require 'combinatorics/permutation'
+    
+    include Combinatorics::Permute
+    
+    Combinatorics::Permute::cardinality(128)
+    # => 8256
 
 ## Requirements
 
