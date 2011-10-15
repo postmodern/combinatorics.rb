@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'combinatorics/power_set'
 
 describe PowerSet do
-  subject { Object.new.extend(PowerSet) }
+  subject { PowerSet }
 
   describe "cardinality" do
     it "should return 1 for cardinality(0)" do 
@@ -26,11 +26,7 @@ describe PowerSet do
     end
   end
 
-  it "should alias cardinality to len" do
-    should respond_to(:len)
-  end
-
   it "should wrap cardinality with PowerSet.P" do
-    PowerSet.should respond_to(:P)
+    should respond_to(:P)
   end
 end

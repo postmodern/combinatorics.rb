@@ -18,12 +18,9 @@ module Combinatorics
     #   Cardinality of power set on an empty set equals `factorial(0)`
     #   equals 1.
     #
-    def cardinality(n)
+    def self.cardinality(n)
       Math.factorial(n)
     end
-
-    # Alias for shortened power set cardinality method name
-    alias len cardinality
 
     # 
     # Wrapper function for power set cardinality method defined above
@@ -31,8 +28,8 @@ module Combinatorics
     # @note The letter `P' stands for the power set function in the context of
     #       statements regarding discrete mathematics.
     #
-    def PowerSet.P
-      cardinality
+    def self.P(n)
+      cardinality(n)
     end
   end
 end
