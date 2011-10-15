@@ -169,7 +169,7 @@ module Math
   #
   def Math.factorial(x=1)
     if    x >= 1  then pi(1..x)
-    elsif x.zero? then 1
+    elsif x == 0  then 1
     else
       raise(RangeError,"x must be non-negative")
     end

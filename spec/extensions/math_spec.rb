@@ -74,7 +74,7 @@ describe Math do
     end
 
     it "should return 0 for subfactorial(1)" do
-      subject.subfactorial(1).should be_zero
+      subject.subfactorial(1).should == 0
     end
 
     it "should return 1 for subfactorial(2)" do

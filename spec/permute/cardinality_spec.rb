@@ -42,7 +42,7 @@ describe Permute do
     end
 
     it "should return 0 for subject.cardinality(1, 0)" do
-      subject.cardinality(1, 0).should be_zero
+      subject.cardinality(1, 0).should == 0
     end
 
     it "should return 1 for subject.cardinality(1, 1)" do
