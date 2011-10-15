@@ -44,10 +44,8 @@ module Combinatorics
       raise(RangeError, 'n must be non-negative') if n < 0
 
       case r
-      when 0
-        0
-      when nil
-        Math.factorial(n)
+      when 0   then 0
+      when nil then Math.factorial(n)
       else
         raise(RangeError, 'r must be non-negative') if r < 0
         raise(RangeError, 'r must be less than or equal to n') if r > n

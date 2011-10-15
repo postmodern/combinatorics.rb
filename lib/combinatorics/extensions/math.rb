@@ -133,10 +133,8 @@ module Math
   # @note The notation used in academia for subfactorial notation is "!n"
   #
   def Math.subfactorial(n)
-    if n >= 1
-      ((Math.factorial(n) + 1) / Math::E).floor
-    elsif n == 0
-      1
+    if    n >= 1 then ((Math.factorial(n) + 1) / Math::E).floor
+    elsif n == 0 then 1
     else
       raise(RangeError, 'n must be non-negative')
     end
@@ -163,10 +161,8 @@ module Math
   # @note The factorial of zero equals one!
   #
   def Math.factorial(x=1)
-    if x >= 1
-      pi(1..x)
-    elsif x.zero?
-      1
+    if    x >= 1  then pi(1..x)
+    elsif x.zero? then 1
     else
       raise(RangeError, 'x must be non-negative')
     end
