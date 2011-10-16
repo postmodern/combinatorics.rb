@@ -113,9 +113,7 @@ Permutation cardinality:
 
     require 'combinatorics/permutation'
     
-    include Combinatorics::Permute
-    
-    Combinatorics::Permute::cardinality(128)
+    Combinatorics::Permute.cardinality(128)
     # => 8256
 
 List comprehensions:
