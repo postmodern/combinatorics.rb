@@ -36,7 +36,7 @@ module Combinatorics
           elements = self.to_a
 
           elements.permutation do |x|
-            unless x.each_with_index.any? { |xi,i| xi == elements[i] }
+            unless elements.each_with_index.any? { |e,i| e == x[i] }
               yield x
             end
           end
