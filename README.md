@@ -58,41 +58,6 @@ Power-set:
           #<Set: {"ab", "cd"}>,
           #<Set: {"ab", "cd", "ef"}>]
 
-Find the intersecting sub-range between two ranges:
-
-    (1..50) & (20..100)
-    # => (20..50)
-
-Enumerate over every sub-range between two ranges:
-
-    (1..5).upto(2..10).to_a
-    # => [1..5, 1..6, 1..7, 1..8, 1..9, 1..10,
-          2..5, 2..6, 2..7, 2..8, 2..9, 2..10]
-
-List comprehensions:
-
-    require 'combinatorics/list_comprehension'
-
-    [(0..10).step(2),('a'..'c')].comprehension.to_a
-    # => [[0, "a"],
-          [0, "b"],
-          [0, "c"],
-          [2, "a"],
-          [2, "b"],
-          [2, "c"],
-          [4, "a"],
-          [4, "b"],
-          [4, "c"],
-          [6, "a"],
-          [6, "b"],
-          [6, "c"],
-          [8, "a"],
-          [8, "b"],
-          [8, "c"],
-          [10, "a"],
-          [10, "b"],
-          [10, "c"]]
-
 Cartesian products:
 
     require 'combinatorics/cartesian_product'
@@ -152,6 +117,41 @@ Permutation cardinality:
     
     Combinatorics::Permute::cardinality(128)
     # => 8256
+
+List comprehensions:
+
+    require 'combinatorics/list_comprehension'
+
+    [(0..10).step(2),('a'..'c')].comprehension.to_a
+    # => [[0, "a"],
+          [0, "b"],
+          [0, "c"],
+          [2, "a"],
+          [2, "b"],
+          [2, "c"],
+          [4, "a"],
+          [4, "b"],
+          [4, "c"],
+          [6, "a"],
+          [6, "b"],
+          [6, "c"],
+          [8, "a"],
+          [8, "b"],
+          [8, "c"],
+          [10, "a"],
+          [10, "b"],
+          [10, "c"]]
+
+Find the intersecting sub-range between two ranges:
+
+    (1..50) & (20..100)
+    # => (20..50)
+
+Enumerate over every sub-range between two ranges:
+
+    (1..5).upto(2..10).to_a
+    # => [1..5, 1..6, 1..7, 1..8, 1..9, 1..10,
+          2..5, 2..6, 2..7, 2..8, 2..9, 2..10]
 
 ## Requirements
 
