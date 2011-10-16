@@ -163,6 +163,6 @@ Permutation cardinality:
 
 ## Copyright
 
-Copyright (c) 2010 Hal Brodigan
+Copyright (c) 2010-2011 Hal Brodigan
 
 See {file:LICENSE.txt} for license information.
