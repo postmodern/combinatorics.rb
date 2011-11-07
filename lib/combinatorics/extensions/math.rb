@@ -113,7 +113,6 @@ module Math
     Math.pi(r)
   end
   
-
   #
   # Subfactorial function for calculation of derangement cardinalities.
   #
