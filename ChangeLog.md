@@ -1,3 +1,8 @@
+### 0.4.2 / 2012-05-27
+
+* Replaced ore-tasks with
+  [rubygems-tasks](https://github.com/postmodern/rubygems-tasks#readme).
+
 ### 0.4.1 / 2011-10-15
 
 * Fixed a typo in the gemspec.
