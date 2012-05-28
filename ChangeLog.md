@@ -1,3 +1,7 @@
+### 0.4.1 / 2011-10-15
+
+* Fixed a typo in the gemspec.
+
 ### 0.4.0 / 2011-10-15
 
 * Added {Math.sigma}.
