@@ -1,7 +1,7 @@
 # Combinatorics
 
-* [Source](http://github.com/postmodern/combinatorics)
-* [Issues](http://github.com/postmodern/combinatorics/issues)
+* [Source](https://github.com/postmodern/combinatorics)
+* [Issues](https://github.com/postmodern/combinatorics/issues)
 * [Documentation](http://rubydoc.info/gems/combinatorics)
 * [Email](mailto:postmodern.mod3 at gmail.com)
 
