@@ -1,5 +1,9 @@
 ### 0.4.2 / 2012-05-27
 
+* Avoid warnings on JRuby by checking for `::Generator` before
+  `::Enumerator::Generator` in `combinatorics/generator`.
+* Raise a `NameError` when the `Generator` class cannot be found in
+  `combinatorics/generator`.
 * Replaced ore-tasks with
   [rubygems-tasks](https://github.com/postmodern/rubygems-tasks#readme).
 
