@@ -8,6 +8,6 @@ module Combinatorics
               elsif defined?(::Enumerator::Generator) # 1.9
                 ::Enumerator::Generator
               else
-                raise("unable to find the Generator class")
+                raise(NameError,"unable to find the Generator class")
               end
 end
