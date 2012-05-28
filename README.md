@@ -157,7 +157,7 @@ Enumerate over every sub-range between two ranges:
 
 ## Install
 
-      $ sudo gem install combinatorics
+    $ gem install combinatorics
 
 ## Copyright
 
