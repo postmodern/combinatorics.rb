@@ -1,8 +1,6 @@
-pkg
-doc
-web
-tmp
+/pkg
+/doc
+/.yardoc
 .DS_Store
-.yardoc
 *.swp
 *~
