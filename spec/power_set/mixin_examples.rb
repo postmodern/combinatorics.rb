@@ -8,13 +8,13 @@ shared_examples_for "PowerSet::Mixin" do
   it "the powerset of an empty Set should only contain the empty Set" do
     set = subject[]
 
-    set.powerset.to_a.should == [empty_set]
+    expect(set.powerset.to_a).to eq([empty_set])
   end
 
   it "the powerset of a single Set should contain that Set" do
     set = subject[1]
 
-    set.powerset.to_a.should == [empty_set, Set[*set]]
+    expect(set.powerset.to_a).to eq([empty_set, Set[*set]])
   end
 
   it "the powerset of a Set should all be subsets" do
@@ -23,12 +23,12 @@ shared_examples_for "PowerSet::Mixin" do
 
     set.powerset { |subset| superset += subset }
 
-    superset.should == Set[*set]
+    expect(superset).to eq(Set[*set])
   end
 
   it "should alias powerset to power_set" do
     set = subject[1]
 
-    set.should respond_to(:power_set)
+    expect(set).to respond_to(:power_set)
   end
 end

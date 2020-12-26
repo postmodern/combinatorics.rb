@@ -6,123 +6,123 @@ describe Choose do
 
   describe "cardinality" do
     it "should raise RangeError if n is negative" do
-      lambda { subject.cardinality(-1) }.should raise_error(RangeError)
+      expect { subject.cardinality(-1) }.to raise_error(RangeError)
     end
 
     it "should raise RangeError if n is negative" do
-      lambda { subject.cardinality(-1, 1) }.should raise_error(RangeError)
+      expect { subject.cardinality(-1, 1) }.to raise_error(RangeError)
     end
 
     it "should raise RangeError if r is negative" do
-      lambda { subject.cardinality(1, -1) }.should raise_error(RangeError)
+      expect { subject.cardinality(1, -1) }.to raise_error(RangeError)
     end
 
     it "should raise RangeError if r is greater than n" do
-      lambda { subject.cardinality(2, 3) }.should raise_error(RangeError)
+      expect { subject.cardinality(2, 3) }.to raise_error(RangeError)
     end
 
     it "should return 1 for subject.cardinality(0)" do
-      subject.cardinality(0).should == 1
+      expect(subject.cardinality(0)).to eq(1)
     end
 
     it "should return 1 for subject.cardinality(1)" do
-      subject.cardinality(1).should == 1
+      expect(subject.cardinality(1)).to eq(1)
     end
 
     it "should return 2 for subject.cardinality(2)" do
-      subject.cardinality(2).should == 2
+      expect(subject.cardinality(2)).to eq(2)
     end
 
     it "should return 6 for subject.cardinality(3)" do
-      subject.cardinality(3).should == 6
+      expect(subject.cardinality(3)).to eq(6)
     end
 
     it "should return 24 for subject.cardinality(4)" do
-      subject.cardinality(4).should == 24
+      expect(subject.cardinality(4)).to eq(24)
     end
 
     it "should return 0 for subject.cardinality(1, 0)" do
-      subject.cardinality(1, 0).should == 0
+      expect(subject.cardinality(1, 0)).to eq(0)
     end
 
     it "should return 1 for subject.cardinality(1, 1)" do
-      subject.cardinality(1, 1).should == 1
+      expect(subject.cardinality(1, 1)).to eq(1)
     end
 
     it "should return 2 for subject.cardinality(2, 1)" do
-      subject.cardinality(2, 1).should == 2
+      expect(subject.cardinality(2, 1)).to eq(2)
     end
 
     it "should return 1 for subject.cardinality(2, 2)" do
-      subject.cardinality(2, 2).should == 1
+      expect(subject.cardinality(2, 2)).to eq(1)
     end
 
     it "should return 3 for subject.cardinality(3, 1)" do
-      subject.cardinality(3, 1).should == 3
+      expect(subject.cardinality(3, 1)).to eq(3)
     end
 
     it "should return 3 for subject.cardinality(3, 2)" do
-      subject.cardinality(3, 2).should == 3
+      expect(subject.cardinality(3, 2)).to eq(3)
     end
 
     it "should return 1 for subject.cardinality(3, 3)" do
-      subject.cardinality(3, 3).should == 1
+      expect(subject.cardinality(3, 3)).to eq(1)
     end
 
     it "should return 4 for subject.cardinality(4, 1)" do
-      subject.cardinality(4, 1).should == 4
+      expect(subject.cardinality(4, 1)).to eq(4)
     end
 
     it "should return 6 for subject.cardinality(4, 2)" do
-      subject.cardinality(4, 2).should == 6
+      expect(subject.cardinality(4, 2)).to eq(6)
     end
 
     it "should return 4 for subject.cardinality(4, 3)" do
-      subject.cardinality(4, 3).should == 4
+      expect(subject.cardinality(4, 3)).to eq(4)
     end
 
     it "should return 1 for subject.cardinality(4, 4)" do
-      subject.cardinality(4, 4).should == 1
+      expect(subject.cardinality(4, 4)).to eq(1)
     end
 
     it "should return 15 for subject.cardinality(6, 4)" do
-      subject.cardinality(6, 4).should == 15
+      expect(subject.cardinality(6, 4)).to eq(15)
     end
 
     it "should return 3628800 for subject.cardinality(10)" do
-      subject.cardinality(10).should == 3628800
+      expect(subject.cardinality(10)).to eq(3628800)
     end
   end
 
   describe "cardinality_all" do
     it "should return [] for subject.cardinality_all(0)" do
-      subject.cardinality_all(0).should be_empty
+      expect(subject.cardinality_all(0)).to be_empty
     end
 
     it "should return [1] for subject.cardinality_all(1)" do
-      subject.cardinality_all(1).should == [1]
+      expect(subject.cardinality_all(1)).to eq([1])
     end
 
     it "should return [2, 1] for subject.cardinality_all(2)" do
-      subject.cardinality_all(2).should == [2, 1]
+      expect(subject.cardinality_all(2)).to eq([2, 1])
     end
 
     it "should return [3, 3, 1] for subject.cardinality_all(3)" do
-      subject.cardinality_all(3).should == [3, 3, 1]
+      expect(subject.cardinality_all(3)).to eq([3, 3, 1])
     end
 
     it "should return [4, 6, 4, 1] for subject.cardinality_all(4)" do
-      subject.cardinality_all(4).should == [4, 6, 4, 1]
+      expect(subject.cardinality_all(4)).to eq([4, 6, 4, 1])
     end
 
     it "should allow specifying the range of `r` values" do
-      subject.cardinality_all(10,5..10).should == [
+      expect(subject.cardinality_all(10,5..10)).to eq([
         252, 210, 120, 45, 10, 1
-      ]
+      ])
     end
 
     it "should raise RangeError for subject.cardinality_all(-1)" do
-      lambda { subject.cardinality_all(-1) }.should raise_error(RangeError)
+      expect { subject.cardinality_all(-1) }.to raise_error(RangeError)
     end
 
     it "should wrap cardinality with Choose.C" do
