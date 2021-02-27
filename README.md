@@ -1,5 +1,7 @@
 # Combinatorics
 
+[![CI](https://github.com/postmodern/combinatorics/actions/workflows/ruby.yml/badge.svg)](https://github.com/postmodern/combinatorics/actions/workflows/ruby.yml)
+
 * [Source](https://github.com/postmodern/combinatorics)
 * [Issues](https://github.com/postmodern/combinatorics/issues)
 * [Documentation](http://rubydoc.info/gems/combinatorics)
