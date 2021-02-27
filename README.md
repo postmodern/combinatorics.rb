@@ -1,6 +1,7 @@
 # Combinatorics
 
 [![CI](https://github.com/postmodern/combinatorics/actions/workflows/ruby.yml/badge.svg)](https://github.com/postmodern/combinatorics/actions/workflows/ruby.yml)
+[![Code Climate](https://codeclimate.com/github/postmodern/combinatorics.svg)](https://codeclimate.com/github/postmodern/combinatorics)
 
 * [Source](https://github.com/postmodern/combinatorics)
 * [Issues](https://github.com/postmodern/combinatorics/issues)
