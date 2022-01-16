@@ -41,8 +41,8 @@ describe Choose do
       expect(subject.cardinality(4)).to eq(24)
     end
 
-    it "should return 0 for subject.cardinality(1, 0)" do
-      expect(subject.cardinality(1, 0)).to eq(0)
+    it "should return 1 for subject.cardinality(1, 0)" do
+      expect(subject.cardinality(1, 0)).to eq(1)
     end
 
     it "should return 1 for subject.cardinality(1, 1)" do

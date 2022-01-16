@@ -38,7 +38,7 @@ module Combinatorics
       raise(RangeError,"n must be non-negative") if n < 0
 
       case r
-      when 0   then 0
+      when 0   then 1
       when nil then Math.factorial(n)
       else
         Math.factorial(n) / (Math.factorial(r) * Math.factorial(n - r))
