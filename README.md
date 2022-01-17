@@ -31,13 +31,13 @@ never complete due to exponential computational complexity.)
   * [Combinatorics::Derange]
   * [Combinatorics::Permute]
   * [Combinatorics::PowerSet]
-* Adds Combinatorics conveniance methods to {Array} and {Set}:
+* Adds Combinatorics core extension methods to {Array} and {Set}:
   * `cartesian_product`
   * `choose`
   * `derange`
   * `permute`
   * `powerset`
-* Adds conveniance methods:
+* Adds additional core extension methods:
   * [Range#&]
   * [Range#upto]
   * [Range#downto]
