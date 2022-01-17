@@ -1,3 +1,8 @@
+### 0.4.4 / 2022-01-16
+
+* Fixed a bug in {Combinatorics::Choose.cardinality} for when `0`
+  is given and `0` was returned instead of `1`.
+
 ### 0.4.3 / 2012-05-28
 
 * Fixed a typo in the gemspec, which incorrectly set
