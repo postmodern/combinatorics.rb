@@ -1,10 +1,10 @@
 require 'spec_helper'
 require 'permute/mixin_examples'
 
-require 'combinatorics/permute/extensions/set'
+require 'combinatorics/permute/core_ext/array'
 
-describe Set do
-  subject { Set }
+describe Array do
+  subject { Array }
 
   it_should_behave_like "Permute::Mixin"
 end

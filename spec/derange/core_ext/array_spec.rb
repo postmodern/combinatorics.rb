@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'derange/mixin_examples'
 
-require 'combinatorics/derange/extensions/array'
+require 'combinatorics/derange/core_ext/array'
 
 describe Array do
   subject { Array }

@@ -1,1 +1,1 @@
-require 'combinatorics/derange/extensions/array'
+require 'combinatorics/derange/core_ext'

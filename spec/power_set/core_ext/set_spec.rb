@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'power_set/mixin_examples'
 
-require 'combinatorics/power_set/extensions/set'
+require 'combinatorics/power_set/core_ext/set'
 
 describe Set do
   subject { Set }

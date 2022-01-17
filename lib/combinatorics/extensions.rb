@@ -1,1 +1,1 @@
-require 'combinatorics/extensions/range'
+require 'combinatorics/core_ext'

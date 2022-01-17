@@ -1,2 +1,1 @@
-require 'combinatorics/choose/extensions/array'
-require 'combinatorics/choose/extensions/set'
+require 'combinatorics/choose/core_ext'

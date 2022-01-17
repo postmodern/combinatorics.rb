@@ -1,2 +1,1 @@
-require 'combinatorics/permute/extensions/array'
-require 'combinatorics/permute/extensions/set'
+require 'combinatorics/permute/core_ext'

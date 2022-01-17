@@ -1,9 +1,9 @@
 require 'spec_helper'
-require 'combinatorics/choose/extensions/array'
+require 'combinatorics/choose/core_ext/set'
 require 'choose/mixin_examples'
 
-describe Array do
-  subject { Array }
+describe Set do
+  subject { Set }
 
   it_should_behave_like 'Choose::Mixin'
 end

@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'power_set/mixin_examples'
 
-require 'combinatorics/power_set/extensions/array'
+require 'combinatorics/power_set/core_ext/array'
 
 describe Array do
   subject { Array }
