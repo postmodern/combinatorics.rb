@@ -50,108 +50,124 @@ never complete due to exponential computational complexity.)
 
 Power-set:
 
-    Set['ab', 'cd', 'ef'].powerset
-    # => [#<Set: {}>,
-          #<Set: {"ef"}>,
-          #<Set: {"cd"}>,
-          #<Set: {"cd", "ef"}>,
-          #<Set: {"ab"}>,
-          #<Set: {"ab", "ef"}>,
-          #<Set: {"ab", "cd"}>,
-          #<Set: {"ab", "cd", "ef"}>]
+```ruby
+Set['ab', 'cd', 'ef'].powerset
+# => [#<Set: {}>,
+      #<Set: {"ef"}>,
+      #<Set: {"cd"}>,
+      #<Set: {"cd", "ef"}>,
+      #<Set: {"ab"}>,
+      #<Set: {"ab", "ef"}>,
+      #<Set: {"ab", "cd"}>,
+      #<Set: {"ab", "cd", "ef"}>]
+```
 
 Cartesian products:
 
-    require 'combinatorics/cartesian_product'
-    
-    ['a', 'b', 'c'].cartesian_product([0, 1, 2]).to_a
-    # => [["a", 0], 
-          ["b", 0], 
-          ["c", 0], 
-          ["a", 1], 
-          ["b", 1], 
-          ["c", 1], 
-          ["a", 2], 
-          ["b", 2], 
-          ["c", 2]]
+```ruby
+require 'combinatorics/cartesian_product'
+
+['a', 'b', 'c'].cartesian_product([0, 1, 2]).to_a
+# => [["a", 0], 
+      ["b", 0], 
+      ["c", 0], 
+      ["a", 1], 
+      ["b", 1], 
+      ["c", 1], 
+      ["a", 2], 
+      ["b", 2], 
+      ["c", 2]]
+```
 
 k-combinations:
 
-    require 'combinatorics/choose'
+```ruby
+require 'combinatorics/choose'
 
-    ('a'..'f').to_a.choose(2).to_a
-    # => [["a", "b"], 
-          ["a", "c"], 
-          ["a", "d"], 
-          ["a", "e"], 
-          ["a", "f"], 
-          ["b", "c"], 
-          ["b", "d"], 
-          ["b", "e"], 
-          ["b", "f"], 
-          ["c", "d"], 
-          ["c", "e"], 
-          ["c", "f"], 
-          ["d", "e"], 
-          ["d", "f"], 
-          ["e", "f"]]
+('a'..'f').to_a.choose(2).to_a
+# => [["a", "b"], 
+      ["a", "c"], 
+      ["a", "d"], 
+      ["a", "e"], 
+      ["a", "f"], 
+      ["b", "c"], 
+      ["b", "d"], 
+      ["b", "e"], 
+      ["b", "f"], 
+      ["c", "d"], 
+      ["c", "e"], 
+      ["c", "f"], 
+      ["d", "e"], 
+      ["d", "f"], 
+      ["e", "f"]]
+```
 
 Derangements:
 
-    require 'combinatorics/derange'
-    
-    [:_, :q, :z, :x].derange.to_a
-    # => [[:q, :_, :x, :z], 
-          [:q, :z, :x, :_], 
-          [:q, :x, :_, :z], 
-          [:z, :_, :x, :q], 
-          [:z, :x, :_, :q], 
-          [:z, :x, :q, :_], 
-          [:x, :_, :q, :z], 
-          [:x, :z, :_, :q], 
-          [:x, :z, :q, :_]]
+```ruby
+require 'combinatorics/derange'
+
+[:_, :q, :z, :x].derange.to_a
+# => [[:q, :_, :x, :z], 
+      [:q, :z, :x, :_], 
+      [:q, :x, :_, :z], 
+      [:z, :_, :x, :q], 
+      [:z, :x, :_, :q], 
+      [:z, :x, :q, :_], 
+      [:x, :_, :q, :z], 
+      [:x, :z, :_, :q], 
+      [:x, :z, :q, :_]]
+```
 
 Permutation cardinality:
 
-    require 'combinatorics/permutation'
-    
-    Combinatorics::Permute.cardinality(128)
-    # => 8256
+```ruby
+require 'combinatorics/permutation'
+
+Combinatorics::Permute.cardinality(128)
+# => 8256
+```
 
 List comprehensions:
 
-    require 'combinatorics/list_comprehension'
+```ruby
+require 'combinatorics/list_comprehension'
 
-    [(0..10).step(2),('a'..'c')].comprehension.to_a
-    # => [[0, "a"],
-          [0, "b"],
-          [0, "c"],
-          [2, "a"],
-          [2, "b"],
-          [2, "c"],
-          [4, "a"],
-          [4, "b"],
-          [4, "c"],
-          [6, "a"],
-          [6, "b"],
-          [6, "c"],
-          [8, "a"],
-          [8, "b"],
-          [8, "c"],
-          [10, "a"],
-          [10, "b"],
-          [10, "c"]]
+[(0..10).step(2),('a'..'c')].comprehension.to_a
+# => [[0, "a"],
+      [0, "b"],
+      [0, "c"],
+      [2, "a"],
+      [2, "b"],
+      [2, "c"],
+      [4, "a"],
+      [4, "b"],
+      [4, "c"],
+      [6, "a"],
+      [6, "b"],
+      [6, "c"],
+      [8, "a"],
+      [8, "b"],
+      [8, "c"],
+      [10, "a"],
+      [10, "b"],
+      [10, "c"]]
+```
 
 Find the intersecting sub-range between two ranges:
 
-    (1..50) & (20..100)
-    # => (20..50)
+```ruby
+(1..50) & (20..100)
+# => (20..50)
+```
 
 Enumerate over every sub-range between two ranges:
 
-    (1..5).upto(2..10).to_a
-    # => [1..5, 1..6, 1..7, 1..8, 1..9, 1..10,
-          2..5, 2..6, 2..7, 2..8, 2..9, 2..10]
+```ruby
+(1..5).upto(2..10).to_a
+# => [1..5, 1..6, 1..7, 1..8, 1..9, 1..10,
+      2..5, 2..6, 2..7, 2..8, 2..9, 2..10]
+```
 
 ## Requirements
 
@@ -159,7 +175,9 @@ Enumerate over every sub-range between two ranges:
 
 ## Install
 
-    $ gem install combinatorics
+```shell
+$ gem install combinatorics
+```
 
 ## Copyright
 
