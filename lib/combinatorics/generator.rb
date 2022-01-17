@@ -1,5 +1,3 @@
-warn 'DEPRECATED: combinatorics/generator is deprecated'
-
 module Combinatorics
   # auto-detects the `Generator` class.
   #
