@@ -181,6 +181,6 @@ $ gem install combinatorics
 
 ## Copyright
 
-Copyright (c) 2010-2012 Hal Brodigan
+Copyright (c) 2010-2022 Hal Brodigan
 
 See {file:LICENSE.txt} for license information.
