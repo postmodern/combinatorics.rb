@@ -11,7 +11,7 @@
 
 A collection of modules and methods for performing
 [Combinatoric](http://en.wikipedia.org/wiki/Combinatoric) calculations.
-Methods are defined to compute power sets, cartesian products, permutations, 
+Methods are defined to compute power sets, Cartesian products, permutations, 
 combinations, and derangements.
 
 Note: this includes k-combinations and k-permutations, i.e. only generating
