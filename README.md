@@ -32,11 +32,11 @@ never complete due to exponential computational complexity.)
   * [Combinatorics::Permute]
   * [Combinatorics::PowerSet]
 * Adds Combinatorics core extension methods to {Array} and {Set}:
-  * `cartesian_product`
-  * `choose`
-  * `derange`
-  * `permute`
-  * `powerset`
+  * [cartesian_product]
+  * [choose]
+  * [derange]
+  * [permute]
+  * [powerset]
 * Adds additional core extension methods:
   * [Range#&]
   * [Range#upto]
@@ -52,6 +52,11 @@ never complete due to exponential computational complexity.)
 [Combinatorics::Derange]: https://rubydoc.info/gems/combinatorics/Combinatorics/Derange
 [Combinatorics::Permute]: https://rubydoc.info/gems/combinatorics/Combinatorics/Permute
 [Combinatorics::PowerSet]: https://rubydoc.info/gems/combinatorics/Combinatorics/PowerSet
+[cartesian_product]: https://rubydoc.info/gems/combinatorics/Combinatorics/CartesianProduct/Mixin#cartesian_product-instance_method
+[choose]: https://rubydoc.info/gems/combinatorics/Combinatorics/Choose/Mixin#choose-instance_method
+[derange]: https://rubydoc.info/gems/combinatorics/Combinatorics/Derange/Mixin#derange-instance_method
+[permute]: https://rubydoc.info/gems/combinatorics/Combinatorics/Permute/Mixin#permute-instance_method
+[powerset]: https://rubydoc.info/gems/combinatorics/Combinatorics/PowerSet/Mixin#powerset-instance_method
 [Range#&]: https://rubydoc.info/gems/combinatorics/Range#&-instance_method
 [Range#upto]: https://rubydoc.info/gems/combinatorics/Range#upto-instance_method
 [Range#downto]: https://rubydoc.info/gems/combinatorics/Range#downto-instance_method
