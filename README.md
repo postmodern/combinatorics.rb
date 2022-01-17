@@ -24,13 +24,13 @@ never complete due to exponential computational complexity.)
 
 ## Features
 
-* Adds Haskell/Python style list comprehensions via {Array#comprehension}.
+* Adds Haskell/Python style list comprehensions via [Array#comprehension].
 * Provides reusable Combinatorics Mixins:
-  * {Combinatorics::CartesianProduct}
-  * {Combinatorics::Choose}
-  * {Combinatorics::Derange}
-  * {Combinatorics::Permute}
-  * {Combinatorics::PowerSet}
+  * [Combinatorics::CartesianProduct]
+  * [Combinatorics::Choose]
+  * [Combinatorics::Derange]
+  * [Combinatorics::Permute]
+  * [Combinatorics::PowerSet]
 * Adds Combinatorics conveniance methods to {Array} and {Set}:
   * `cartesian_product`
   * `choose`
@@ -38,13 +38,27 @@ never complete due to exponential computational complexity.)
   * `permute`
   * `powerset`
 * Adds conveniance methods:
-  * {Range#&}
-  * {Range#upto}
-  * {Range#downto}
-  * {Math.sigma}
-  * {Math.pi}
-  * {Math.factorial}
-  * {Math.subfactorial}
+  * [Range#&]
+  * [Range#upto]
+  * [Range#downto]
+  * [Math.sigma]
+  * [Math.pi]
+  * [Math.factorial]
+  * [Math.subfactorial]
+
+[Array#comprehension]: https://rubydoc.info/gems/combinatorics/Array#comprehension-instance_method
+[Combinatorics::CartesianProduct]: https://rubydoc.info/gems/combinatorics/Combinatorics/CartesianProduct
+[Combinatorics::Choose]: https://rubydoc.info/gems/combinatorics/Combinatorics/Choose
+[Combinatorics::Derange]: https://rubydoc.info/gems/combinatorics/Combinatorics/Derange
+[Combinatorics::Permute]: https://rubydoc.info/gems/combinatorics/Combinatorics/Permute
+[Combinatorics::PowerSet]: https://rubydoc.info/gems/combinatorics/Combinatorics/PowerSet
+[Range#&]: https://rubydoc.info/gems/combinatorics/Range#&-instance_method
+[Range#upto]: https://rubydoc.info/gems/combinatorics/Range#upto-instance_method
+[Range#downto]: https://rubydoc.info/gems/combinatorics/Range#downto-instance_method
+[Math.sigma]: https://rubydoc.info/gems/combinatorics/Math#sigma-class_method
+[Math.pi]: https://rubydoc.info/gems/combinatorics/Math#pi-class_method
+[Math.factorial]: https://rubydoc.info/gems/combinatorics/Math#factorial-class_method
+[Math.subfactorial]: https://rubydoc.info/gems/combinatorics/Math#subfactorial-class_method
 
 ## Examples
 
