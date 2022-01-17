@@ -190,7 +190,7 @@ Enumerate over every sub-range between two ranges:
 
 ## Requirements
 
-* [ruby](http://www.ruby-lang.org/) >= 1.8.7
+* [ruby](http://www.ruby-lang.org/) >= 2.0.0
 
 ## Install
 
