@@ -1,13 +1,8 @@
-require 'enumerator'
-require 'generator' if RUBY_VERSION < '1.9'
+warn 'DEPRECATED: combinatorics/generator is deprecated'
 
 module Combinatorics
   # auto-detects the `Generator` class.
-  Generator = if defined?(::Generator) # 1.8.7
-                ::Generator
-              elsif defined?(::Enumerator::Generator) # >= 1.9.1
-                ::Enumerator::Generator
-              else
-                raise(NameError,"unable to find the Generator class")
-              end
+  #
+  # @deprecated Deprecated in 0.5.0
+  Generator = ::Enumerator::Generator
 end

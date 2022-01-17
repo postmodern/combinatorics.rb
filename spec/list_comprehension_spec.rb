@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'combinatorics/list_comprehension'
-require 'combinatorics/generator'
 
 describe "Array#comprehension" do
   it "should return an Enumerator object if no block is given" do
@@ -43,7 +42,7 @@ describe "Array#comprehension" do
   end
 
   it "should iterate over values from a generator" do
-    a = [Combinatorics::Generator.new { |g| 5.times { |i| g.yield i } }]
+    a = [Enumerator::Generator.new { |g| 5.times { |i| g.yield i } }]
 
     expect(a.comprehension.to_a).to eq([[0],[1],[2],[3],[4]])
   end
@@ -52,7 +51,7 @@ describe "Array#comprehension" do
     multiplier = 0
     a = [
       [1,2],
-      Combinatorics::Generator.new { |g|
+      Enumerator::Generator.new { |g|
         multiplier += 1
         5.times { |i| g.yield(i * multiplier) }
       }

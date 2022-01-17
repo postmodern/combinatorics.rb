@@ -1,5 +1,3 @@
-require 'combinatorics/enumerator'
-
 class Array
 
   #
@@ -51,7 +49,7 @@ class Array
 
     enums = self.map do |value|
       case value
-      when Combinatorics::Enumerator
+      when Enumerator
         value
       when Enumerable
         value.enum_for
