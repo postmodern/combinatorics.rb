@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Combinatorics
   #
   # @author duper <super@manson.vistech.net>

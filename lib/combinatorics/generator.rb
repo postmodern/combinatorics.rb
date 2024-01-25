@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'enumerator'
 require 'generator' if RUBY_VERSION < '1.9'
 

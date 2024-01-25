@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'combinatorics/cartesian_product'
 require_relative 'combinatorics/choose'
 require_relative 'combinatorics/derange'
