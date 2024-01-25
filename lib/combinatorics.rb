@@ -9,5 +9,5 @@ require_relative 'combinatorics/power_set'
 require_relative 'combinatorics/permute'
 require_relative 'combinatorics/version'
 
-# @todo inversions (permutation mutations)
-# @todo set families (approximate power set subsets)
+# TODO: inversions (permutation mutations)
+# TODO: set families (approximate power set subsets)
