@@ -1,4 +1,4 @@
-require 'combinatorics/list_comprehension'
+require_relative '../list_comprehension'
 
 module Combinatorics
   module CartesianProduct

@@ -1,2 +1,2 @@
-require 'combinatorics/cartesian_product/extensions/array'
-require 'combinatorics/cartesian_product/extensions/set'
+require_relative 'extensions/array'
+require_relative 'extensions/set'

@@ -1,3 +1,3 @@
-require 'combinatorics/power_set/mixin'
-require 'combinatorics/power_set/extensions'
-require 'combinatorics/power_set/cardinality'
+require_relative 'power_set/mixin'
+require_relative 'power_set/extensions'
+require_relative 'power_set/cardinality'

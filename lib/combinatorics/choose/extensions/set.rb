@@ -1,5 +1,6 @@
+require_relative '../mixin'
+
 require 'set'
-require 'combinatorics/choose/mixin'
 
 class Set
   include Combinatorics::Choose::Mixin

@@ -1,3 +1,3 @@
-require 'combinatorics/permute/cardinality'
-require 'combinatorics/permute/mixin'
-require 'combinatorics/permute/extensions'
+require_relative 'permute/cardinality'
+require_relative 'permute/mixin'
+require_relative 'permute/extensions'

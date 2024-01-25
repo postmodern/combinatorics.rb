@@ -1,1 +1,1 @@
-require 'combinatorics/extensions/range'
+require_relative 'extensions/range'

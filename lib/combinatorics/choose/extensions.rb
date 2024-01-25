@@ -1,2 +1,2 @@
-require 'combinatorics/choose/extensions/array'
-require 'combinatorics/choose/extensions/set'
+require_relative 'extensions/array'
+require_relative 'extensions/set'

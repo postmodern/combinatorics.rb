@@ -1,1 +1,1 @@
-require 'combinatorics/derange/extensions/array'
+require_relative 'extensions/array'

@@ -1,3 +1,3 @@
-require 'combinatorics/derange/mixin'
-require 'combinatorics/derange/extensions'
-require 'combinatorics/derange/cardinality'
+require_relative 'derange/mixin'
+require_relative 'derange/extensions'
+require_relative 'derange/cardinality'

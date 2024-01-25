@@ -1,4 +1,4 @@
-require 'combinatorics/extensions/math'
+require_relative '../extensions/math'
 
 module Combinatorics
   #

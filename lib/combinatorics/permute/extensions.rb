@@ -1,2 +1,2 @@
-require 'combinatorics/permute/extensions/array'
-require 'combinatorics/permute/extensions/set'
+require_relative 'extensions/array'
+require_relative 'extensions/set'

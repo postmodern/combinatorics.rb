@@ -1,4 +1,4 @@
-require 'combinatorics/permute/mixin'
+require_relative '../mixin'
 
 class Array
 

@@ -1,4 +1,4 @@
-require 'combinatorics/choose/mixin'
+require_relative '../mixin'
 
 class Array
   include Combinatorics::Choose::Mixin

@@ -1,2 +1,2 @@
-require 'combinatorics/power_set/extensions/array'
-require 'combinatorics/power_set/extensions/set'
+require_relative 'extensions/array'
+require_relative 'extensions/set'

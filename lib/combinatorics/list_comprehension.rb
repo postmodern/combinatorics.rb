@@ -1,4 +1,4 @@
-require 'combinatorics/enumerator'
+require_relative 'enumerator'
 
 class Array
 

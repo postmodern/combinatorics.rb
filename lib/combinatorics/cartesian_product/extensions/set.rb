@@ -1,4 +1,4 @@
-require 'combinatorics/cartesian_product/mixin'
+require_relative '../mixin'
 
 require 'set'
 

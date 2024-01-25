@@ -1,4 +1,4 @@
-require 'combinatorics/power_set/mixin'
+require_relative '../mixin'
 
 class Array
 
