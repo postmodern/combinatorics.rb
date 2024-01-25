@@ -1,9 +1,7 @@
 require 'spec_helper'
 require 'combinatorics/cartesian_product'
 
-describe CartesianProduct do
-  subject { CartesianProduct } 
-
+describe Combinatorics::CartesianProduct do
   describe "cardinality" do
     it "should return 1 for cardinality(1, 1)" do 
       expect(subject.cardinality(1, 1)).to eq(1)

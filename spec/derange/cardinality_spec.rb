@@ -1,9 +1,7 @@
 require 'spec_helper'
 require 'combinatorics/derange/cardinality'
 
-describe Derange do
-  subject { Derange }
-
+describe Combinatorics::Derange do
   it "should alias cardinality to subfactorial" do
     should respond_to(:cardinality)
   end

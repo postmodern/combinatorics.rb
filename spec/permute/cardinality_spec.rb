@@ -1,9 +1,7 @@
 require 'spec_helper'
 require 'combinatorics/permute'
 
-describe Permute do
-  subject { Permute }
-
+describe Combinatorics::Permute do
   describe "cardinality" do
     it "should raise RangeError if n is negative without passing r" do
       expect { subject.cardinality(-1) }.to raise_error(RangeError)

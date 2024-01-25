@@ -1,9 +1,7 @@
 require 'spec_helper'
 require 'combinatorics/power_set'
 
-describe PowerSet do
-  subject { PowerSet }
-
+describe Combinatorics::PowerSet do
   describe "cardinality" do
     it "should return 1 for cardinality(0)" do 
       subject.cardinality(0) == 1

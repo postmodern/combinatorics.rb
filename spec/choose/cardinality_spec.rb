@@ -1,9 +1,7 @@
 require 'spec_helper'
 require 'combinatorics/choose'
 
-describe Choose do
-  subject { Choose }
-
+describe Combinatorics::Choose do
   describe "cardinality" do
     it "should raise RangeError if n is negative" do
       expect { subject.cardinality(-1) }.to raise_error(RangeError)
