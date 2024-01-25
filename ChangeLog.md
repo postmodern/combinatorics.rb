@@ -1,3 +1,9 @@
+### 0.5.0 / 2024-01-25
+
+* Require [ruby](http://www.ruby-lang.org/) >= 2.0.0.
+* Switched to using `require_relative` to improve load-times.
+* Added `# frozen_string_literal: true` to all files.
+
 ### 0.4.4 / 2022-01-16
 
 * Fixed a bug in {Combinatorics::Choose.cardinality} for when `0`
