@@ -19,7 +19,7 @@ metadata:
   bug_tracker_uri:   https://github.com/postmodern/combinatorics.rb/issues
   changelog_uri:     https://github.com/postmodern/combinatorics.rb/blob/master/ChangeLog.md
 
-required_ruby_version: ">= 1.8.7"
+required_ruby_version: ">= 2.0.0"
 
 development_dependencies:
   bundler: ~> 2.0
